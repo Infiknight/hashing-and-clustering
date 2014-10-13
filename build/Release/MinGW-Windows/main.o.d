@@ -1,3 +1,3 @@
-build/Release/MinGW-Windows/main.o: main.c plchlder.h
+build/Release/MinGW-Windows/main.o: main.c vector.h
 
-plchlder.h:
+vector.h:
