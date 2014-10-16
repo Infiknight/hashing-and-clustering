@@ -3,6 +3,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct vector{
+	int dimensionality;		///< number of dimensions of the vector
+	double *coordinates;	///< points to an array holding the vector's components
+};
+
+struct vector * init_vector()
+{
+	struct vector * new= malloc(sizeof(struct vector));
+	new->dimensionality= 0;
+	new->coordinates= NULL;
+	return new;
+}
+
 struct vector * init_rand_vector(
 	int noDimensions)
 {
@@ -14,6 +27,18 @@ struct vector * init_rand_vector(
 		new->coordinates[i]= normal_distr();
 	}
 	return new;
+}
+
+int vector_add_dimension(
+	struct vector * const vector0,
+	double dimvalue)
+{
+	vector0->dimensionality+= 1;
+	vector0->coordinates= realloc( vector0->coordinates, vector0->dimensionality*sizeof(double) );
+	if(vector0->coordinates == NULL)
+		return 1;
+	vector0->coordinates[vector0->dimensionality - 1]= dimvalue;
+	return 0;
 }
 
 struct vector * vector_copy(
@@ -62,4 +87,11 @@ void vector_print(
 	for(i= 0; i < vector0->dimensionality; i++){
 		printf("component %d= %f\n", i, vector0->coordinates[i]);
 	}
+}
+
+void vector_destruct(
+	struct vector * const vector0)
+{
+	free(vector0->coordinates);
+	free(vector0);
 }
