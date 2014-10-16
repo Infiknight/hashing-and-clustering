@@ -16,10 +16,13 @@ extern "C" {
  * A vector consisting of its number of dimensions along with
  * a pointer to an array holding its coordinates.
  */
-struct vector{
-	int dimensionality;		///< number of dimensions of the vector
-	double *coordinates;	///< points to an array holding the vector's components
-};
+struct vector;
+
+/**
+ * Create a vector in 0 dimensional space.
+ * @return A pointer to the newly created vector.
+ */
+struct vector * init_vector();
 
 /**
  * Create a vector and initialize with random values following the standard
@@ -29,6 +32,16 @@ struct vector{
  */
 struct vector* init_rand_vector(
 	int noDimensions);
+
+/**
+ * Extend? a vector to a new dimension.
+ * @param vector0 The vector in question.
+ * @param dimvalue The value the vector is going to have in the new dimension.
+ * @return 1 if an error occurred, 0 otherwise.
+ */
+int vector_add_dimension(
+	struct vector * const vector0,
+	double dimvalue);
 
 /**
  * Make a copy of a vector.
@@ -65,6 +78,13 @@ int vector_inner_product(
  */
 void vector_print(
 	struct vector const * const vector0);
+
+/**
+ * Destroy a vector and release its memory.
+ * @param vector0 Vector to be destroyed.
+ */
+void vector_destruct(
+	struct vector * const vector0);
 
 #ifdef	__cplusplus
 }
