@@ -16,13 +16,13 @@ extern "C" {
  * A vector consisting of its number of dimensions along with
  * a pointer to an array holding its coordinates.
  */
-struct vector;
+typedef struct Vector vector;
 
 /**
  * Create a vector in 0 dimensional space.
  * @return A pointer to the newly created vector.
  */
-struct vector * init_vector();
+vector * init_vector();
 
 /**
  * Create a vector and initialize with random values following the standard
@@ -30,7 +30,7 @@ struct vector * init_vector();
  * @param noDimensions Number of dimensions of the vector to be created.
  * @return A pointer to the newly created vector.
  */
-struct vector* init_rand_vector(
+vector* init_rand_vector(
 	int noDimensions);
 
 /**
@@ -40,7 +40,7 @@ struct vector* init_rand_vector(
  * @return 1 if an error occurred, 0 otherwise.
  */
 int vector_add_dimension(
-	struct vector * const vector0,
+	vector * const vector0,
 	double dimvalue);
 
 /**
@@ -48,8 +48,8 @@ int vector_add_dimension(
  * @param original Vector to be copied.
  * @return The copy of the given vector.
  */
-struct vector * vector_copy(
-	struct vector const * const original);
+vector * vector_copy(
+	vector const * const original);
 
 /**
  * Multiply a vector by a scalar.
@@ -57,7 +57,7 @@ struct vector * vector_copy(
  * @param scalar The value by which the vector is multiplied.
  */
 void vector_scalar_multiplication(
-	struct vector const * const vector0,
+	vector const * const vector0,
 	double const scalar);
 
 /**
@@ -68,8 +68,8 @@ void vector_scalar_multiplication(
  * @return 1 if the vectors' dimensionalities differ, otherwise 0.
  */
 int vector_inner_product(
-	struct vector const * const vector1, 
-	struct vector const * const vector2,
+	vector const * const vector1, 
+	vector const * const vector2,
 	double * const result);
 
 /**
@@ -77,14 +77,14 @@ int vector_inner_product(
  * @param vector0 The vector in question.
  */
 void vector_print(
-	struct vector const * const vector0);
+	vector const * const vector0);
 
 /**
  * Destroy a vector and release its memory.
  * @param vector0 Vector to be destroyed.
  */
 void vector_destruct(
-	struct vector * const vector0);
+	vector * const vector0);
 
 #ifdef	__cplusplus
 }

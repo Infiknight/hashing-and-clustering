@@ -3,23 +3,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct vector{
+struct Vector{
 	int dimensionality;		///< number of dimensions of the vector
 	double *coordinates;	///< points to an array holding the vector's components
 };
 
-struct vector * init_vector()
+vector * init_vector()
 {
-	struct vector * new= malloc(sizeof(struct vector));
+	vector * new= malloc(sizeof(vector));
 	new->dimensionality= 0;
 	new->coordinates= NULL;
 	return new;
 }
 
-struct vector * init_rand_vector(
+vector * init_rand_vector(
 	int noDimensions)
 {
-	struct vector * new= malloc(sizeof(struct vector));
+	vector * new= malloc(sizeof(vector));
 	new->dimensionality= noDimensions;
 	new->coordinates= malloc(noDimensions*sizeof(double));
 	int i;
@@ -30,7 +30,7 @@ struct vector * init_rand_vector(
 }
 
 int vector_add_dimension(
-	struct vector * const vector0,
+	vector * const vector0,
 	double dimvalue)
 {
 	vector0->dimensionality+= 1;
@@ -41,10 +41,10 @@ int vector_add_dimension(
 	return 0;
 }
 
-struct vector * vector_copy(
-	struct vector const * const original)
+vector * vector_copy(
+	vector const * const original)
 {
-	struct vector * new= malloc(sizeof(struct vector));
+	vector * new= malloc(sizeof(vector));
 	new->dimensionality= original->dimensionality;
 	new->coordinates= malloc(new->dimensionality*sizeof(double));
 	int i;
@@ -55,7 +55,7 @@ struct vector * vector_copy(
 }
 
 void vector_scalar_multiplication(
-	struct vector const * const vector0,
+	vector const * const vector0,
 	double const scalar)
 {
 	int i;
@@ -65,8 +65,8 @@ void vector_scalar_multiplication(
 }
 
 int vector_inner_product(
-	struct vector const * const vector1, 
-	struct vector const * const vector2,
+	vector const * const vector1, 
+	vector const * const vector2,
 	double * const result)
 {
 	if(vector1->dimensionality != vector2->dimensionality)
@@ -81,7 +81,7 @@ int vector_inner_product(
 }
 
 void vector_print(
-	struct vector const * const vector0)
+	vector const * const vector0)
 {
 	int i;
 	for(i= 0; i < vector0->dimensionality; i++){
@@ -90,7 +90,7 @@ void vector_print(
 }
 
 void vector_destruct(
-	struct vector * const vector0)
+	vector * const vector0)
 {
 	free(vector0->coordinates);
 	free(vector0);
