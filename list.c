@@ -4,6 +4,7 @@
 struct List{
 	void * elementPtr;	///< pointer to current node's data
 	struct List * next;	///< pointer to the next node
+	int compl_int;	///< A complementary integer for special cases.
 };
 
 //typedef struct List list;

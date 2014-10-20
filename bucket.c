@@ -6,7 +6,6 @@ struct Bucket{
 	list * head;	///< The first node of the list.
 	list * iterator;	///< A pointer to some node of the list.
 	int size;		///< The number of units of data stored in the list.
-	int compl_int;	///< A complementary integer for special cases.
 };
 
 bucket * bucket_construct()
