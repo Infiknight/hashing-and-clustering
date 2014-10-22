@@ -8,7 +8,7 @@ struct Vector{
 	double *coordinates;	///< points to an array holding the vector's components
 };
 
-vector * init_vector()
+vector * vector_construct()
 {
 	vector * new= malloc(sizeof(vector));
 	new->dimensionality= 0;
@@ -16,7 +16,7 @@ vector * init_vector()
 	return new;
 }
 
-vector * init_rand_vector(
+vector * vector_construct_random(
 	int noDimensions)
 {
 	vector * new= malloc(sizeof(vector));
@@ -65,7 +65,7 @@ void vector_scalar_multiplication(
 }
 
 int vector_inner_product(
-	vector const * const vector1, 
+	vector const * const vector1,
 	vector const * const vector2,
 	double * const result)
 {
@@ -80,12 +80,18 @@ int vector_inner_product(
 	return 0;
 }
 
+int vector_dimensions(
+	vector const * const vector_0)
+{
+	return vector_0->dimensionality;
+}
+
 void vector_print(
 	vector const * const vector0)
 {
 	int i;
 	for(i= 0; i < vector0->dimensionality; i++){
-		printf("component %d= %f\n", i, vector0->coordinates[i]);
+		printf("%f	", vector0->coordinates[i]);
 	}
 }
 

@@ -22,7 +22,7 @@ typedef struct Vector vector;
  * Create a vector in 0 dimensional space.
  * @return A pointer to the newly created vector.
  */
-vector * init_vector();
+vector * vector_construct();
 
 /**
  * Create a vector and initialize with random values following the standard
@@ -30,7 +30,7 @@ vector * init_vector();
  * @param noDimensions Number of dimensions of the vector to be created.
  * @return A pointer to the newly created vector.
  */
-vector* init_rand_vector(
+vector* vector_construct_random(
 	int noDimensions);
 
 /**
@@ -71,6 +71,14 @@ int vector_inner_product(
 	vector const * const vector1, 
 	vector const * const vector2,
 	double * const result);
+
+/**
+ * Returns a vector's number of dimensions
+ * @param vector_0	The vector whose dimensionality we want to know.
+ * @return The dimensionality of the vector.
+ */
+int vector_dimensions(
+	vector const * const vector_0);
 
 /**
  * Print the components of a vector.

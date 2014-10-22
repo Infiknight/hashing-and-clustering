@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>bucket.h</itemPath>
+      <itemPath>euclidean.h</itemPath>
       <itemPath>list.h</itemPath>
       <itemPath>probability_distr.h</itemPath>
       <itemPath>vector.h</itemPath>
@@ -16,11 +17,17 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>bucket.c</itemPath>
-      <itemPath>list.c</itemPath>
+      <logicalFolder name="f1" displayName="bucket" projectFiles="true">
+        <itemPath>bucket.c</itemPath>
+        <itemPath>list.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="vector" projectFiles="true">
+        <itemPath>probability_distr.c</itemPath>
+        <itemPath>vector.c</itemPath>
+      </logicalFolder>
+      <itemPath>euclidean_2.c</itemPath>
+      <itemPath>euclidean_parser.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>probability_distr.c</itemPath>
-      <itemPath>vector.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -48,6 +55,12 @@
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="euclidean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="euclidean_2.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="euclidean_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="list.h" ex="false" tool="3" flavor2="0">
@@ -71,7 +84,8 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <commandlineTool>gcc</commandlineTool>
+          <commandLine>-g</commandLine>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -86,6 +100,12 @@
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="euclidean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="euclidean_2.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="euclidean_parser.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
