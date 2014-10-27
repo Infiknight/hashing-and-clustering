@@ -1,5 +1,6 @@
 #include "vector.h"
 #include "euclidean.h"
+#include "euclidean_p.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -27,9 +28,9 @@ int parser(
 		memset(line, 0, LINE_SIZE);
 		fgets(line, LINE_SIZE, stream);
 		//printf("%s\n", line);
-		vector_add_dimension( (*data_table)[iter].vector0, atof(strtok(line, "	")) );
+		vector_add_dimension( (*data_table)[iter].vector0, strtod(strtok(line, "	"),NULL) );
 		while( (str= strtok(NULL, "	")) != NULL){
-			vector_add_dimension( (*data_table)[iter].vector0, atof(str));
+			vector_add_dimension( (*data_table)[iter].vector0, strtod(str,NULL));
 		}
 		iter++;
 	}

@@ -18,7 +18,7 @@ list * list_construct()
 }
 
 int list_add(
-	list * node,
+	list * const node,
 	void * data)
 {
 	if(node->elementPtr == NULL){

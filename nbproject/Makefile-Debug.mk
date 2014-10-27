@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/bucket.o \
 	${OBJECTDIR}/euclidean_2.o \
+	${OBJECTDIR}/euclidean_3.o \
 	${OBJECTDIR}/euclidean_parser.o \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
@@ -77,6 +78,11 @@ ${OBJECTDIR}/euclidean_2.o: euclidean_2.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_2.o euclidean_2.c
+
+${OBJECTDIR}/euclidean_3.o: euclidean_3.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_3.o euclidean_3.c
 
 ${OBJECTDIR}/euclidean_parser.o: euclidean_parser.c 
 	${MKDIR} -p ${OBJECTDIR}

@@ -12,6 +12,7 @@
 #include "vector.h"
 #include "bucket.h"
 #include "euclidean.h"
+#include "euclidean_p.h"
 
 #define LINE_SIZE 10000
 
@@ -51,12 +52,31 @@ int main(int argc, char** argv) {
 	int size;
 	element * data_table= NULL;
 	size= parser(stream, &data_table);
+	//vector_print(data_table[67].vector0);
 	//vector_print(hash_table[3].vector0);
-	/*for(i= 0; i < no; i++){
+	/*for(i= 0; i < size; i++){
 		printf("%s\n", data_table[i].name);
 		printf("\n");
 	}*/
-	parser_clean(data_table, size);
+	//parser_clean(data_table, size);
+	int hash_size;
+	seed * seed_0;
+	bucket ** b= hash_table_constructor(data_table, size, &hash_size, &seed_0);
+	search(data_table[999].vector0, b, seed_0, 1000); //return (EXIT_SUCCESS);
+	for(i=0; i<hash_size; i++){
+		if(NULL != bucket_get_currnode_data(b[i])){
+			element * e= ((augmented_data*)bucket_get_currnode_data(b[i]))->data;
+			printf("%d: %s	", i,  e->name);
+			while(bucket_next(b[i]) == 0){
+				element * e= ((augmented_data*)bucket_get_currnode_data(b[i]))->data;
+				printf("%s	",  e->name);
+			}
+			printf("\n");
+			//vector_print(e->vector0);
+		}
+	}
+	//vector * v= e->vector0;
+	//vector_print(v);
 	//for(i= 0; i<10; i++){
 	//	printf("%f\n", normal_distr());
 	//}

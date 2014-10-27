@@ -1,5 +1,6 @@
 #include "vector.h"
 #include "probability_distr.h"
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -78,6 +79,20 @@ int vector_inner_product(
 	}
 	*result= sum;
 	return 0;
+}
+
+double vector_euclidean_distance(
+	vector const * const vector1,
+	vector const * const vector2)
+{
+	if( vector1->dimensionality != vector2->dimensionality)
+		return -1;
+	int i;
+	double sum= 0;
+	for(i= 0; i < vector1->dimensionality; i++){
+		sum+= pow(vector1->coordinates[i] - vector2->coordinates[i], 2);
+	}
+	return sqrt(sum);
 }
 
 int vector_dimensions(

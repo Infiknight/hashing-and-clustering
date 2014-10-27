@@ -30,6 +30,7 @@ int bucket_add_data(
 	void * data)
 {
 	if( list_add(bucket0->head, data) == 0){
+		//bucket0->iterator= bucket0->head;
 		bucket0->size++;
 		return 0;
 	}

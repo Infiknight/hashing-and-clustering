@@ -73,6 +73,16 @@ int vector_inner_product(
 	double * const result);
 
 /**
+ * Calculates the euclidean distance of two vectors.
+ * @param vector1 The first vector.
+ * @param vector2 The second vector.
+ * @return The eculidean distance as a double.
+ */
+double vector_euclidean_distance(
+	vector const * const vector1,
+	vector const * const vector2);
+
+/**
  * Returns a vector's number of dimensions
  * @param vector_0	The vector whose dimensionality we want to know.
  * @return The dimensionality of the vector.
