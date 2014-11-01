@@ -11,15 +11,62 @@
 //#include "probability_distr.h"
 #include "vector.h"
 #include "bucket.h"
-#include "euclidean.h"
-#include "euclidean_p.h"
+//#include "euclidean.h"
+//#include "euclidean_p.h"
+#include "distance_matrix.h"
+#include "distance_matrix_p.h"
 
 #define LINE_SIZE 10000
+
+
 
 /*
  * 
  */
 int main(int argc, char** argv) {
+	/*FILE * stream2= fopen("DistanceMatrix.csv", "r");
+	int i2, j2, hash_table_size;
+	element * dt;
+	int dimensions;
+	char trash[LINE_SIZE];
+	fgets(trash, LINE_SIZE, stream2);
+	int size= parser2(stream2, &dt, &dimensions);
+	seed seed_0;
+	bucket ** b= hash_table_constructor1(dt, size, &hash_table_size, &seed_0);
+	element ** results= NULL;
+	int current_results_no= 0;*/
+	int L= 5;
+	int k= 12;
+	FILE * stream= fopen("DistanceMatrix.csv", "r");
+	distance_matrix_LSH(
+	stream,
+	L,
+	k);
+	/*dm_search(&seed_0, b, dt, &results, &current_results_no, 10, 3);
+	for(i2= 0; i2 < current_results_no; i2++){
+		printf("%s\n", results[i2]->name);
+	}*/
+	/*for(i2= 0; i2 < size; i2++){
+		for(j2= 0; j2 < dimensions; j2++){
+			printf("%d	", dt[i2].array[j2]);
+			//fflush(stdout);
+		}
+		printf("\n");
+	}*/
+	/*for(i2=0; i2<hash_table_size; i2++){
+		if(NULL != bucket_get_currnode_data(b[i2])){
+			element * e= bucket_get_currnode_data(b[i2]);
+			printf("%d: %s	", i2,  e->name);
+			while(bucket_next(b[i2]) == 0){
+				element * e= bucket_get_currnode_data(b[i2]);
+				printf("%s	",  e->name);
+			}
+			printf("\n");
+			//vector_print(e->vector0);
+		}
+	}*/
+	return (EXIT_SUCCESS);
+}/*
 	srand(time(NULL));
 	int i;
 	vector* vector0= vector_construct_random(4);
@@ -49,16 +96,10 @@ int main(int argc, char** argv) {
 	char line[LINE_SIZE];
 	fgets(line, LINE_SIZE, stream);
 	fgets(line, LINE_SIZE, stream);
-	int size;
+	//int size;
 	element * data_table= NULL;
 	size= parser(stream, &data_table);
-	//vector_print(data_table[67].vector0);
-	//vector_print(hash_table[3].vector0);
-	/*for(i= 0; i < size; i++){
-		printf("%s\n", data_table[i].name);
-		printf("\n");
-	}*/
-	//parser_clean(data_table, size);
+
 	int hash_size;
 	seed * seed_0;
 	bucket ** b= hash_table_constructor(data_table, size, &hash_size, &seed_0);
@@ -83,3 +124,4 @@ int main(int argc, char** argv) {
     return (EXIT_SUCCESS);
 }
 
+*/

@@ -12,3 +12,10 @@ double normal_distr()
     }while(S >= 1);
 	return U*sqrt( -2*log(S)/S );
 }
+
+int uniform_distr(
+	int min,
+	int max)
+{
+	return (int) floor( (max-min+1) * (rand()/(RAND_MAX+1.0)) + min );
+}

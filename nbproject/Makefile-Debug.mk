@@ -36,6 +36,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/bucket.o \
+	${OBJECTDIR}/distance_matrix.o \
+	${OBJECTDIR}/distance_matrix_1.o \
+	${OBJECTDIR}/distance_matrix_2.o \
+	${OBJECTDIR}/distance_matrix_3.o \
+	${OBJECTDIR}/distance_matrix_4.o \
 	${OBJECTDIR}/euclidean_2.o \
 	${OBJECTDIR}/euclidean_3.o \
 	${OBJECTDIR}/euclidean_parser.o \
@@ -73,6 +78,31 @@ ${OBJECTDIR}/bucket.o: bucket.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/bucket.o bucket.c
+
+${OBJECTDIR}/distance_matrix.o: distance_matrix.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix.o distance_matrix.c
+
+${OBJECTDIR}/distance_matrix_1.o: distance_matrix_1.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_1.o distance_matrix_1.c
+
+${OBJECTDIR}/distance_matrix_2.o: distance_matrix_2.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_2.o distance_matrix_2.c
+
+${OBJECTDIR}/distance_matrix_3.o: distance_matrix_3.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_3.o distance_matrix_3.c
+
+${OBJECTDIR}/distance_matrix_4.o: distance_matrix_4.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_4.o distance_matrix_4.c
 
 ${OBJECTDIR}/euclidean_2.o: euclidean_2.c 
 	${MKDIR} -p ${OBJECTDIR}

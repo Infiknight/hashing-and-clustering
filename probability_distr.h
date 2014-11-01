@@ -21,6 +21,15 @@ extern "C" {
  */
 double normal_distr();
 
+/**
+ * Uniform distribution from min to max (inclusive).
+ * @param min Minimum value.
+ * @param max Maximum value.
+ * @return Integer following the uniform distribution.
+ */
+int uniform_distr(
+	int min,
+	int max);
 
 #ifdef	__cplusplus
 }
