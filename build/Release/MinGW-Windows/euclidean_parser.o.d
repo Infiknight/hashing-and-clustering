@@ -1,10 +1,8 @@
 build/Release/MinGW-Windows/euclidean_parser.o: euclidean_parser.c \
- vector.h euclidean.h bucket.h euclidean_p.h
+ vector.h euclidean_p.h bucket.h
 
 vector.h:
 
-euclidean.h:
+euclidean_p.h:
 
 bucket.h:
-
-euclidean_p.h:

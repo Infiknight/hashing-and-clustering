@@ -41,8 +41,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/distance_matrix_2.o \
 	${OBJECTDIR}/distance_matrix_3.o \
 	${OBJECTDIR}/distance_matrix_4.o \
+	${OBJECTDIR}/euclidean.o \
 	${OBJECTDIR}/euclidean_2.o \
 	${OBJECTDIR}/euclidean_3.o \
+	${OBJECTDIR}/euclidean_4.o \
 	${OBJECTDIR}/euclidean_parser.o \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
@@ -104,6 +106,11 @@ ${OBJECTDIR}/distance_matrix_4.o: distance_matrix_4.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_4.o distance_matrix_4.c
 
+${OBJECTDIR}/euclidean.o: euclidean.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean.o euclidean.c
+
 ${OBJECTDIR}/euclidean_2.o: euclidean_2.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -113,6 +120,11 @@ ${OBJECTDIR}/euclidean_3.o: euclidean_3.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_3.o euclidean_3.c
+
+${OBJECTDIR}/euclidean_4.o: euclidean_4.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_4.o euclidean_4.c
 
 ${OBJECTDIR}/euclidean_parser.o: euclidean_parser.c 
 	${MKDIR} -p ${OBJECTDIR}

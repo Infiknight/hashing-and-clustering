@@ -5,11 +5,11 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="private" projectFiles="true">
+        <itemPath>distance_matrix_p.h</itemPath>
         <itemPath>euclidean_p.h</itemPath>
       </logicalFolder>
       <itemPath>bucket.h</itemPath>
       <itemPath>distance_matrix.h</itemPath>
-      <itemPath>distance_matrix_p.h</itemPath>
       <itemPath>euclidean.h</itemPath>
       <itemPath>list.h</itemPath>
       <itemPath>probability_distr.h</itemPath>
@@ -26,18 +26,24 @@
         <itemPath>bucket.c</itemPath>
         <itemPath>list.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f4" displayName="distance_matrix" projectFiles="true">
+        <itemPath>distance_matrix.c</itemPath>
+        <itemPath>distance_matrix_1.c</itemPath>
+        <itemPath>distance_matrix_2.c</itemPath>
+        <itemPath>distance_matrix_3.c</itemPath>
+        <itemPath>distance_matrix_4.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="euclidean" projectFiles="true">
+        <itemPath>euclidean.c</itemPath>
+        <itemPath>euclidean_2.c</itemPath>
+        <itemPath>euclidean_3.c</itemPath>
+        <itemPath>euclidean_4.c</itemPath>
+        <itemPath>euclidean_parser.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="vector" projectFiles="true">
         <itemPath>probability_distr.c</itemPath>
         <itemPath>vector.c</itemPath>
       </logicalFolder>
-      <itemPath>distance_matrix.c</itemPath>
-      <itemPath>distance_matrix_1.c</itemPath>
-      <itemPath>distance_matrix_2.c</itemPath>
-      <itemPath>distance_matrix_3.c</itemPath>
-      <itemPath>distance_matrix_4.c</itemPath>
-      <itemPath>euclidean_2.c</itemPath>
-      <itemPath>euclidean_3.c</itemPath>
-      <itemPath>euclidean_parser.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -80,11 +86,15 @@
       </item>
       <item path="distance_matrix_p.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="euclidean.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="euclidean.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="euclidean_2.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_3.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="euclidean_4.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_p.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -144,11 +154,15 @@
       </item>
       <item path="distance_matrix_p.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="euclidean.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="euclidean.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="euclidean_2.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_3.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="euclidean_4.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_p.h" ex="false" tool="3" flavor2="0">
       </item>

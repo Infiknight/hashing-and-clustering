@@ -9,14 +9,7 @@
 #define CONCAT_SIZE 500
 #define RAW_SIZE 500
 
-/*
-struct Seed{
-	vector ** vector_table;
-	double * t_table;
-	int w, k, n;
-};*/
-
-int concatenated_hash_function(
+int euc_concatenated_hash_function(
 	vector const * const vector_0,
 	seed const * const seed_0,
 	int * identifying_value)
@@ -26,7 +19,7 @@ int concatenated_hash_function(
 	int i;
 	long long raw_hash, concat_hash;
 	for(i= 0; i < seed_0->k; i++){
-		raw_hash= base_hash_function(vector_0, seed_0->vector_table[i], seed_0->t_table[i], seed_0->w);
+		raw_hash= euc_base_hash_function(vector_0, seed_0->vector_table[i], seed_0->t_table[i], seed_0->w);
 		if(raw_hash < 0){
 			raw_hash= llabs(raw_hash);
 			if( (raw_hash % 2) == 0)
@@ -51,7 +44,7 @@ int concatenated_hash_function(
 	return (int) concat_hash;
 }
 
-long long base_hash_function(
+long long euc_base_hash_function(
 	vector const * const vector_0,
 	vector const * const vector_1,
 	double t,

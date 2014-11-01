@@ -1,10 +1,10 @@
-build/Release/MinGW-Windows/main.o: main.c vector.h bucket.h \
- distance_matrix.h distance_matrix_p.h
+build/Release/MinGW-Windows/main.o: main.c vector.h bucket.h euclidean.h \
+ euclidean_p.h
 
 vector.h:
 
 bucket.h:
 
-distance_matrix.h:
+euclidean.h:
 
-distance_matrix_p.h:
+euclidean_p.h:

@@ -1,10 +1,8 @@
-build/Release/MinGW-Windows/euclidean_2.o: euclidean_2.c euclidean.h \
- bucket.h vector.h euclidean_p.h
-
-euclidean.h:
-
-bucket.h:
+build/Release/MinGW-Windows/euclidean_2.o: euclidean_2.c vector.h \
+ bucket.h euclidean_p.h
 
 vector.h:
+
+bucket.h:
 
 euclidean_p.h:

@@ -1,55 +1,11 @@
-Query: item34
-15-near neighbors:
-item1
-item2
-item3
-item4
-item5
-item6
-item7
-item8
-item9
-item10
-item12
-item13
-item14
-item15
-item16
-item17
-item18
-item19
-item20
-item21
-item22
-item24
-item25
-item26
-item27
-item28
-item29
-item31
-item32
+Query: item33
+2000.000000-near neighbors:
 item33
-item34
-item35
-item36
-item37
-item38
-item39
-item40
-item41
+item22
 item42
-item43
-item44
-item45
-item46
-item47
-item49
-item50
-item11
-item30
-Nearest neighbor: item36
-distanceLSH: 5
+item37
+Nearest neighbor: item42
+distanceLSH: 38.488365
 tLSH: 0 seconds and 0 microseconds
-distanceTrue: 5
-tTrue: 0 seconds and 0 microseconds
+distanceTrue: 34.265456
+tTrue: 0 seconds and 7002 microseconds

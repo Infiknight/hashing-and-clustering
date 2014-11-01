@@ -1,5 +1,4 @@
 #include "vector.h"
-#include "euclidean.h"
 #include "euclidean_p.h"
 #include <string.h>
 #include <stdlib.h>
@@ -10,7 +9,7 @@
 
 
 
-int parser(
+int euc_parser(
 	FILE * stream,
 	element ** data_table)
 {
@@ -19,7 +18,6 @@ int parser(
 	char * str;
 	int size= 0, iter= 0;
 	while(fscanf(stream, "%s", name) != EOF){
-		//printf("%s \n", name);
 		*data_table= realloc(*data_table, size+sizeof(element));
 		size+= sizeof(element);
 		(*data_table)[iter].vector0= vector_construct();
@@ -27,18 +25,16 @@ int parser(
 		strcpy( (*data_table)[iter].name, name);
 		memset(line, 0, LINE_SIZE);
 		fgets(line, LINE_SIZE, stream);
-		//printf("%s\n", line);
 		vector_add_dimension( (*data_table)[iter].vector0, strtod(strtok(line, "	"),NULL) );
 		while( (str= strtok(NULL, "	")) != NULL){
 			vector_add_dimension( (*data_table)[iter].vector0, strtod(str,NULL));
 		}
 		iter++;
 	}
-	//vector_print(hash_table[3].vector0);
 	return iter;
 }
 
-int parser_clean(
+int euc_parser_clean(
 	element * data_table,
 	int size)
 {
