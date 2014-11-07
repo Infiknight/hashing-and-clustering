@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <float.h>
 #include <time.h>
-#include <sys/time.h>
+//#include <sys/time.h>
 #include "bucket.h"
 #include "euclidean_p.h"
 
@@ -62,13 +62,13 @@ int euc_L_search(
 	double radius,
 	int item_index)
 {
-	struct timeval stop, start;
+	struct timespec stop, start;
 	int i,
 		current_results_no= 0;
 	double	minimum_distance= DBL_MAX;
 	char * minimum= NULL;
 	element ** results= NULL;
-	gettimeofday(&start, NULL);
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(i= 0; i < L; i++){
 		euc_search( data_table[item_index].vector0, hash_table[i], &results, &current_results_no, seed_0[i], radius);
 	}
@@ -82,10 +82,10 @@ int euc_L_search(
 				minimum= results[i]->name;
 		}
 	}
-	gettimeofday(&stop, NULL);
+	clock_gettime(CLOCK_MONOTONIC, &stop);
 	if( minimum != NULL )
-		fprintf(stream, "Nearest neighbor: %s\ndistanceLSH: %lf\ntLSH: %I64u seconds and %I64u microseconds\n", 
-			minimum, minimum_distance, (long long) (stop.tv_sec - start.tv_sec), (long long) (stop.tv_usec - start.tv_usec));
+		fprintf(stream, "Nearest neighbor: %s\ndistanceLSH: %lf\ntLSH: %lld seconds and %lld microseconds\n", 
+			minimum, minimum_distance, (long long) (stop.tv_sec - start.tv_sec), (long long) (stop.tv_nsec - start.tv_nsec));
 	else
 		fprintf(stream, "Found no items near the query.\n");
 	return 0;
@@ -97,11 +97,12 @@ int euc_exhaustive_search(
 	int item_index,
 	FILE * stream)
 {
-	struct timeval stop, start;
+	struct timespec stop, start;
 	int i;
 	double minimum_distance= DBL_MAX;
 	char * minimum= NULL;
-	gettimeofday(&start, NULL);
+	//gettimeofday(&start, NULL);
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(i= 0; i < size; i++){
 		if( ( vector_euclidean_distance( data_table[i].vector0, data_table[item_index].vector0) <= minimum_distance) 
 			&& (0 != strcmp(data_table[i].name, data_table[item_index].name)) ){
@@ -109,8 +110,8 @@ int euc_exhaustive_search(
 			minimum= data_table[i].name;
 		}
 	}
-	gettimeofday(&stop, NULL);
-	fprintf(stream, "distanceTrue: %lf\ntTrue: %I64u seconds and %I64u microseconds\n", minimum_distance, 
-		(long long) (stop.tv_sec - start.tv_sec), (long long) (stop.tv_usec - start.tv_usec));
+	clock_gettime(CLOCK_MONOTONIC, &stop);
+	fprintf(stream, "distanceTrue: %lf\ntTrue: %lld seconds and %lld microseconds\n", minimum_distance, 
+		(long long) (stop.tv_sec - start.tv_sec), (long long) (stop.tv_nsec - start.tv_nsec));
 	return 0;
 }

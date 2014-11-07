@@ -30,14 +30,14 @@ int euc_concatenated_hash_function(
 		raw_hash%= PRIME;
 		raw_hash*= 10;
 		memset(raw_hash_str, 0, RAW_SIZE);
-		sprintf(raw_hash_str, "%I64d", raw_hash);
+		sprintf(raw_hash_str, "%lld", raw_hash);
 		strcat(raw_hash_str, concat_hash_str);
 		memset(concat_hash_str, 0, CONCAT_SIZE);
 		strcpy(concat_hash_str, raw_hash_str);
 		concat_hash= strtoll(concat_hash_str, NULL, 10);
 		concat_hash%= PRIME;
 		memset(concat_hash_str, 0, CONCAT_SIZE);
-		sprintf(concat_hash_str, "%I64d", concat_hash);
+		sprintf(concat_hash_str, "%lld", concat_hash);
 	}
 	*identifying_value= (int) concat_hash;
 	concat_hash%= seed_0->n;

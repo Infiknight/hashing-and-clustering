@@ -18,7 +18,7 @@ extern "C" {
 	
 	//largest prime under 2^28
 #define PRIME 268435399
-#define W_SIZE 40
+#define W_SIZE 4
 #define N_DENOMINATOR 1
 
 

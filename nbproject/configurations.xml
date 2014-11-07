@@ -11,6 +11,7 @@
       <itemPath>bucket.h</itemPath>
       <itemPath>distance_matrix.h</itemPath>
       <itemPath>euclidean.h</itemPath>
+      <itemPath>hamming.h</itemPath>
       <itemPath>list.h</itemPath>
       <itemPath>probability_distr.h</itemPath>
       <itemPath>vector.h</itemPath>
@@ -44,6 +45,9 @@
         <itemPath>probability_distr.c</itemPath>
         <itemPath>vector.c</itemPath>
       </logicalFolder>
+      <itemPath>LSH.c</itemPath>
+      <itemPath>LSH.h</itemPath>
+      <itemPath>hamming.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -68,6 +72,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="LSH.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LSH.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
@@ -99,6 +107,10 @@
       <item path="euclidean_p.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="euclidean_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="hamming.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="hamming.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -136,6 +148,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="LSH.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LSH.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
@@ -167,6 +183,10 @@
       <item path="euclidean_p.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="euclidean_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="hamming.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="hamming.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>

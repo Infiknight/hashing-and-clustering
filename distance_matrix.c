@@ -44,6 +44,8 @@ int distance_matrix_LSH(
 	//	}
 	printf("Which item shall be our query?\nitem");
 	fscanf(stdin, "%d", &i);
+	printf("Which shall be the radius of our search? (0 for nearest-neighboor)\n");
+	fscanf(stdin, "%d", &radius);
 		dm_L_search(L, outstream, &seed_ptr, hash_table, data_table, radius, i-1);
 		dm_exhaustive_search(data_table, dimensions, i-1, outstream);
 	//}

@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=MinGW-Windows
+CND_PLATFORM=Cygwin_4.x-Windows
 CND_DLIB_EXT=dll
 CND_CONF=Release
 CND_DISTDIR=dist
@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/LSH.o \
 	${OBJECTDIR}/bucket.o \
 	${OBJECTDIR}/distance_matrix.o \
 	${OBJECTDIR}/distance_matrix_1.o \
@@ -46,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/euclidean_3.o \
 	${OBJECTDIR}/euclidean_4.o \
 	${OBJECTDIR}/euclidean_parser.o \
+	${OBJECTDIR}/hamming.o \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/probability_distr.o \
@@ -75,6 +77,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/1h_anaptu3hs.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/1h_anaptu3hs ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/LSH.o: LSH.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LSH.o LSH.c
 
 ${OBJECTDIR}/bucket.o: bucket.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -130,6 +137,11 @@ ${OBJECTDIR}/euclidean_parser.o: euclidean_parser.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_parser.o euclidean_parser.c
+
+${OBJECTDIR}/hamming.o: hamming.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hamming.o hamming.c
 
 ${OBJECTDIR}/list.o: list.c 
 	${MKDIR} -p ${OBJECTDIR}

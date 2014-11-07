@@ -19,7 +19,7 @@ int euclidean_LSH(
 	fgets(line, LINE_SIZE, stream);
 	element * data_table= NULL;
 	int size= euc_parser(stream, &data_table);
-	fclose(stream);
+	//fclose(stream);
 	int item_index;
 	double radius;
 	int  hash_table_size[L];
@@ -30,14 +30,14 @@ int euclidean_LSH(
 	}
 	element ** results= NULL;
 	int current_results_no= 0;
-	stream= fopen("output.txt", "w");
+	 FILE * qstream= fopen("output.txt", "w");
 	printf("Which shall be the radius of our search? (0 for nearest-neighboor)\n");
 	fscanf(stdin, "%lf", &radius);
 	printf("Which item shall be our query?\nitem");
 	fscanf(stdin, "%d", &item_index);
 	euc_L_search(
 		L, 
-		stream,
+		qstream,
 		seed_table,
 		hash_table,
 		data_table,
@@ -47,8 +47,8 @@ int euclidean_LSH(
 		data_table,
 		size,
 		item_index,
-		stream);
-	fclose(stream);
+		qstream);
+	fclose(qstream);
 	//CLEANUP
 	euc_parser_clean(
 		data_table,

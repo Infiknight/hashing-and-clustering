@@ -1,11 +1,6 @@
-Query: item33
-2000.000000-near neighbors:
-item33
-item22
-item42
-item37
-Nearest neighbor: item42
-distanceLSH: 38.488365
-tLSH: 0 seconds and 0 microseconds
-distanceTrue: 34.265456
-tTrue: 0 seconds and 7002 microseconds
+Query: item366
+3000.000000-near neighbors:
+item366
+Found no items near the query.
+distanceTrue: 33.439045
+tTrue: 0 seconds and 2598038 microseconds
