@@ -35,11 +35,11 @@
                    projectFiles="true">
       <logicalFolder name="f4" displayName="distance_matrix" projectFiles="true">
         <itemPath>distance_matrix.c</itemPath>
-        <itemPath>distance_matrix_1.c</itemPath>
-        <itemPath>distance_matrix_2.c</itemPath>
-        <itemPath>distance_matrix_3.c</itemPath>
-        <itemPath>distance_matrix_4.c</itemPath>
-        <itemPath>distance_matrix_dstance.c</itemPath>
+        <itemPath>distance_matrix_distance.c</itemPath>
+        <itemPath>distance_matrix_hash_funcs.c</itemPath>
+        <itemPath>distance_matrix_hash_table.c</itemPath>
+        <itemPath>distance_matrix_parser.c</itemPath>
+        <itemPath>distance_matrix_search.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="euclidean" projectFiles="true">
         <itemPath>euclidean.c</itemPath>
@@ -65,6 +65,7 @@
       <itemPath>hamming.c</itemPath>
       <itemPath>initialize.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>reverse_assignment.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -104,17 +105,17 @@
       </item>
       <item path="distance_matrix.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="distance_matrix_1.c" ex="false" tool="0" flavor2="0">
+      <item path="distance_matrix_distance.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="distance_matrix_2.c" ex="false" tool="0" flavor2="0">
+      <item path="distance_matrix_hash_funcs.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="distance_matrix_3.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="distance_matrix_4.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="distance_matrix_dstance.c" ex="false" tool="0" flavor2="0">
+      <item path="distance_matrix_hash_table.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="distance_matrix_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="distance_matrix_search.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -153,6 +154,8 @@
       <item path="probability_distr.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="probability_distr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="vector.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -196,17 +199,17 @@
       </item>
       <item path="distance_matrix.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="distance_matrix_1.c" ex="false" tool="0" flavor2="0">
+      <item path="distance_matrix_distance.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="distance_matrix_2.c" ex="false" tool="0" flavor2="0">
+      <item path="distance_matrix_hash_funcs.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="distance_matrix_3.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="distance_matrix_4.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="distance_matrix_dstance.c" ex="false" tool="0" flavor2="0">
+      <item path="distance_matrix_hash_table.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="distance_matrix_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="distance_matrix_search.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -245,6 +248,8 @@
       <item path="probability_distr.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="probability_distr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="vector.c" ex="false" tool="0" flavor2="0">
       </item>

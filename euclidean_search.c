@@ -60,7 +60,7 @@ int euc_L_search(
 	bucket *** hash_table,
 	element * data_table,
 	double radius,
-	element query)
+	element * query)
 {
 	struct timespec stop, start;
 	int i,
@@ -70,15 +70,15 @@ int euc_L_search(
 	element ** results= NULL;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(i= 0; i < L; i++){
-		euc_search( query.vector0, hash_table[i], &results, &current_results_no, seed_0[i], radius);
+		euc_search( query->vector0, hash_table[i], &results, &current_results_no, seed_0[i], radius);
 	}
-	fprintf(stream, "Query: %s\n%f-near neighbors:\n", query.name, radius);
+	fprintf(stream, "Query: %s\n%f-near neighbors:\n", query->name, radius);
 	for(i= 0; i < current_results_no; i++){
 		if(radius > 0)
 			fprintf(stream, "%s\n", results[i]->name);
-		if( ( vector_euclidean_distance( results[i]->vector0, query.vector0) <= minimum_distance) 
-			&& (0 != strcmp(results[i]->name, query.name)) ){
-				minimum_distance= vector_euclidean_distance( results[i]->vector0, query.vector0);
+		if( ( vector_euclidean_distance( results[i]->vector0, query->vector0) <= minimum_distance) 
+			&& (0 != strcmp(results[i]->name, query->name)) ){
+				minimum_distance= vector_euclidean_distance( results[i]->vector0, query->vector0);
 				minimum= results[i]->name;
 		}
 	}
@@ -94,7 +94,7 @@ int euc_L_search(
 int euc_exhaustive_search(
 	element * data_table,
 	int size,
-	element query,
+	element * query,
 	FILE * stream)
 {
 	struct timespec stop, start;
@@ -104,9 +104,9 @@ int euc_exhaustive_search(
 	//gettimeofday(&start, NULL);
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(i= 0; i < size; i++){
-		if( ( vector_euclidean_distance( data_table[i].vector0, query.vector0) <= minimum_distance) 
-			&& (0 != strcmp(data_table[i].name, query.name)) ){
-			minimum_distance= vector_euclidean_distance( data_table[i].vector0, query.vector0);
+		if( ( vector_euclidean_distance( data_table[i].vector0, query->vector0) <= minimum_distance) 
+			&& (0 != strcmp(data_table[i].name, query->name)) ){
+			minimum_distance= vector_euclidean_distance( data_table[i].vector0, query->vector0);
 			minimum= data_table[i].name;
 		}
 	}

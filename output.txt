@@ -1,19 +1,9 @@
-Query: item124
-90.000000-near neighbors:
-item112
-item124
-item103
-item110
-item102
-item129
-item116
-item127
-item115
-item114
-item133
-item147
-Nearest neighbor: item115
-distanceLSH: 31.678226
-tLSH: 0 seconds and 241079 microseconds
-distanceTrue: 30.198080
-tTrue: 0 seconds and 2556200 microseconds
+Query: item17
+678.000000-near neighbors:
+item17
+item20
+Nearest neighbor: item20
+distanceLSH: 42.273747
+tLSH: 0 seconds and 248978 microseconds
+distanceTrue: 34.870794
+tTrue: 0 seconds and 2538354 microseconds

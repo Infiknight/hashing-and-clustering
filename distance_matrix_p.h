@@ -53,7 +53,7 @@ int dm_L_search(
 	bucket *** hash_table,
 	element * data_table,
 	int radius,
-	int item_index);
+	element * query);
 
 /**
  * COnstructs a hash table (table of pointers to buckets) and returns a pointer to it.
@@ -80,7 +80,7 @@ bucket ** dm_hash_table_constructor(
 int dm_exhaustive_search(
 	element * data_table,
 	int size,
-	int item_index,
+	element * query,
 	FILE * stream);
 
 /**
@@ -101,7 +101,7 @@ int dm_search(
 	element *** results,
 	int * current_results_no,
 	int radius,
-	int item_index);
+	element * query);
 
 /**
  * Generate a t value so according to the DBH rules.
@@ -127,7 +127,7 @@ double generate_t_value(
 int dm_concatenated_hash(
 	element * data_table,
 	seed const * const seed_0,
-	int query);
+	element * query);
 
 /**
  * Constructs our data_table from some input file

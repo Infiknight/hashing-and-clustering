@@ -3,13 +3,13 @@
 #include "compare.h"
 
 double line_projection(
-	int x,
+	element * x,
 	int x_1,
 	int x_2,
 	element * data_table)
 {
-	double d_x_x1= data_table[x].array[x_1];
-	double d_x_x2= data_table[x].array[x_2];
+	double d_x_x1= x->array[x_1];
+	double d_x_x2= x->array[x_2];
 	double d_x1_x2= data_table[x_1].array[x_2];
 	return ( pow(d_x_x1, 2) + pow(d_x_x2, 2) - pow(d_x1_x2, 2) ) / ( 2 * d_x1_x2 );
 }
@@ -18,7 +18,7 @@ int base_hash(
 	element * data_table,
 	seed const * const seed_0,
 	int seed_index,
-	int query)
+	element * query)
 {
 	int x_1= seed_0->x_1[seed_index],
 		x_2= seed_0->x_2[seed_index];
@@ -32,7 +32,7 @@ int base_hash(
 int dm_concatenated_hash(
 	element * data_table,
 	seed const * const seed_0,
-	int query)
+	element * query)
 {
 	int i,
 		base_hash_0,

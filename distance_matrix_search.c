@@ -13,9 +13,9 @@ int dm_search(
 	element *** results,
 	int * current_results_no,
 	int radius,
-	int item_index)
+	element * query)
 {
-	int bucket_no= dm_concatenated_hash(data_table, seed_0, item_index);
+	int bucket_no= dm_concatenated_hash(data_table, seed_0, query);
 	int i,
 		already_in;
 	element * item;
@@ -37,7 +37,7 @@ int dm_search(
 			*results= realloc( *results, (*current_results_no)*sizeof(element*));
 			(*results)[(*current_results_no)-1]= item;
 		}
-		else if( item->array[item_index] < radius*C_FACTOR){
+		else if( query->array[item - data_table] < radius*C_FACTOR){
 			for(i= 0; i < *current_results_no; i++){
 				if( (*results)[i] == item){
 					already_in= 1;
@@ -62,7 +62,7 @@ int dm_L_search(
 	bucket *** hash_table,
 	element * data_table,
 	int radius,
-	int item_index)
+	element * query)
 {
 	struct timeval stop, start;
 	int i,
@@ -72,14 +72,14 @@ int dm_L_search(
 	element ** results= NULL;
 	gettimeofday(&start, NULL);
 	for(i= 0; i < L; i++){
-		dm_search( &((*seed_0)[i]), hash_table[i], data_table, &results, &current_results_no, radius, item_index);
+		dm_search( &((*seed_0)[i]), hash_table[i], data_table, &results, &current_results_no, radius, query);
 	}
-	fprintf(stream, "Query: %s\n%d-near neighbors:\n", data_table[item_index].name, radius);
+	fprintf(stream, "Query: %s\n%d-near neighbors:\n", query->name, radius);
 	for(i= 0; i < current_results_no; i++){
 		if(radius > 0)
 			fprintf(stream, "%s\n", results[i]->name);
-		if( (results[i]->array[item_index] <= minimum_distance) && (0 != strcmp(results[i]->name, data_table[item_index].name)) ){
-			minimum_distance= results[i]->array[item_index];
+		if( (query->array[results[i] - data_table] <= minimum_distance) && (0 != strcmp(results[i]->name, query->name)) ){
+			minimum_distance= query->array[results[i] - data_table];
 			minimum= results[i]->name;
 		}
 	}
@@ -95,7 +95,7 @@ int dm_L_search(
 int dm_exhaustive_search(
 	element * data_table,
 	int size,
-	int item_index,
+	element * query,
 	FILE * stream)
 {
 	struct timeval stop, start;
@@ -104,8 +104,8 @@ int dm_exhaustive_search(
 	char * minimum= NULL;
 	gettimeofday(&start, NULL);
 	for(i= 0; i < size; i++){
-		if( data_table[item_index].array[i] < minimum_distance && 0 != strcmp(data_table[item_index].name, data_table[i].name) ){
-			minimum_distance= data_table[item_index].array[i];
+		if( query->array[i] < minimum_distance && 0 != strcmp(query->name, data_table[i].name) ){
+			minimum_distance= query->array[i];
 			minimum= data_table[i].name;
 		}
 	}

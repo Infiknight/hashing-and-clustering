@@ -46,8 +46,9 @@ int distance_matrix_LSH(
 	fscanf(stdin, "%d", &i);
 	printf("Which shall be the radius of our search? (0 for nearest-neighboor)\n");
 	fscanf(stdin, "%d", &radius);
-		dm_L_search(L, outstream, &seed_ptr, hash_table, data_table, radius, i-1);
-		dm_exhaustive_search(data_table, dimensions, i-1, outstream);
+	element * query= &(data_table[15]);
+		dm_L_search(L, outstream, &seed_ptr, hash_table, data_table, radius, query);
+		dm_exhaustive_search(data_table, dimensions, query, outstream);
 	//}
 	//fclose(qstream);
 	fclose(outstream);

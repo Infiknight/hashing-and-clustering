@@ -35,6 +35,7 @@ int euclidean_LSH(
 	fscanf(stdin, "%lf", &radius);
 	printf("Which item shall be our query?\nitem");
 	fscanf(stdin, "%d", &item_index);
+	element * query= &(data_table[15]);
 	euc_L_search(
 		L, 
 		qstream,
@@ -42,11 +43,11 @@ int euclidean_LSH(
 		hash_table,
 		data_table,
 		radius,
-		item_index);
+		query);
 	euc_exhaustive_search(
 		data_table,
 		size,
-		item_index,
+		query,
 		qstream);
 	fclose(qstream);
 	//CLEANUP

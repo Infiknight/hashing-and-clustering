@@ -39,11 +39,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/bucket.o \
 	${OBJECTDIR}/compare.o \
 	${OBJECTDIR}/distance_matrix.o \
-	${OBJECTDIR}/distance_matrix_1.o \
-	${OBJECTDIR}/distance_matrix_2.o \
-	${OBJECTDIR}/distance_matrix_3.o \
-	${OBJECTDIR}/distance_matrix_4.o \
-	${OBJECTDIR}/distance_matrix_dstance.o \
+	${OBJECTDIR}/distance_matrix_distance.o \
+	${OBJECTDIR}/distance_matrix_hash_funcs.o \
+	${OBJECTDIR}/distance_matrix_hash_table.o \
+	${OBJECTDIR}/distance_matrix_parser.o \
+	${OBJECTDIR}/distance_matrix_search.o \
 	${OBJECTDIR}/euclidean.o \
 	${OBJECTDIR}/euclidean_distance.o \
 	${OBJECTDIR}/euclidean_hash_funcs.o \
@@ -56,6 +56,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/probability_distr.o \
+	${OBJECTDIR}/reverse_assignment.o \
 	${OBJECTDIR}/vector.o
 
 
@@ -103,30 +104,30 @@ ${OBJECTDIR}/distance_matrix.o: distance_matrix.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix.o distance_matrix.c
 
-${OBJECTDIR}/distance_matrix_1.o: distance_matrix_1.c 
+${OBJECTDIR}/distance_matrix_distance.o: distance_matrix_distance.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_1.o distance_matrix_1.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_distance.o distance_matrix_distance.c
 
-${OBJECTDIR}/distance_matrix_2.o: distance_matrix_2.c 
+${OBJECTDIR}/distance_matrix_hash_funcs.o: distance_matrix_hash_funcs.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_2.o distance_matrix_2.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_hash_funcs.o distance_matrix_hash_funcs.c
 
-${OBJECTDIR}/distance_matrix_3.o: distance_matrix_3.c 
+${OBJECTDIR}/distance_matrix_hash_table.o: distance_matrix_hash_table.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_3.o distance_matrix_3.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_hash_table.o distance_matrix_hash_table.c
 
-${OBJECTDIR}/distance_matrix_4.o: distance_matrix_4.c 
+${OBJECTDIR}/distance_matrix_parser.o: distance_matrix_parser.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_4.o distance_matrix_4.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_parser.o distance_matrix_parser.c
 
-${OBJECTDIR}/distance_matrix_dstance.o: distance_matrix_dstance.c 
+${OBJECTDIR}/distance_matrix_search.o: distance_matrix_search.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_dstance.o distance_matrix_dstance.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_search.o distance_matrix_search.c
 
 ${OBJECTDIR}/euclidean.o: euclidean.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -187,6 +188,11 @@ ${OBJECTDIR}/probability_distr.o: probability_distr.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/probability_distr.o probability_distr.c
+
+${OBJECTDIR}/reverse_assignment.o: reverse_assignment.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/reverse_assignment.o reverse_assignment.c
 
 ${OBJECTDIR}/vector.o: vector.c 
 	${MKDIR} -p ${OBJECTDIR}

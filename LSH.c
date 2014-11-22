@@ -40,6 +40,7 @@ int LSH(int L, int k){
 		double ** distance_matrix;
 		int dt_size, k=5;
 		int * medoids;
+		euclidean_LSH(fpInput, L,k); return 0;
 		if(strcmp(metricSpace , "vector") == 0){
 			//euclidean_LSH(fpInput, L,k);
 			fscanf(fpInput, "%s %s ", a, metricSpace);
