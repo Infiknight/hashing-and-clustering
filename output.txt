@@ -1,6 +1,19 @@
-Query: item366
-3000.000000-near neighbors:
-item366
-Found no items near the query.
-distanceTrue: 33.439045
-tTrue: 0 seconds and 2598038 microseconds
+Query: item124
+90.000000-near neighbors:
+item112
+item124
+item103
+item110
+item102
+item129
+item116
+item127
+item115
+item114
+item133
+item147
+Nearest neighbor: item115
+distanceLSH: 31.678226
+tLSH: 0 seconds and 241079 microseconds
+distanceTrue: 30.198080
+tTrue: 0 seconds and 2556200 microseconds

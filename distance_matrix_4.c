@@ -1,5 +1,6 @@
 #include "distance_matrix_p.h"
 #include <math.h>
+#include "compare.h"
 
 double line_projection(
 	int x,
@@ -42,18 +43,6 @@ int dm_concatenated_hash(
 		sum+= pow(2, i) * base_hash_0;
 	}
 	return sum;
-}
-
-
-double comp_double(
-	const void * elem1,
-	const void * elem2)
-{
-    double f = *((double*)elem1);
-    double s = *((double*)elem2);
-    if (f > s) return  1;
-    if (f < s) return -1;
-    return 0;
 }
 
 double generate_t_value(

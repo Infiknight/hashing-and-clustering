@@ -2,11 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LSH.h"
+#include "euclidean_p.h"
+#include "general_distance_matrix.h"
+#include "initialize.h"
 
 
 int LSH(int L, int k){
 	char a[100], metricSpace[100], inputFile[100]={0}, library[100]={0}, function[100]={0};
 	int lines = 0, repeat = 1;
+	int i, j;
 	char c;
 	FILE *fpInput;
 
@@ -19,6 +23,7 @@ int LSH(int L, int k){
 	    //printf("file = %s", queryFile);
 
 	    fpInput = fopen(inputFile, "r");
+		FILE * out= fopen("outnow.txt", "w");
 	    while(fpInput==NULL){
 	    	printf("Error in fopen\n");
 	    	printf("Enter again the path of the inputfile: ");
@@ -27,13 +32,32 @@ int LSH(int L, int k){
 	    }
 
 
-		fscanf(fpInput, "%s %s", a, metricSpace);
+		fscanf(fpInput, "%s %s ", a, metricSpace);
 
 
-		fseek(fpInput, 0, SEEK_SET);
-
+		//fseek(fpInput, 0, SEEK_SET);
+		element * data_table= 0;
+		double ** distance_matrix;
+		int dt_size, k=5;
+		int * medoids;
 		if(strcmp(metricSpace , "vector") == 0){
-			euclidean_LSH(fpInput, L,k);
+			//euclidean_LSH(fpInput, L,k);
+			fscanf(fpInput, "%s %s ", a, metricSpace);
+			dt_size= euc_parser(fpInput, &data_table);
+			distance_matrix= generate_distance_matrix(euc_distance, data_table, dt_size);
+			/*for(i= 0; i < dt_size; i++){
+				for(j= 0; j < dt_size; j++){
+					fprintf(out, "%lf	", distance_matrix[i][j]);
+				}
+				fprintf(out, "\n");
+			}*/
+			medoids= initialize(distance_matrix, dt_size, k, 2);
+			for(i= 0; i < k ; i++){
+				fprintf(out, "%d\n", medoids[i]);
+			}
+			//fflush(out);
+			//euc_clean_distance_matrix(distance_matrix, dt_size);
+			fclose(out);
 		}
 		//else if(strcmp(metricSpace , "hamming") == 0){
 		//	 hammingLHS(fpInput, L, k);

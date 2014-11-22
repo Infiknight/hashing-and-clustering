@@ -37,17 +37,22 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/LSH.o \
 	${OBJECTDIR}/bucket.o \
+	${OBJECTDIR}/compare.o \
 	${OBJECTDIR}/distance_matrix.o \
 	${OBJECTDIR}/distance_matrix_1.o \
 	${OBJECTDIR}/distance_matrix_2.o \
 	${OBJECTDIR}/distance_matrix_3.o \
 	${OBJECTDIR}/distance_matrix_4.o \
+	${OBJECTDIR}/distance_matrix_dstance.o \
 	${OBJECTDIR}/euclidean.o \
-	${OBJECTDIR}/euclidean_2.o \
-	${OBJECTDIR}/euclidean_3.o \
-	${OBJECTDIR}/euclidean_4.o \
+	${OBJECTDIR}/euclidean_distance.o \
+	${OBJECTDIR}/euclidean_hash_funcs.o \
+	${OBJECTDIR}/euclidean_hash_table.o \
 	${OBJECTDIR}/euclidean_parser.o \
+	${OBJECTDIR}/euclidean_search.o \
+	${OBJECTDIR}/general_distance_matrix.o \
 	${OBJECTDIR}/hamming.o \
+	${OBJECTDIR}/initialize.o \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/probability_distr.o \
@@ -88,6 +93,11 @@ ${OBJECTDIR}/bucket.o: bucket.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/bucket.o bucket.c
 
+${OBJECTDIR}/compare.o: compare.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/compare.o compare.c
+
 ${OBJECTDIR}/distance_matrix.o: distance_matrix.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -113,35 +123,55 @@ ${OBJECTDIR}/distance_matrix_4.o: distance_matrix_4.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_4.o distance_matrix_4.c
 
+${OBJECTDIR}/distance_matrix_dstance.o: distance_matrix_dstance.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/distance_matrix_dstance.o distance_matrix_dstance.c
+
 ${OBJECTDIR}/euclidean.o: euclidean.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean.o euclidean.c
 
-${OBJECTDIR}/euclidean_2.o: euclidean_2.c 
+${OBJECTDIR}/euclidean_distance.o: euclidean_distance.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_2.o euclidean_2.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_distance.o euclidean_distance.c
 
-${OBJECTDIR}/euclidean_3.o: euclidean_3.c 
+${OBJECTDIR}/euclidean_hash_funcs.o: euclidean_hash_funcs.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_3.o euclidean_3.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_hash_funcs.o euclidean_hash_funcs.c
 
-${OBJECTDIR}/euclidean_4.o: euclidean_4.c 
+${OBJECTDIR}/euclidean_hash_table.o: euclidean_hash_table.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_4.o euclidean_4.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_hash_table.o euclidean_hash_table.c
 
 ${OBJECTDIR}/euclidean_parser.o: euclidean_parser.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_parser.o euclidean_parser.c
 
+${OBJECTDIR}/euclidean_search.o: euclidean_search.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/euclidean_search.o euclidean_search.c
+
+${OBJECTDIR}/general_distance_matrix.o: general_distance_matrix.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/general_distance_matrix.o general_distance_matrix.c
+
 ${OBJECTDIR}/hamming.o: hamming.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hamming.o hamming.c
+
+${OBJECTDIR}/initialize.o: initialize.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/initialize.o initialize.c
 
 ${OBJECTDIR}/list.o: list.c 
 	${MKDIR} -p ${OBJECTDIR}

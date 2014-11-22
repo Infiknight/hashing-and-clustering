@@ -16,6 +16,8 @@ extern "C" {
 #include "bucket.h"
 #include "vector.h"
 
+typedef struct Element element;
+	
 /**
  * Euclidean version of the LSH.
  * @param stream
@@ -27,7 +29,12 @@ int euclidean_LSH(
 	FILE * stream,
 	int L,
 	int k);
-	
+
+double euc_distance(
+	void * data_table,
+	int index_1,
+	int index_2);
+
 #ifdef	__cplusplus
 }
 #endif

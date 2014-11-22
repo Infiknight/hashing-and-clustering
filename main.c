@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
 	//	L=atoi(argv[8]);
 	//}
 	
-	LSH(15,3);
+	LSH(20,4);
 
 	return 0;
 }

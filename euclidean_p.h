@@ -15,10 +15,11 @@ extern "C" {
 #include <stdio.h>
 #include "bucket.h"
 #include "vector.h"
+#include "euclidean.h"
 	
 	//largest prime under 2^28
 #define PRIME 268435399
-#define W_SIZE 4
+#define W_SIZE 16
 #define N_DENOMINATOR 1
 
 
@@ -26,7 +27,7 @@ struct Element{
 	char * name;
 	vector * vector0;
 };
-typedef struct Element element;		
+//typedef struct Element element;		
 
 typedef struct Augmented_data{
 	element * data;	///the actual data
@@ -58,7 +59,7 @@ int euc_L_search(
 	bucket *** hash_table,
 	element * data_table,
 	double radius,
-	int item_index);
+	element * query);
 
 /**
  * Exhaustive search for the nearest neighbour of the query in the data_table.
@@ -71,7 +72,7 @@ int euc_L_search(
 int euc_exhaustive_search(
 	element * data_table,
 	int size,
-	int item_index,
+	element * query,
 	FILE * stream);
 
 /**
