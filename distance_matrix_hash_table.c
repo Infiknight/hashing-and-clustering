@@ -11,10 +11,13 @@ bucket ** dm_hash_table_constructor(
 	element * data_table,
 	int data_table_size,
 	int * hash_table_size,
-	seed * seed_0)
+	seed ** seed_0_PPtr,
+	int k)
 {
 	int i, x_1, x_2;
 	//construct seed
+	*seed_0_PPtr= malloc(sizeof(seed));
+	seed * const seed_0= *seed_0_PPtr;
 	(*seed_0).dimensions= data_table_size;
 	(*seed_0).x_1= malloc(K_SIZE*sizeof(int));
 	(*seed_0).x_2= malloc(K_SIZE*sizeof(int));

@@ -55,41 +55,42 @@ int dm_search(
 	return 0;
 }
 
-int dm_L_search(
+element ** dm_L_search(
 	int L,
 	FILE * stream,
 	seed ** seed_0,
 	bucket *** hash_table,
 	element * data_table,
 	int radius,
-	element * query)
+	element * query,
+	int * results_no)
 {
 	struct timeval stop, start;
 	int i,
-		current_results_no= 0,
 		minimum_distance= INT_MAX;
+	*results_no= 0;
 	char * minimum= NULL;
 	element ** results= NULL;
 	gettimeofday(&start, NULL);
 	for(i= 0; i < L; i++){
-		dm_search( &((*seed_0)[i]), hash_table[i], data_table, &results, &current_results_no, radius, query);
+		dm_search( &((*seed_0)[i]), hash_table[i], data_table, &results, results_no, radius, query);
 	}
-	fprintf(stream, "Query: %s\n%d-near neighbors:\n", query->name, radius);
-	for(i= 0; i < current_results_no; i++){
+	/*fprintf(stream, "Query: %s\n%d-near neighbors:\n", query->name, radius);
+	for(i= 0; i < *results_no; i++){
 		if(radius > 0)
 			fprintf(stream, "%s\n", results[i]->name);
 		if( (query->array[results[i] - data_table] <= minimum_distance) && (0 != strcmp(results[i]->name, query->name)) ){
 			minimum_distance= query->array[results[i] - data_table];
 			minimum= results[i]->name;
 		}
-	}
+	}*/
 	gettimeofday(&stop, NULL);
-	if( minimum != NULL )
+	/*if( minimum != NULL )
 		fprintf(stream, "Nearest neighbor: %s\ndistanceLSH: %d\ntLSH: %I64u seconds and %I64u microseconds\n", 
 			minimum, minimum_distance, (long long) (stop.tv_sec - start.tv_sec), (long long) (stop.tv_usec - start.tv_usec));
 	else
-		fprintf(stream, "Found no items near the query.\n");
-	return 0;
+		fprintf(stream, "Found no items near the query.\n");*/
+	return results;
 }
 
 int dm_exhaustive_search(

@@ -34,7 +34,7 @@ int distance_matrix_LSH(
 	seed seed_table[L];
 	bucket ** hash_table[L];
 	for(i= 0; i < L; i++){
-		hash_table[i]= dm_hash_table_constructor(data_table, size, &(hash_table_size[i]), &(seed_table[i]));
+		hash_table[i]= dm_hash_table_constructor(data_table, size, &(hash_table_size[i]), &(seed_table[i]), k);
 	}
 	seed * seed_ptr= seed_table;
 	//while( fscanf(qstream, "\n%s", item_name) > 4){
