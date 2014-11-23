@@ -53,27 +53,28 @@ int euc_search(
 	return 0;
 }
 
-int euc_L_search(
+element ** euc_L_search(
 	int L, 
 	FILE * stream,
 	seed ** seed_0,
 	bucket *** hash_table,
 	element * data_table,
 	double radius,
-	element * query)
+	element * query,
+	int * results_no)
 {
 	struct timespec stop, start;
-	int i,
-		current_results_no= 0;
+	int i;
+	*results_no= 0;
 	double	minimum_distance= DBL_MAX;
 	char * minimum= NULL;
 	element ** results= NULL;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(i= 0; i < L; i++){
-		euc_search( query->vector0, hash_table[i], &results, &current_results_no, seed_0[i], radius);
+		euc_search( query->vector0, hash_table[i], &results, results_no, seed_0[i], radius);
 	}
-	fprintf(stream, "Query: %s\n%f-near neighbors:\n", query->name, radius);
-	for(i= 0; i < current_results_no; i++){
+	//fprintf(stream, "Query: %s\n%f-near neighbors:\n", query->name, radius);
+	/*for(i= 0; i < *results_no; i++){
 		if(radius > 0)
 			fprintf(stream, "%s\n", results[i]->name);
 		if( ( vector_euclidean_distance( results[i]->vector0, query->vector0) <= minimum_distance) 
@@ -81,14 +82,14 @@ int euc_L_search(
 				minimum_distance= vector_euclidean_distance( results[i]->vector0, query->vector0);
 				minimum= results[i]->name;
 		}
-	}
+	}*/
 	clock_gettime(CLOCK_MONOTONIC, &stop);
-	if( minimum != NULL )
+	/*if( minimum != NULL )
 		fprintf(stream, "Nearest neighbor: %s\ndistanceLSH: %lf\ntLSH: %lld seconds and %lld microseconds\n", 
 			minimum, minimum_distance, (long long) (stop.tv_sec - start.tv_sec), (long long) (stop.tv_nsec - start.tv_nsec));
 	else
-		fprintf(stream, "Found no items near the query.\n");
-	return 0;
+		fprintf(stream, "Found no items near the query.\n");*/
+	return results;
 }
 
 int euc_exhaustive_search(

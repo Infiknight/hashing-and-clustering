@@ -31,12 +31,11 @@ int distance_matrix_LSH(
 	//outstream= fopen(outputFile, "w");
 	outstream= fopen("output.txt", "w");
 	int  hash_table_size[L];
-	seed seed_table[L];
+	seed * seed_table[L];
 	bucket ** hash_table[L];
 	for(i= 0; i < L; i++){
-		hash_table[i]= dm_hash_table_constructor(data_table, size, &(hash_table_size[i]), &(seed_table[i]));
+		hash_table[i]= dm_hash_table_constructor(data_table, size, &(hash_table_size[i]), &(seed_table[i]), k);
 	}
-	seed * seed_ptr= seed_table;
 	//while( fscanf(qstream, "\n%s", item_name) > 4){
 	//	for(i= 0; i < size; i++){
 	//		if( strcmp(data_table[i].name, item_name) == 0 )
@@ -46,8 +45,9 @@ int distance_matrix_LSH(
 	fscanf(stdin, "%d", &i);
 	printf("Which shall be the radius of our search? (0 for nearest-neighboor)\n");
 	fscanf(stdin, "%d", &radius);
+	int results_no;
 	element * query= &(data_table[15]);
-		dm_L_search(L, outstream, &seed_ptr, hash_table, data_table, radius, query);
+		dm_L_search(L, outstream, seed_table, hash_table, data_table, radius, query, &results_no);
 		dm_exhaustive_search(data_table, dimensions, query, outstream);
 	//}
 	//fclose(qstream);

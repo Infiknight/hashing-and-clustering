@@ -54,7 +54,7 @@ double generate_t_value(
 	int i;
 	double values[data_table_size];
 	for(i= 0; i < data_table_size; i++){
-		values[i]= line_projection( i, x_1, x_2, data_table);
+		values[i]= line_projection( &(data_table[i]), x_1, x_2, data_table);
 	}
 	qsort(values, data_table_size, sizeof(double), comp_double);
 	return values[data_table_size/2];

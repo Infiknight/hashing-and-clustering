@@ -5,6 +5,7 @@
 #include "euclidean_p.h"
 #include "general_distance_matrix.h"
 #include "initialize.h"
+#include "reverse_assignment.h"
 
 
 int LSH(int L, int k){
@@ -40,7 +41,7 @@ int LSH(int L, int k){
 		double ** distance_matrix;
 		int dt_size, k=5;
 		int * medoids;
-		euclidean_LSH(fpInput, L,k); return 0;
+		//euclidean_LSH(fpInput, L,k); return 0;
 		if(strcmp(metricSpace , "vector") == 0){
 			//euclidean_LSH(fpInput, L,k);
 			fscanf(fpInput, "%s %s ", a, metricSpace);
@@ -53,6 +54,13 @@ int LSH(int L, int k){
 				fprintf(out, "\n");
 			}*/
 			medoids= initialize(distance_matrix, dt_size, k, 2);
+			reverse_assignment(
+				medoids,
+				k,
+				distance_matrix,
+				data_table,
+				dt_size,
+				euclidean);
 			for(i= 0; i < k ; i++){
 				fprintf(out, "%d\n", medoids[i]);
 			}

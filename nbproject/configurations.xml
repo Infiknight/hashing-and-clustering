@@ -25,6 +25,7 @@
       <itemPath>euclidean.h</itemPath>
       <itemPath>hamming.h</itemPath>
       <itemPath>initialize.h</itemPath>
+      <itemPath>reverse_assignment.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -157,6 +158,8 @@
       </item>
       <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
@@ -250,6 +253,8 @@
       <item path="probability_distr.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.c" ex="false" tool="0" flavor2="0">
       </item>

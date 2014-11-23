@@ -52,14 +52,15 @@ typedef struct Seed{
  * @param item_index Item index of our query
  * @return 1= error 0=ok
  */
-int euc_L_search(
+element ** euc_L_search(
 	int L, 
 	FILE * stream,
 	seed ** seed_0,
 	bucket *** hash_table,
 	element * data_table,
 	double radius,
-	element * query);
+	element * query,
+	int * results_no);
 
 /**
  * Exhaustive search for the nearest neighbour of the query in the data_table.

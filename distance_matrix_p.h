@@ -46,14 +46,15 @@ typedef struct Element element;
  * @param item_index Query
  * @return 
  */
-int dm_L_search(
+element ** dm_L_search(
 	int L,
 	FILE * stream,
 	seed ** seed_0,
 	bucket *** hash_table,
 	element * data_table,
 	int radius,
-	element * query);
+	element * query,
+	int * results_no);
 
 /**
  * COnstructs a hash table (table of pointers to buckets) and returns a pointer to it.
@@ -67,7 +68,8 @@ bucket ** dm_hash_table_constructor(
 	element * data_table,
 	int data_table_size,
 	int * hash_table_size,
-	seed * seed_0);
+	seed ** seed_0_PPtr,
+	int k);
 
 /**
  * Exhaustive search of the nearest with respect to q neighboor in the data_table.
