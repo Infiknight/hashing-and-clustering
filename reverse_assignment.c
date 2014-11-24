@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <stdlib.h>
 #include "reverse_assignment.h"
-
+//asdkjgflshdgfj
 int * reverse_assignment(
 	int * medoids,
 	int medoids_size,
