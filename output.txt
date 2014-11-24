@@ -1,9 +1,0 @@
-Query: item17
-678.000000-near neighbors:
-item17
-item20
-Nearest neighbor: item20
-distanceLSH: 42.273747
-tLSH: 0 seconds and 248978 microseconds
-distanceTrue: 34.870794
-tTrue: 0 seconds and 2538354 microseconds
