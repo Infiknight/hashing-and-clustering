@@ -1,4 +1,3 @@
-#include "euclidean_p.h"
 #include <float.h>
 #include <limits.h>
 #include <stdlib.h>
@@ -8,9 +7,11 @@ int * reverse_assignment(
 	int * medoids,
 	int medoids_size,
 	double ** distance_matrix,
-	element * data_table,
+	element ** data_table,
 	int dt_size,
-	enum metric_space current_metric_space)
+	metric_space current_metric_space,
+	bucket ** (*hash_table_constructor)(element **,int,int *,seed **,int),
+	element ** (*L_search)(int, FILE *,seed **,bucket ***,element **,double,element *,int *))
 {
 	int L= 50;
 	int k= 4;
@@ -36,7 +37,7 @@ int * reverse_assignment(
 	seed * seed_table[L];
 	bucket ** hash_table[L];
 	for(i= 0; i < L; i++){
-		hash_table[i]= euc_hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k );
+		hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k );
 	}
 	int results_no;
 	element * query;
@@ -46,8 +47,8 @@ int * reverse_assignment(
 	FILE * qstream= fopen("output.txt", "w");
 	while( radius < DBL_MAX/2 && currently_allocated <= dt_size){	//until radius reaches threshold or all points assigned
 		for(i= 0; i < medoids_size; i++){
-			query= &(data_table[ medoids[i] ]);
-			results= euc_L_search(
+			query= data_table[ medoids[i] ];
+			results= L_search(
 				L,
 				qstream,
 				seed_table,
@@ -57,7 +58,7 @@ int * reverse_assignment(
 				query,
 				&results_no);
 			for(j= 0; j < results_no; j++){
-				element_position= results[j] - data_table;	//get current result's position in the data table
+				element_position= get_element_pos(results[j], current_metric_space);	//get current result's position in the data table
 				if( no_iteration_table[element_position] == -1 ){	//allocate to medoid if free
 					medoid_allocation_table[element_position]= i;
 					no_iteration_table[element_position]= current_iteration;
@@ -90,7 +91,7 @@ int * reverse_assignment(
 		}
 	}
 	for(i= 0; i < dt_size; i++){
-		fprintf(qstream, "%s ' s medoid is %d\n", data_table[i].name, medoid_allocation_table[i]);
+		fprintf(qstream, "%s ' s medoid is %d\n", get_element_name(data_table[i], current_metric_space), medoid_allocation_table[i]);
 	}
 	fclose(qstream);
 	//CLEANUP

@@ -58,7 +58,7 @@ element ** euc_L_search(
 	FILE * stream,
 	seed ** seed_0,
 	bucket *** hash_table,
-	element * data_table,
+	element ** data_table,
 	double radius,
 	element * query,
 	int * results_no)
@@ -93,7 +93,7 @@ element ** euc_L_search(
 }
 
 int euc_exhaustive_search(
-	element * data_table,
+	element ** data_table,
 	int size,
 	element * query,
 	FILE * stream)
@@ -105,10 +105,10 @@ int euc_exhaustive_search(
 	//gettimeofday(&start, NULL);
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(i= 0; i < size; i++){
-		if( ( vector_euclidean_distance( data_table[i].vector0, query->vector0) <= minimum_distance) 
-			&& (0 != strcmp(data_table[i].name, query->name)) ){
-			minimum_distance= vector_euclidean_distance( data_table[i].vector0, query->vector0);
-			minimum= data_table[i].name;
+		if( ( vector_euclidean_distance( data_table[i]->vector0, query->vector0) <= minimum_distance) 
+			&& (0 != strcmp(data_table[i]->name, query->name)) ){
+			minimum_distance= vector_euclidean_distance( data_table[i]->vector0, query->vector0);
+			minimum= data_table[i]->name;
 		}
 	}
 	clock_gettime(CLOCK_MONOTONIC, &stop);

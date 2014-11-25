@@ -8,7 +8,7 @@
 #include <math.h>
 
 bucket ** dm_hash_table_constructor(
-	element * data_table,
+	element ** data_table,
 	int data_table_size,
 	int * hash_table_size,
 	seed ** seed_0_PPtr,
@@ -40,8 +40,8 @@ bucket ** dm_hash_table_constructor(
 	}
 	int bucket_no;
 	for(i= 0; i < data_table_size; i++){
-		bucket_no= dm_concatenated_hash(data_table, seed_0, i);
-		bucket_add_data( hash_table[bucket_no], &(data_table[i]) );
+		bucket_no= dm_concatenated_hash(data_table, seed_0, data_table[i]);
+		bucket_add_data( hash_table[bucket_no], data_table[i] );
 	}
 	return hash_table;
 }

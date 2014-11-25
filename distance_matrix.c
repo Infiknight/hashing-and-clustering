@@ -11,16 +11,14 @@ int distance_matrix_LSH(
 {
 	FILE * qstream;
 	FILE * outstream;
-	int i;
-	element * data_table;
+	int i, size;
 	char queryFile[200];
 	char outputFile[200];
 	char item_name[100];
-	int dimensions,
-		radius= 15;
+	int radius= 15;
 	char trash[LINE_SIZE];
 	fgets(trash, LINE_SIZE, stream); //THIS LINE IGNORES THE FIRST LINE OF THE DATA_SAMPLE, REMOVE IT IF IT'S ALREADY BEEN READ
-	int size= dm_parser(stream, &data_table, &dimensions);
+	element ** data_table= dm_parser(stream, &size);
 	fclose(stream);
 	//printf("Enter the path of the query file: ");
     //fscanf(stdin, "%s", queryFile);
@@ -46,9 +44,9 @@ int distance_matrix_LSH(
 	printf("Which shall be the radius of our search? (0 for nearest-neighboor)\n");
 	fscanf(stdin, "%d", &radius);
 	int results_no;
-	element * query= &(data_table[15]);
+	element * query= data_table[15];
 		dm_L_search(L, outstream, seed_table, hash_table, data_table, radius, query, &results_no);
-		dm_exhaustive_search(data_table, dimensions, query, outstream);
+		dm_exhaustive_search(data_table, size, query, outstream);
 	//}
 	//fclose(qstream);
 	fclose(outstream);

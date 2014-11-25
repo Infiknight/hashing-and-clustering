@@ -12,19 +12,19 @@
 extern "C" {
 #endif
 
-enum metric_space{
-	hamming,
-	euclidean,
-	metric
-};
+#include "LSH_structs.h"
+#include "bucket.h"
+#include <stdio.h>
 	
 int * reverse_assignment(
 	int * medoids,
 	int medoids_size,
 	double ** distance_matrix,
-	element * data_table,
+	element ** data_table,
 	int dt_size,
-	enum metric_space current_metric_space);
+	metric_space current_metric_space,
+	bucket ** (*hash_table_constructor)(element **,int,int *,seed **,int),
+	element ** (*L_search)(int, FILE *,seed **,bucket ***,element **,double,element *,int *));
 
 
 #ifdef	__cplusplus

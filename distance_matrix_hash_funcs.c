@@ -6,16 +6,16 @@ double line_projection(
 	element * x,
 	int x_1,
 	int x_2,
-	element * data_table)
+	element ** data_table)
 {
 	double d_x_x1= x->array[x_1];
 	double d_x_x2= x->array[x_2];
-	double d_x1_x2= data_table[x_1].array[x_2];
+	double d_x1_x2= data_table[x_1]->array[x_2];
 	return ( pow(d_x_x1, 2) + pow(d_x_x2, 2) - pow(d_x1_x2, 2) ) / ( 2 * d_x1_x2 );
 }
 
 int base_hash(
-	element * data_table,
+	element ** data_table,
 	seed const * const seed_0,
 	int seed_index,
 	element * query)
@@ -30,7 +30,7 @@ int base_hash(
 }
 
 int dm_concatenated_hash(
-	element * data_table,
+	element ** data_table,
 	seed const * const seed_0,
 	element * query)
 {
@@ -48,13 +48,13 @@ int dm_concatenated_hash(
 double generate_t_value(
 	int x_1,
 	int x_2,
-	element * data_table,
+	element ** data_table,
 	int data_table_size)
 {
 	int i;
 	double values[data_table_size];
 	for(i= 0; i < data_table_size; i++){
-		values[i]= line_projection( &(data_table[i]), x_1, x_2, data_table);
+		values[i]= line_projection( data_table[i], x_1, x_2, data_table);
 	}
 	qsort(values, data_table_size, sizeof(double), comp_double);
 	return values[data_table_size/2];

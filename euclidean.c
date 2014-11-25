@@ -4,7 +4,7 @@
 #include "vector.h"
 #include "bucket.h"
 #include "euclidean.h"
-#include "euclidean_p.h"
+//#include "euclidean_p.h"
 
 #define LINE_SIZE 10000
 
@@ -17,8 +17,8 @@ int euclidean_LSH(
 	char line[LINE_SIZE];
 	fgets(line, LINE_SIZE, stream);
 	fgets(line, LINE_SIZE, stream);
-	element * data_table= NULL;
-	int size= euc_parser(stream, &data_table);
+	int size;
+	element ** data_table= euc_parser(stream, &size);
 	//fclose(stream);
 	int item_index;
 	double radius;
@@ -35,7 +35,7 @@ int euclidean_LSH(
 	fscanf(stdin, "%lf", &radius);
 	printf("Which item shall be our query?\nitem");
 	fscanf(stdin, "%d", &item_index);
-	element * query= &(data_table[15]);
+	element * query= data_table[15];
 	int results_no;
 	euc_L_search(
 		L, 

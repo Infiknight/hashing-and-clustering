@@ -9,7 +9,7 @@
 int dm_search(
 	seed const * const seed_0,
 	bucket ** hash_table,
-	element * data_table,
+	element ** data_table,
 	element *** results,
 	int * current_results_no,
 	int radius,
@@ -37,7 +37,7 @@ int dm_search(
 			*results= realloc( *results, (*current_results_no)*sizeof(element*));
 			(*results)[(*current_results_no)-1]= item;
 		}
-		else if( query->array[item - data_table] < radius*C_FACTOR){
+		else if( query->array[item->position_in_dt] < radius*C_FACTOR){
 			for(i= 0; i < *current_results_no; i++){
 				if( (*results)[i] == item){
 					already_in= 1;
@@ -60,7 +60,7 @@ element ** dm_L_search(
 	FILE * stream,
 	seed ** seed_0,
 	bucket *** hash_table,
-	element * data_table,
+	element ** data_table,
 	int radius,
 	element * query,
 	int * results_no)
@@ -94,7 +94,7 @@ element ** dm_L_search(
 }
 
 int dm_exhaustive_search(
-	element * data_table,
+	element ** data_table,
 	int size,
 	element * query,
 	FILE * stream)
@@ -105,9 +105,9 @@ int dm_exhaustive_search(
 	char * minimum= NULL;
 	gettimeofday(&start, NULL);
 	for(i= 0; i < size; i++){
-		if( query->array[i] < minimum_distance && 0 != strcmp(query->name, data_table[i].name) ){
+		if( query->array[i] < minimum_distance && 0 != strcmp(query->name, data_table[i]->name) ){
 			minimum_distance= query->array[i];
-			minimum= data_table[i].name;
+			minimum= data_table[i]->name;
 		}
 	}
 	gettimeofday(&stop, NULL);

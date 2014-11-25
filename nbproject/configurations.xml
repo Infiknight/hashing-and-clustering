@@ -21,6 +21,7 @@
         <itemPath>general_distance_matrix.h</itemPath>
       </logicalFolder>
       <itemPath>LSH.h</itemPath>
+      <itemPath>LSH_structs.h</itemPath>
       <itemPath>distance_matrix.h</itemPath>
       <itemPath>euclidean.h</itemPath>
       <itemPath>hamming.h</itemPath>
@@ -36,19 +37,19 @@
                    projectFiles="true">
       <logicalFolder name="f4" displayName="distance_matrix" projectFiles="true">
         <itemPath>distance_matrix.c</itemPath>
-        <itemPath>distance_matrix_distance.c</itemPath>
         <itemPath>distance_matrix_hash_funcs.c</itemPath>
         <itemPath>distance_matrix_hash_table.c</itemPath>
         <itemPath>distance_matrix_parser.c</itemPath>
         <itemPath>distance_matrix_search.c</itemPath>
+        <itemPath>distance_matrix_specialized_tools.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="euclidean" projectFiles="true">
         <itemPath>euclidean.c</itemPath>
-        <itemPath>euclidean_distance.c</itemPath>
         <itemPath>euclidean_hash_funcs.c</itemPath>
         <itemPath>euclidean_hash_table.c</itemPath>
         <itemPath>euclidean_parser.c</itemPath>
         <itemPath>euclidean_search.c</itemPath>
+        <itemPath>euclidean_specialized_tools.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
@@ -62,6 +63,7 @@
         <itemPath>compare.c</itemPath>
       </logicalFolder>
       <itemPath>LSH.c</itemPath>
+      <itemPath>LSH_structs.c</itemPath>
       <itemPath>general_distance_matrix.c</itemPath>
       <itemPath>hamming.c</itemPath>
       <itemPath>initialize.c</itemPath>
@@ -94,6 +96,10 @@
       </item>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="LSH_structs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LSH_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
@@ -106,8 +112,6 @@
       </item>
       <item path="distance_matrix.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="distance_matrix_distance.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="distance_matrix_hash_funcs.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix_hash_table.c" ex="false" tool="0" flavor2="0">
@@ -118,11 +122,14 @@
       </item>
       <item path="distance_matrix_search.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="distance_matrix_specialized_tools.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
       <item path="euclidean.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="euclidean_distance.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_hash_funcs.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -133,6 +140,8 @@
       <item path="euclidean_parser.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_search.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="euclidean_specialized_tools.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="general_distance_matrix.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -190,6 +199,10 @@
       </item>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="LSH_structs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LSH_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
@@ -202,8 +215,6 @@
       </item>
       <item path="distance_matrix.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="distance_matrix_distance.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="distance_matrix_hash_funcs.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix_hash_table.c" ex="false" tool="0" flavor2="0">
@@ -214,11 +225,14 @@
       </item>
       <item path="distance_matrix_search.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="distance_matrix_specialized_tools.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
       <item path="euclidean.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="euclidean_distance.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_hash_funcs.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -229,6 +243,8 @@
       <item path="euclidean_parser.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="euclidean_search.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="euclidean_specialized_tools.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="general_distance_matrix.c" ex="false" tool="0" flavor2="0">
       </item>

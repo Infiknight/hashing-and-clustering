@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LSH.h"
+#include "LSH_structs.h"
 #include "euclidean_p.h"
 #include "general_distance_matrix.h"
 #include "initialize.h"
@@ -37,7 +38,7 @@ int LSH(int L, int k){
 
 
 		//fseek(fpInput, 0, SEEK_SET);
-		element * data_table= 0;
+		element ** data_table= NULL;
 		double ** distance_matrix;
 		int dt_size, k=5;
 		int * medoids;
@@ -45,8 +46,8 @@ int LSH(int L, int k){
 		if(strcmp(metricSpace , "vector") == 0){
 			//euclidean_LSH(fpInput, L,k);
 			fscanf(fpInput, "%s %s ", a, metricSpace);
-			dt_size= euc_parser(fpInput, &data_table);
-			distance_matrix= generate_distance_matrix(euc_distance, data_table, dt_size);
+			data_table= euc_parser(fpInput, &dt_size);
+			distance_matrix= generate_distance_matrix(euc_distance, (void*)data_table, dt_size);
 			/*for(i= 0; i < dt_size; i++){
 				for(j= 0; j < dt_size; j++){
 					fprintf(out, "%lf	", distance_matrix[i][j]);
@@ -60,7 +61,9 @@ int LSH(int L, int k){
 				distance_matrix,
 				data_table,
 				dt_size,
-				euclidean);
+				euclidean,
+				euc_hash_table_constructor,
+				euc_L_search);
 			for(i= 0; i < k ; i++){
 				fprintf(out, "%d\n", medoids[i]);
 			}

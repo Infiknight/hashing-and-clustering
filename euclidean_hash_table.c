@@ -7,7 +7,7 @@
 //typedef struct Seed seed;
 
 bucket ** euc_hash_table_constructor(
-	element * data_table,
+	element ** data_table,
 	int data_table_size,
 	int * hash_table_size,
 	seed ** seed_0_PPtr,
@@ -15,7 +15,7 @@ bucket ** euc_hash_table_constructor(
 {
 	augmented_data * augmented_data_Ptr;
 	int i, bucket_no, identifying_value;
-	int dimensions= vector_dimensions(data_table->vector0);
+	int dimensions= vector_dimensions(data_table[0]->vector0);
 	*hash_table_size= data_table_size/N_DENOMINATOR;
 	bucket ** hash_table= malloc( (*hash_table_size)*sizeof(bucket *));
 	for(i= 0; i < *hash_table_size; i++){
@@ -33,10 +33,10 @@ bucket ** euc_hash_table_constructor(
 		seed_0->t_table[i]= ( (double)rand()/((double)RAND_MAX+1) )*W_SIZE;
 	}
 	for(i= 0; i < data_table_size; i++){
-		bucket_no= euc_concatenated_hash_function(data_table[i].vector0, seed_0, &identifying_value);
+		bucket_no= euc_concatenated_hash_function(data_table[i]->vector0, seed_0, &identifying_value);
 		augmented_data_Ptr= malloc(sizeof(augmented_data));
 		augmented_data_Ptr->augment= identifying_value;
-		augmented_data_Ptr->data= &data_table[i];
+		augmented_data_Ptr->data= data_table[i];
 		bucket_add_data(hash_table[bucket_no], augmented_data_Ptr);
 	}
 	return hash_table;
