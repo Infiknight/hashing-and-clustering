@@ -6,8 +6,8 @@ double dm_distance(
 	int index_1,
 	int index_2)
 {
-	element ** data_table_cast= data_table;
-	return (double) data_table_cast[index_1]->array[index_2];
+	element ** data_table_cast= (element**) data_table;
+	return data_table_cast[index_1]->array[index_2];
 }
 
 

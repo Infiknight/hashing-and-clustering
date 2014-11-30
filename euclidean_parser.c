@@ -18,6 +18,7 @@ element ** euc_parser(
 	char * str;
 	*iter= 0;
 	element ** data_table= NULL;
+	fscanf(stream, "%s %s %s %s", line, line, line, line);
 	while(fscanf(stream, "%s", name) != EOF){
 		data_table= realloc(data_table, ((*iter)+1) * sizeof(element*));
 		data_table[*iter]= malloc(sizeof(element));

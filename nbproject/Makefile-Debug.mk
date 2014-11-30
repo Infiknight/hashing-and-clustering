@@ -58,6 +58,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/probability_distr.o \
 	${OBJECTDIR}/reverse_assignment.o \
+	${OBJECTDIR}/update_step.o \
 	${OBJECTDIR}/vector.o
 
 
@@ -199,6 +200,11 @@ ${OBJECTDIR}/reverse_assignment.o: reverse_assignment.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/reverse_assignment.o reverse_assignment.c
+
+${OBJECTDIR}/update_step.o: update_step.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/update_step.o update_step.c
 
 ${OBJECTDIR}/vector.o: vector.c 
 	${MKDIR} -p ${OBJECTDIR}

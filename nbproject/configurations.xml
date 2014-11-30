@@ -27,6 +27,7 @@
       <itemPath>hamming.h</itemPath>
       <itemPath>initialize.h</itemPath>
       <itemPath>reverse_assignment.h</itemPath>
+      <itemPath>update_step.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -69,6 +70,7 @@
       <itemPath>initialize.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>reverse_assignment.c</itemPath>
+      <itemPath>update_step.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -168,6 +170,10 @@
       <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="update_step.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_step.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -271,6 +277,10 @@
       <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="update_step.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_step.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.c" ex="false" tool="0" flavor2="0">
       </item>

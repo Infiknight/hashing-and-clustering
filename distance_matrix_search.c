@@ -73,7 +73,7 @@ element ** dm_L_search(
 	element ** results= NULL;
 	gettimeofday(&start, NULL);
 	for(i= 0; i < L; i++){
-		dm_search( &((*seed_0)[i]), hash_table[i], data_table, &results, results_no, radius, query);
+		dm_search( seed_0[i], hash_table[i], data_table, &results, results_no, radius, query);
 	}
 	/*fprintf(stream, "Query: %s\n%d-near neighbors:\n", query->name, radius);
 	for(i= 0; i < *results_no; i++){

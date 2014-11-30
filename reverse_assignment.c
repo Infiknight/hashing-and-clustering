@@ -9,9 +9,7 @@ int * reverse_assignment(
 	double ** distance_matrix,
 	element ** data_table,
 	int dt_size,
-	metric_space current_metric_space,
-	bucket ** (*hash_table_constructor)(element **,int,int *,seed **,int),
-	element ** (*L_search)(int, FILE *,seed **,bucket ***,element **,double,element *,int *))
+	metric_space current_metric_space)
 {
 	int L= 50;
 	int k= 4;
@@ -37,7 +35,7 @@ int * reverse_assignment(
 	seed * seed_table[L];
 	bucket ** hash_table[L];
 	for(i= 0; i < L; i++){
-		hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k );
+		hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k, current_metric_space);
 	}
 	int results_no;
 	element * query;
@@ -56,7 +54,8 @@ int * reverse_assignment(
 				data_table,
 				radius,
 				query,
-				&results_no);
+				&results_no,
+				current_metric_space);
 			for(j= 0; j < results_no; j++){
 				element_position= get_element_pos(results[j], current_metric_space);	//get current result's position in the data table
 				if( no_iteration_table[element_position] == -1 ){	//allocate to medoid if free
@@ -93,11 +92,12 @@ int * reverse_assignment(
 	for(i= 0; i < dt_size; i++){
 		fprintf(qstream, "%s ' s medoid is %d\n", get_element_name(data_table[i], current_metric_space), medoid_allocation_table[i]);
 	}
+	fprintf(qstream, "%d items allocated\n", currently_allocated);
 	fclose(qstream);
 	//CLEANUP
-	euc_parser_clean(
-		data_table,
-		dt_size);
+	//euc_parser_clean(
+	//	data_table,
+	//	dt_size);
 	//int j;
 	for(i= 0; i < L; i++){
 		for(j= 0;j <  hash_table_size[j]; j++){

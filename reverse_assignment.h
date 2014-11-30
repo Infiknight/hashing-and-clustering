@@ -22,9 +22,7 @@ int * reverse_assignment(
 	double ** distance_matrix,
 	element ** data_table,
 	int dt_size,
-	metric_space current_metric_space,
-	bucket ** (*hash_table_constructor)(element **,int,int *,seed **,int),
-	element ** (*L_search)(int, FILE *,seed **,bucket ***,element **,double,element *,int *));
+	metric_space current_metric_space);
 
 
 #ifdef	__cplusplus

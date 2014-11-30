@@ -89,6 +89,11 @@ int dm_exhaustive_search(
 	element * query,
 	FILE * stream);
 
+double dm_distance(
+	void * data_table,
+	int index_1,
+	int index_2);
+
 int dm_get_element_pos(
 	element * element_ptr);
 	

@@ -31,7 +31,7 @@ typedef struct Seed{
 typedef struct Element{
 	int position_in_dt;
 	char * name;
-	int * array;
+	double * array;
 } element;
 	
 

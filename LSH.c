@@ -5,8 +5,10 @@
 #include "LSH_structs.h"
 #include "euclidean_p.h"
 #include "general_distance_matrix.h"
+#include "distance_matrix.h"
 #include "initialize.h"
 #include "reverse_assignment.h"
+#include "update_step.h"
 
 
 int LSH(int L, int k){
@@ -37,47 +39,64 @@ int LSH(int L, int k){
 		fscanf(fpInput, "%s %s ", a, metricSpace);
 
 
-		//fseek(fpInput, 0, SEEK_SET);
+		fseek(fpInput, 0, SEEK_SET);
 		element ** data_table= NULL;
-		double ** distance_matrix;
+		double ** distance_matrix_2;
 		int dt_size, k=5;
-		int * medoids;
+		int * medoids, * assignment;
 		//euclidean_LSH(fpInput, L,k); return 0;
-		if(strcmp(metricSpace , "vector") == 0){
+		metric_space current_space;
+		if(strcmp(metricSpace , "vector") == 0)
+			current_space= euclidean;
+		else if(strcmp(metricSpace , "matrix") == 0){
+			current_space= distance_matrix;
+		}
+		//if(strcmp(metricSpace , "vector") == 0){
 			//euclidean_LSH(fpInput, L,k);
-			fscanf(fpInput, "%s %s ", a, metricSpace);
-			data_table= euc_parser(fpInput, &dt_size);
-			distance_matrix= generate_distance_matrix(euc_distance, (void*)data_table, dt_size);
-			/*for(i= 0; i < dt_size; i++){
-				for(j= 0; j < dt_size; j++){
-					fprintf(out, "%lf	", distance_matrix[i][j]);
-				}
-				fprintf(out, "\n");
-			}*/
-			medoids= initialize(distance_matrix, dt_size, k, 2);
-			reverse_assignment(
-				medoids,
-				k,
-				distance_matrix,
-				data_table,
-				dt_size,
-				euclidean,
-				euc_hash_table_constructor,
-				euc_L_search);
+			//fscanf(fpInput, "%s %s ", a, metricSpace);
+			data_table= generic_parser(fpInput, &dt_size, current_space);
+			distance_matrix_2= general_generate_distance_matrix((void*)data_table, dt_size, current_space);
+			printf("%d\n", dt_size);
+			//for(i= 0; i < dt_size; i++){
+				//for(j= 0; j < dt_size; j++){
+					//printf("%f	", distance_matrix_2[i][j]);
+				//}
+				//printf("\n");
+			//}
+			medoids= initialize(distance_matrix_2, dt_size, k, 2);
 			for(i= 0; i < k ; i++){
 				fprintf(out, "%d\n", medoids[i]);
 			}
+			fflush(out);
+			assignment= reverse_assignment(
+				medoids,
+				k,
+				distance_matrix_2,
+				data_table,
+				dt_size,
+				current_space);
 			//fflush(out);
 			//euc_clean_distance_matrix(distance_matrix, dt_size);
+			medoids= clarans(
+				k,
+				distance_matrix_2,
+				data_table,
+				assignment,
+				dt_size,
+				current_space);
+			fprintf(out, "----------------\n");
+			for(i= 0; i < k; i++){
+				fprintf(out, "%d\n", medoids[i]);
+			}
 			fclose(out);
-		}
+		//}
 		//else if(strcmp(metricSpace , "hamming") == 0){
 		//	 hammingLHS(fpInput, L, k);
 		//}
-		else if(strcmp(metricSpace , "matrix") == 0){
-			distance_matrix_LSH(fpInput, L, k);
-		}
-		else if(strcmp(metricSpace , "function") == 0){
+		//else if(strcmp(metricSpace , "matrix") == 0){
+		//	distance_matrix_LSH(fpInput, L, k);
+		//}
+		if(strcmp(metricSpace , "function") == 0){
 			while(lines != 2){
 				c = getc(fpInput);
 				if (c=='\n')
