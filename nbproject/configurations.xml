@@ -7,6 +7,7 @@
       <logicalFolder name="f1" displayName="private" projectFiles="true">
         <itemPath>distance_matrix_p.h</itemPath>
         <itemPath>euclidean_p.h</itemPath>
+        <itemPath>hamming_p.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
@@ -52,6 +53,11 @@
         <itemPath>euclidean_search.c</itemPath>
         <itemPath>euclidean_specialized_tools.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f1" displayName="hamming" projectFiles="true">
+        <itemPath>hamming.c</itemPath>
+        <itemPath>hamming_search.c</itemPath>
+        <itemPath>hamming_specialized_tools.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f5" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
           <itemPath>bucket.c</itemPath>
@@ -66,7 +72,6 @@
       <itemPath>LSH.c</itemPath>
       <itemPath>LSH_structs.c</itemPath>
       <itemPath>general_distance_matrix.c</itemPath>
-      <itemPath>hamming.c</itemPath>
       <itemPath>initialize.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>reverse_assignment.c</itemPath>
@@ -152,6 +157,12 @@
       <item path="hamming.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="hamming.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hamming_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hamming_search.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="hamming_specialized_tools.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="initialize.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -259,6 +270,12 @@
       <item path="hamming.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="hamming.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hamming_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hamming_search.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="hamming_specialized_tools.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="initialize.c" ex="false" tool="0" flavor2="0">
       </item>

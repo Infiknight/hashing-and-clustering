@@ -53,6 +53,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/euclidean_specialized_tools.o \
 	${OBJECTDIR}/general_distance_matrix.o \
 	${OBJECTDIR}/hamming.o \
+	${OBJECTDIR}/hamming_search.o \
+	${OBJECTDIR}/hamming_specialized_tools.o \
 	${OBJECTDIR}/initialize.o \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
@@ -175,6 +177,16 @@ ${OBJECTDIR}/hamming.o: hamming.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hamming.o hamming.c
+
+${OBJECTDIR}/hamming_search.o: hamming_search.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hamming_search.o hamming_search.c
+
+${OBJECTDIR}/hamming_specialized_tools.o: hamming_specialized_tools.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hamming_specialized_tools.o hamming_specialized_tools.c
 
 ${OBJECTDIR}/initialize.o: initialize.c 
 	${MKDIR} -p ${OBJECTDIR}

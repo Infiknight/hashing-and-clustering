@@ -15,7 +15,9 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/initialize.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_hash_funcs.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/PAM.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/initialize.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/update_Improved_PAM.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/bucket.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/bucket.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_p.h</file>
@@ -36,14 +38,17 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH_structs.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_specialized_tools.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH_structs.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming_search.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_hash_table.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/update_step.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH.h</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/update_step.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/general_distance_matrix.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/compare.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_specialized_tools.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_hash_table.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/main.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.h</file>
         </group>

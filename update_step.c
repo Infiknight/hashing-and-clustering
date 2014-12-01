@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <math.h>
 #include "probability_distr.h"
 #include "LSH_structs.h"
 
@@ -49,7 +50,7 @@ int * clarans(
 	double total_cost_current,
 		total_cost_neighbor,
 		minCost= -1;
-	temp= (int) floor(0.015*k*(n-k));
+	temp= (int) floor(0.15*k*(n-k));
 	if(temp > 250)
 		maxNeighbors= temp;
 	else

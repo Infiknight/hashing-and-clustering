@@ -1,6 +1,7 @@
 #include "LSH_structs.h"
 #include "euclidean.h"
 #include "distance_matrix.h"
+#include "hamming.h"
 #include <stdlib.h>
 
 int get_element_pos(
@@ -11,7 +12,8 @@ int get_element_pos(
 		return euc_get_element_pos(element_ptr);
 	else if(current_space == distance_matrix)
 		return dm_get_element_pos(element_ptr);
-	//else
+	else if(current_space == hamming)
+		return hamming_get_element_pos(element_ptr);
 }
 
 char * get_element_name(
@@ -22,7 +24,8 @@ char * get_element_name(
 		return euc_get_element_name(element_ptr);
 	else if(current_space == distance_matrix)
 		return dm_get_element_name(element_ptr);
-	//else
+	else if(current_space == hamming)
+		return hamming_get_element_name(element_ptr);
 }
 
 bucket ** hash_table_constructor(
@@ -40,14 +43,20 @@ bucket ** hash_table_constructor(
 			hash_table_size,
 			seed_0_PPtr,
 			k);
-	if(current_space == distance_matrix)
+	else if(current_space == distance_matrix)
 		return dm_hash_table_constructor(
 			data_table,
 			data_table_size,
 			hash_table_size,
 			seed_0_PPtr,
 			k);
-	//else
+	else if(current_space == hamming)
+		return hamming_hash_table_constructor(
+			data_table,
+			data_table_size,
+			hash_table_size,
+			seed_0_PPtr,
+			k);
 }
 
 element ** L_search(
@@ -81,7 +90,16 @@ element ** L_search(
 			radius,
 			query,
 			results_no);
-	//else
+	else if(current_space == hamming)
+		return hamming_L_search(
+			L, 
+			stream,
+			seed_0,
+			hash_table,
+			data_table,
+			radius,
+			query,
+			results_no);
 }
 
 element ** generic_parser(
@@ -97,7 +115,10 @@ element ** generic_parser(
 		return dm_parser(
 			stream,
 			dt_size);
-	//else
+	else if(current_space == hamming)
+		return hamming_parser(
+			stream,
+			dt_size);
 }
 
 double ** general_generate_distance_matrix(
@@ -113,9 +134,10 @@ double ** general_generate_distance_matrix(
 			if( i < j ){
 				if(current_space == distance_matrix)
 					distance_matrix_2[i][j]= dm_distance( data_table, i, j);
-				if(current_space == euclidean)
+				else if(current_space == euclidean)
 					distance_matrix_2[i][j]= euc_distance( data_table, i, j);
-				//else
+				else if(current_space == hamming)
+					distance_matrix_2[i][j]= hamming_distance( data_table, i, j);
 			}
 			else if( i == j )
 				distance_matrix_2[i][j]= 0;

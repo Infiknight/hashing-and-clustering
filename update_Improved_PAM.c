@@ -5,7 +5,7 @@
 #include <errno.h>
 #include "update_Improved_PAM.h"
 
-hammingUpdateAlaLloyd(cluster * clusters, struct hamming_element * datasetArr, int size, int k){
+int * hammingUpdateAlaLloyd(cluster * clusters, struct hamming_element * datasetArr, int size, int k){
 
 	int i, j;
 	int * newMedoids;

@@ -3,9 +3,6 @@
 #include <string.h>
 #include "LSH.h"
 #include "LSH_structs.h"
-#include "euclidean_p.h"
-#include "general_distance_matrix.h"
-#include "distance_matrix.h"
 #include "initialize.h"
 #include "reverse_assignment.h"
 #include "update_step.h"
@@ -51,6 +48,8 @@ int LSH(int L, int k){
 		else if(strcmp(metricSpace , "matrix") == 0){
 			current_space= distance_matrix;
 		}
+		else if(strcmp(metricSpace , "hamming") == 0)
+			current_space= hamming;
 		//if(strcmp(metricSpace , "vector") == 0){
 			//euclidean_LSH(fpInput, L,k);
 			//fscanf(fpInput, "%s %s ", a, metricSpace);
