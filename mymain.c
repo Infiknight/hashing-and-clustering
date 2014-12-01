@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+//#include "hamming2.h"
+//#include "euclidean_p.h"
 #include "euclidean.h"
+//#include "PAM.h"
+//#include "update_Improved_PAM.h"
 #include "k-medoids.h"
 
 
@@ -21,11 +25,12 @@ int main(int argc, char *argv[]){
 	char outputFile[100]={0};
 	char variable[100]={0};
 	char a[100], metricSpace[100];
-	FILE *fpInput, *fpConf;
+	FILE *fpInput, *fpConf, *fpOutput;
 	int k, numOfHashFunctions = 4, L = 5;
 	int claransSetFraction = -1;
 	int claransIterations = 2;
 	int value;
+	int complete = 0;
 
 
 	printf("ARG = %d\n", argc);
@@ -34,6 +39,12 @@ int main(int argc, char *argv[]){
 		strcpy(inputFile ,argv[2]);
 		strcpy(confFile, argv[4]);
 		strcpy(outputFile, argv[6]);
+	}
+	else if((argc==8) && (strcmp(argv[7], "–complete") == 0)) {
+		strcpy(inputFile ,argv[2]);
+		strcpy(confFile, argv[4]);
+		strcpy(outputFile, argv[6]);
+		complete = 1;
 	}
 	else{
 		printf("Please run again with the correct parameters\n");
@@ -55,6 +66,12 @@ int main(int argc, char *argv[]){
 	   	return -1;
 	}
 
+	fpOutput = fopen(outputFile , "w");
+	if(fpInput==NULL){
+	    printf("Error in fopen\n");
+	   	return -1;
+	}
+
 	fpConf = fopen(confFile, "r");
 	if(fpConf == NULL){
 	    printf("Error in fopen\n");
@@ -63,7 +80,7 @@ int main(int argc, char *argv[]){
 
 
 	fscanf(fpInput, "%s%s", a, metricSpace);
-	//printf("Metric = %s\n",metricSpace );
+	printf("Metric = %s\n",metricSpace );
 
 	fseek(fpInput, 0, SEEK_SET);
 
@@ -110,9 +127,12 @@ int main(int argc, char *argv[]){
 		}
 	}
 
+	
 
 
-	kmedoids(datasetArr, datasetArrSize, k, numOfHashFunctions, L, claransSetFraction, claransIterations);
+
+
+	kmedoids(datasetArr, datasetArrSize, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, complete);
 	
 
 	return 0;
