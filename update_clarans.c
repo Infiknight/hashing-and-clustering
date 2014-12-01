@@ -3,22 +3,6 @@
 #include "probability_distr.h"
 #include "LSH_structs.h"
 
-
-double cluster_cost(
-	double ** distance_matrix,
-	int n,
-	int medoid,
-	int * assignment)
-{
-	int i;
-	double sum= 0;
-	for(i= 0; i < n; i++){
-		if(assignment[i] == medoid)
-			sum+= distance_matrix[medoid][i]; //lathos
-	}
-	return sum;
-}
-
 double total_cost(
 	double ** distance_matrix,
 	int n, 
@@ -82,5 +66,6 @@ int * clarans(
 			bestNode= current_node;
 		}
 	}
+	free(neighbor);
 	return bestNode;
 }

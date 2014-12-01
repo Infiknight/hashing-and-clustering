@@ -1,0 +1,35 @@
+/* 
+ * File:   update_medoids_p.h
+ * Author: Infiknight
+ *
+ * Created on December 1, 2014, 9:39 PM
+ */
+
+#ifndef UPDATE_MEDOIDS_P_H
+#define	UPDATE_MEDOIDS_P_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+#include "cluster.h"
+	
+int * UpdateAlaLloyd(
+	cluster * clusters,
+	double ** distance_matrix,
+	int k);
+
+int * clarans(
+	int k,
+	double ** distance_matrix,
+	element ** data_table,
+	int * assignment,
+	int n,
+	metric_space current_metric_space);
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* UPDATE_MEDOIDS_P_H */
+

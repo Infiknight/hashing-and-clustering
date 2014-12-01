@@ -35,13 +35,3 @@ int * concentrate(
 	}
 	return medoids;
 }
-
-int * initialize(
-	double ** distance_matrix,
-	int size,
-	int k,
-	int choice)
-{
-	if(choice == 2)
-		return concentrate( distance_matrix, size, k);
-}

@@ -37,8 +37,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/LSH.o \
 	${OBJECTDIR}/LSH_structs.o \
+	${OBJECTDIR}/PAM.o \
+	${OBJECTDIR}/assign_to_clusters.o \
 	${OBJECTDIR}/bucket.o \
 	${OBJECTDIR}/compare.o \
+	${OBJECTDIR}/concentrate.o \
 	${OBJECTDIR}/distance_matrix.o \
 	${OBJECTDIR}/distance_matrix_hash_funcs.o \
 	${OBJECTDIR}/distance_matrix_hash_table.o \
@@ -55,12 +58,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/hamming.o \
 	${OBJECTDIR}/hamming_search.o \
 	${OBJECTDIR}/hamming_specialized_tools.o \
-	${OBJECTDIR}/initialize.o \
+	${OBJECTDIR}/initialize_medoids.o \
+	${OBJECTDIR}/k-medoids++.o \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/probability_distr.o \
 	${OBJECTDIR}/reverse_assignment.o \
-	${OBJECTDIR}/update_step.o \
+	${OBJECTDIR}/update_Improved_PAM.o \
+	${OBJECTDIR}/update_clarans.o \
+	${OBJECTDIR}/update_medoids.o \
 	${OBJECTDIR}/vector.o
 
 
@@ -98,6 +104,16 @@ ${OBJECTDIR}/LSH_structs.o: LSH_structs.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LSH_structs.o LSH_structs.c
 
+${OBJECTDIR}/PAM.o: PAM.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PAM.o PAM.c
+
+${OBJECTDIR}/assign_to_clusters.o: assign_to_clusters.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/assign_to_clusters.o assign_to_clusters.c
+
 ${OBJECTDIR}/bucket.o: bucket.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -107,6 +123,11 @@ ${OBJECTDIR}/compare.o: compare.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/compare.o compare.c
+
+${OBJECTDIR}/concentrate.o: concentrate.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/concentrate.o concentrate.c
 
 ${OBJECTDIR}/distance_matrix.o: distance_matrix.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -188,10 +209,15 @@ ${OBJECTDIR}/hamming_specialized_tools.o: hamming_specialized_tools.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hamming_specialized_tools.o hamming_specialized_tools.c
 
-${OBJECTDIR}/initialize.o: initialize.c 
+${OBJECTDIR}/initialize_medoids.o: initialize_medoids.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/initialize.o initialize.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/initialize_medoids.o initialize_medoids.c
+
+${OBJECTDIR}/k-medoids++.o: k-medoids++.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/k-medoids++.o k-medoids++.c
 
 ${OBJECTDIR}/list.o: list.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -213,10 +239,20 @@ ${OBJECTDIR}/reverse_assignment.o: reverse_assignment.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/reverse_assignment.o reverse_assignment.c
 
-${OBJECTDIR}/update_step.o: update_step.c 
+${OBJECTDIR}/update_Improved_PAM.o: update_Improved_PAM.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/update_step.o update_step.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/update_Improved_PAM.o update_Improved_PAM.c
+
+${OBJECTDIR}/update_clarans.o: update_clarans.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/update_clarans.o update_clarans.c
+
+${OBJECTDIR}/update_medoids.o: update_medoids.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/update_medoids.o update_medoids.c
 
 ${OBJECTDIR}/vector.o: vector.c 
 	${MKDIR} -p ${OBJECTDIR}

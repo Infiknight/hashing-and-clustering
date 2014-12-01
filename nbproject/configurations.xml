@@ -4,6 +4,21 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="Clustering" projectFiles="true">
+        <logicalFolder name="f1" displayName="assign_to_clusters" projectFiles="true">
+          <itemPath>assign_to_clusters.h</itemPath>
+          <itemPath>assign_to_clusters_p.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="initialize_medoids" projectFiles="true">
+          <itemPath>initialize_medoids.h</itemPath>
+          <itemPath>initialize_medoids_p.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="update_medoids" projectFiles="true">
+          <itemPath>update_medoids.h</itemPath>
+          <itemPath>update_medoids_p.h</itemPath>
+        </logicalFolder>
+        <itemPath>cluster.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="private" projectFiles="true">
         <itemPath>distance_matrix_p.h</itemPath>
         <itemPath>euclidean_p.h</itemPath>
@@ -37,6 +52,23 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f6" displayName="Clustering" projectFiles="true">
+        <logicalFolder name="f2" displayName="assign_to_clusters" projectFiles="true">
+          <itemPath>PAM.c</itemPath>
+          <itemPath>reverse_assignment.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="initialize_medoids" projectFiles="true">
+          <itemPath>concentrate.c</itemPath>
+          <itemPath>k-medoids++.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="update_medoids" projectFiles="true">
+          <itemPath>update_Improved_PAM.c</itemPath>
+          <itemPath>update_clarans.c</itemPath>
+        </logicalFolder>
+        <itemPath>assign_to_clusters.c</itemPath>
+        <itemPath>initialize_medoids.c</itemPath>
+        <itemPath>update_medoids.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f4" displayName="distance_matrix" projectFiles="true">
         <itemPath>distance_matrix.c</itemPath>
         <itemPath>distance_matrix_hash_funcs.c</itemPath>
@@ -72,10 +104,7 @@
       <itemPath>LSH.c</itemPath>
       <itemPath>LSH_structs.c</itemPath>
       <itemPath>general_distance_matrix.c</itemPath>
-      <itemPath>initialize.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>reverse_assignment.c</itemPath>
-      <itemPath>update_step.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -107,13 +136,25 @@
       </item>
       <item path="LSH_structs.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="PAM.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="assign_to_clusters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="assign_to_clusters.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="assign_to_clusters_p.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="cluster.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="compare.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="compare.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="concentrate.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -164,9 +205,15 @@
       </item>
       <item path="hamming_specialized_tools.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="initialize.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="initialize_medoids.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="initialize_medoids.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="initialize_medoids_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="k-medoids++.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -182,7 +229,15 @@
       </item>
       <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="update_step.c" ex="false" tool="0" flavor2="0">
+      <item path="update_Improved_PAM.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_clarans.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_medoids.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_medoids.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="update_medoids_p.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="update_step.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -220,13 +275,25 @@
       </item>
       <item path="LSH_structs.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="PAM.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="assign_to_clusters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="assign_to_clusters.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="assign_to_clusters_p.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="cluster.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="compare.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="compare.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="concentrate.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -277,9 +344,15 @@
       </item>
       <item path="hamming_specialized_tools.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="initialize.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="initialize_medoids.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="initialize_medoids.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="initialize_medoids_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="k-medoids++.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -295,7 +368,15 @@
       </item>
       <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="update_step.c" ex="false" tool="0" flavor2="0">
+      <item path="update_Improved_PAM.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_clarans.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_medoids.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="update_medoids.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="update_medoids_p.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="update_step.h" ex="false" tool="3" flavor2="0">
       </item>
