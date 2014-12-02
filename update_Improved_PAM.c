@@ -39,7 +39,7 @@ int * UpdateAlaLloyd(
 {
     int i, j;
     int * newMedoids;
-    double  *newMedoidsCosts;
+    double  *newMedoidsCosts= malloc(k * sizeof(double));
     newMedoids = malloc(sizeof(double)*k);
     for(i=0; i<k; i++){
         newMedoids[i] = clusters[i].elementsIndexes[5];

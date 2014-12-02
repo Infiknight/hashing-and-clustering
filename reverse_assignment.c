@@ -44,7 +44,7 @@ int * reverse_assignment(
 	element ** results;
 	int element_position,
 		current_iteration= 0;
-	FILE * qstream= fopen("output.txt", "w");
+	FILE * qstream= fopen("output2.txt", "w");
 	while( radius < DBL_MAX/2 && currently_allocated <= dt_size){	//until radius reaches threshold or all points assigned
 		for(i= 0; i < medoids_size; i++){
 			query= data_table[ medoids[i] ];

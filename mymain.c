@@ -37,6 +37,7 @@ int main(int argc, char *argv[]){
 		strcpy(inputFile ,"DataEuclidean.csv");
 		strcpy(confFile, "random.txt");
 		strcpy(outputFile, "output.txt");
+		complete = 1;
 	/*if(argc==7){
 		strcpy(inputFile ,argv[2]);
 		strcpy(confFile, argv[4]);

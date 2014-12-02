@@ -23,7 +23,7 @@ cluster * assignmentToCluster(
 		clusters[assignment[i]].elementsIndexes= realloc(clusters[assignment[i]].elementsIndexes, clusters[assignment[i]].size * sizeof(int));
 		clusters[assignment[i]].elementsIndexes[ clusters[assignment[i]].size-1 ]= i;
 	}
-	free(assignment);
+	//free(assignment);
 	return clusters;
 }
 

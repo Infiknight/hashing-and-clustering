@@ -1,155 +1,457 @@
-Query: item4
-10-near neighbors:
-item1
-item2
-item4
-item5
-item7
-item8
-item9
-item12
-item14
-item15
-item16
-item17
-item18
-item19
-item20
-item21
-item22
-item24
-item25
-item26
-item27
-item28
-item29
-item32
-item34
-item36
-item37
-item38
-item39
-item40
-item43
-item44
-item46
-item47
-item49
-item1
-item2
-item4
-item5
-item7
-item8
-item9
-item12
-item14
-item15
-item16
-item17
-item18
-item19
-item20
-item21
-item22
-item24
-item25
-item26
-item27
-item28
-item29
-item32
-item34
-item36
-item37
-item38
-item39
-item40
-item43
-item44
-item46
-item47
-item49
-item1
-item2
-item4
-item5
-item9
-item12
-item14
-item15
-item18
-item19
-item20
-item22
-item27
-item28
-item29
-item32
-item34
-item37
-item39
-item43
-item44
-item46
-item47
-item2
-item4
-item5
-item8
-item9
-item12
-item14
-item15
-item17
-item18
-item19
-item20
-item21
-item22
-item24
-item25
-item26
-item27
-item28
-item29
-item32
-item34
-item36
-item37
-item38
-item39
-item43
-item47
-item2
-item4
-item5
-item7
-item8
-item9
-item12
-item14
-item15
-item16
-item18
-item19
-item20
-item22
-item24
-item25
-item26
-item28
-item29
-item34
-item37
-item38
-item39
-item40
-item43
-item44
-item46
-item47
-item49
-Nearest neighbor: item5
-distanceLSH: 4
-tLSH: 0 seconds and 18043647236767747 microseconds
+item2 ' s medoid is 3
+item3 ' s medoid is 3
+item4 ' s medoid is 3
+item6 ' s medoid is 3
+item7 ' s medoid is 3
+item8 ' s medoid is 3
+item9 ' s medoid is 3
+item10 ' s medoid is 3
+item11 ' s medoid is 3
+item12 ' s medoid is 3
+item14 ' s medoid is 3
+item15 ' s medoid is 3
+item16 ' s medoid is 3
+item17 ' s medoid is 3
+item18 ' s medoid is 3
+item19 ' s medoid is 3
+item20 ' s medoid is 3
+item21 ' s medoid is 3
+item22 ' s medoid is 3
+item23 ' s medoid is 3
+item24 ' s medoid is 3
+item26 ' s medoid is 3
+item27 ' s medoid is 3
+item28 ' s medoid is 3
+item29 ' s medoid is 3
+item30 ' s medoid is 3
+item31 ' s medoid is 3
+item32 ' s medoid is 3
+item33 ' s medoid is 3
+item34 ' s medoid is 3
+item35 ' s medoid is 3
+item36 ' s medoid is 3
+item37 ' s medoid is 3
+item38 ' s medoid is 3
+item39 ' s medoid is 3
+item40 ' s medoid is 3
+item41 ' s medoid is 3
+item42 ' s medoid is 3
+item43 ' s medoid is 3
+item44 ' s medoid is 3
+item45 ' s medoid is 3
+item46 ' s medoid is 3
+item47 ' s medoid is 3
+item48 ' s medoid is 3
+item49 ' s medoid is 3
+item50 ' s medoid is 3
+item51 ' s medoid is 3
+item53 ' s medoid is 3
+item54 ' s medoid is 3
+item55 ' s medoid is 3
+item56 ' s medoid is 3
+item57 ' s medoid is 3
+item58 ' s medoid is 3
+item59 ' s medoid is 3
+item60 ' s medoid is 3
+item61 ' s medoid is 3
+item62 ' s medoid is 3
+item64 ' s medoid is 3
+item65 ' s medoid is 3
+item66 ' s medoid is 3
+item67 ' s medoid is 3
+item68 ' s medoid is 3
+item69 ' s medoid is 3
+item71 ' s medoid is 3
+item72 ' s medoid is 3
+item73 ' s medoid is 3
+item74 ' s medoid is 3
+item75 ' s medoid is 3
+item76 ' s medoid is 3
+item77 ' s medoid is 3
+item78 ' s medoid is 3
+item80 ' s medoid is 3
+item81 ' s medoid is 3
+item82 ' s medoid is 3
+item83 ' s medoid is 3
+item84 ' s medoid is 3
+item85 ' s medoid is 3
+item87 ' s medoid is 3
+item88 ' s medoid is 3
+item89 ' s medoid is 3
+item90 ' s medoid is 3
+item91 ' s medoid is 3
+item92 ' s medoid is 3
+item93 ' s medoid is 3
+item94 ' s medoid is 3
+item95 ' s medoid is 3
+item96 ' s medoid is 3
+item97 ' s medoid is 3
+item98 ' s medoid is 3
+item99 ' s medoid is 3
+item100 ' s medoid is 3
+item101 ' s medoid is 1
+item102 ' s medoid is 1
+item103 ' s medoid is 1
+item104 ' s medoid is 1
+item105 ' s medoid is 1
+item106 ' s medoid is 1
+item107 ' s medoid is 1
+item108 ' s medoid is 1
+item110 ' s medoid is 1
+item111 ' s medoid is 1
+item113 ' s medoid is 1
+item114 ' s medoid is 1
+item115 ' s medoid is 1
+item116 ' s medoid is 1
+item117 ' s medoid is 1
+item118 ' s medoid is 1
+item119 ' s medoid is 1
+item120 ' s medoid is 1
+item121 ' s medoid is 1
+item122 ' s medoid is 1
+item123 ' s medoid is 1
+item124 ' s medoid is 1
+item125 ' s medoid is 1
+item126 ' s medoid is 1
+item127 ' s medoid is 1
+item129 ' s medoid is 1
+item130 ' s medoid is 1
+item131 ' s medoid is 1
+item134 ' s medoid is 1
+item135 ' s medoid is 1
+item138 ' s medoid is 1
+item139 ' s medoid is 1
+item140 ' s medoid is 1
+item141 ' s medoid is 1
+item142 ' s medoid is 1
+item143 ' s medoid is 1
+item144 ' s medoid is 1
+item145 ' s medoid is 1
+item146 ' s medoid is 1
+item147 ' s medoid is 1
+item148 ' s medoid is 1
+item149 ' s medoid is 1
+item150 ' s medoid is 1
+item151 ' s medoid is 1
+item152 ' s medoid is 1
+item154 ' s medoid is 1
+item155 ' s medoid is 1
+item156 ' s medoid is 1
+item157 ' s medoid is 1
+item158 ' s medoid is 1
+item159 ' s medoid is 1
+item160 ' s medoid is 1
+item161 ' s medoid is 1
+item162 ' s medoid is 1
+item163 ' s medoid is 1
+item164 ' s medoid is 1
+item165 ' s medoid is 1
+item166 ' s medoid is 1
+item167 ' s medoid is 1
+item168 ' s medoid is 1
+item169 ' s medoid is 1
+item170 ' s medoid is 1
+item171 ' s medoid is 1
+item173 ' s medoid is 1
+item174 ' s medoid is 1
+item175 ' s medoid is 1
+item176 ' s medoid is 1
+item177 ' s medoid is 1
+item178 ' s medoid is 1
+item179 ' s medoid is 1
+item180 ' s medoid is 1
+item181 ' s medoid is 1
+item182 ' s medoid is 1
+item183 ' s medoid is 1
+item184 ' s medoid is 1
+item185 ' s medoid is 1
+item186 ' s medoid is 1
+item187 ' s medoid is 1
+item188 ' s medoid is 1
+item189 ' s medoid is 1
+item190 ' s medoid is 1
+item191 ' s medoid is 1
+item192 ' s medoid is 1
+item193 ' s medoid is 1
+item194 ' s medoid is 1
+item195 ' s medoid is 1
+item196 ' s medoid is 1
+item197 ' s medoid is 1
+item198 ' s medoid is 1
+item199 ' s medoid is 1
+item200 ' s medoid is 1
+item201 ' s medoid is 0
+item202 ' s medoid is 0
+item203 ' s medoid is 0
+item204 ' s medoid is 0
+item205 ' s medoid is 0
+item206 ' s medoid is 0
+item207 ' s medoid is 0
+item208 ' s medoid is 0
+item209 ' s medoid is 0
+item210 ' s medoid is 0
+item211 ' s medoid is 0
+item212 ' s medoid is 0
+item213 ' s medoid is 0
+item214 ' s medoid is 0
+item215 ' s medoid is 0
+item216 ' s medoid is 0
+item217 ' s medoid is 0
+item218 ' s medoid is 0
+item219 ' s medoid is 0
+item220 ' s medoid is 0
+item221 ' s medoid is 0
+item222 ' s medoid is 0
+item223 ' s medoid is 0
+item224 ' s medoid is 0
+item226 ' s medoid is 0
+item227 ' s medoid is 0
+item228 ' s medoid is 0
+item229 ' s medoid is 0
+item230 ' s medoid is 0
+item231 ' s medoid is 0
+item232 ' s medoid is 0
+item233 ' s medoid is 0
+item234 ' s medoid is 0
+item235 ' s medoid is 0
+item236 ' s medoid is 0
+item237 ' s medoid is 0
+item238 ' s medoid is 0
+item239 ' s medoid is 0
+item240 ' s medoid is 0
+item241 ' s medoid is 0
+item242 ' s medoid is 0
+item243 ' s medoid is 0
+item244 ' s medoid is 0
+item245 ' s medoid is 0
+item246 ' s medoid is 0
+item247 ' s medoid is 0
+item248 ' s medoid is 0
+item249 ' s medoid is 0
+item250 ' s medoid is 0
+item251 ' s medoid is 0
+item252 ' s medoid is 0
+item253 ' s medoid is 0
+item255 ' s medoid is 0
+item256 ' s medoid is 0
+item257 ' s medoid is 0
+item258 ' s medoid is 0
+item259 ' s medoid is 0
+item260 ' s medoid is 0
+item261 ' s medoid is 0
+item262 ' s medoid is 0
+item263 ' s medoid is 0
+item264 ' s medoid is 0
+item265 ' s medoid is 0
+item266 ' s medoid is 0
+item267 ' s medoid is 0
+item268 ' s medoid is 0
+item269 ' s medoid is 0
+item270 ' s medoid is 0
+item271 ' s medoid is 0
+item273 ' s medoid is 0
+item274 ' s medoid is 0
+item275 ' s medoid is 0
+item276 ' s medoid is 0
+item277 ' s medoid is 0
+item278 ' s medoid is 0
+item279 ' s medoid is 0
+item280 ' s medoid is 0
+item281 ' s medoid is 0
+item282 ' s medoid is 0
+item283 ' s medoid is 0
+item285 ' s medoid is 0
+item286 ' s medoid is 0
+item287 ' s medoid is 0
+item289 ' s medoid is 0
+item290 ' s medoid is 0
+item291 ' s medoid is 0
+item292 ' s medoid is 0
+item293 ' s medoid is 0
+item294 ' s medoid is 0
+item295 ' s medoid is 0
+item296 ' s medoid is 0
+item297 ' s medoid is 0
+item298 ' s medoid is 0
+item299 ' s medoid is 0
+item300 ' s medoid is 0
+item301 ' s medoid is 2
+item302 ' s medoid is 2
+item303 ' s medoid is 2
+item304 ' s medoid is 2
+item305 ' s medoid is 2
+item307 ' s medoid is 2
+item308 ' s medoid is 2
+item310 ' s medoid is 2
+item311 ' s medoid is 2
+item312 ' s medoid is 2
+item313 ' s medoid is 2
+item314 ' s medoid is 2
+item315 ' s medoid is 2
+item316 ' s medoid is 2
+item317 ' s medoid is 2
+item318 ' s medoid is 2
+item319 ' s medoid is 2
+item320 ' s medoid is 2
+item321 ' s medoid is 2
+item322 ' s medoid is 2
+item323 ' s medoid is 2
+item324 ' s medoid is 2
+item325 ' s medoid is 2
+item326 ' s medoid is 2
+item327 ' s medoid is 2
+item328 ' s medoid is 2
+item329 ' s medoid is 2
+item330 ' s medoid is 2
+item331 ' s medoid is 2
+item332 ' s medoid is 2
+item333 ' s medoid is 2
+item334 ' s medoid is 2
+item335 ' s medoid is 2
+item336 ' s medoid is 2
+item337 ' s medoid is 2
+item338 ' s medoid is 2
+item339 ' s medoid is 2
+item340 ' s medoid is 2
+item341 ' s medoid is 2
+item342 ' s medoid is 2
+item343 ' s medoid is 2
+item344 ' s medoid is 2
+item345 ' s medoid is 2
+item346 ' s medoid is 2
+item347 ' s medoid is 2
+item348 ' s medoid is 2
+item349 ' s medoid is 2
+item351 ' s medoid is 2
+item352 ' s medoid is 2
+item353 ' s medoid is 2
+item354 ' s medoid is 2
+item355 ' s medoid is 2
+item356 ' s medoid is 2
+item357 ' s medoid is 2
+item358 ' s medoid is 2
+item360 ' s medoid is 2
+item361 ' s medoid is 2
+item362 ' s medoid is 2
+item363 ' s medoid is 2
+item364 ' s medoid is 2
+item365 ' s medoid is 2
+item366 ' s medoid is 2
+item367 ' s medoid is 2
+item368 ' s medoid is 2
+item369 ' s medoid is 2
+item371 ' s medoid is 2
+item372 ' s medoid is 2
+item373 ' s medoid is 2
+item374 ' s medoid is 2
+item375 ' s medoid is 2
+item376 ' s medoid is 2
+item378 ' s medoid is 2
+item379 ' s medoid is 2
+item382 ' s medoid is 2
+item383 ' s medoid is 2
+item384 ' s medoid is 2
+item385 ' s medoid is 2
+item386 ' s medoid is 2
+item387 ' s medoid is 2
+item388 ' s medoid is 2
+item389 ' s medoid is 2
+item390 ' s medoid is 2
+item391 ' s medoid is 2
+item392 ' s medoid is 2
+item393 ' s medoid is 2
+item394 ' s medoid is 2
+item395 ' s medoid is 2
+item396 ' s medoid is 2
+item397 ' s medoid is 2
+item398 ' s medoid is 2
+item399 ' s medoid is 2
+item400 ' s medoid is 2
+item401 ' s medoid is 4
+item402 ' s medoid is 4
+item403 ' s medoid is 4
+item404 ' s medoid is 4
+item405 ' s medoid is 4
+item406 ' s medoid is 4
+item407 ' s medoid is 4
+item408 ' s medoid is 4
+item410 ' s medoid is 4
+item411 ' s medoid is 4
+item412 ' s medoid is 4
+item413 ' s medoid is 4
+item414 ' s medoid is 4
+item415 ' s medoid is 4
+item416 ' s medoid is 4
+item418 ' s medoid is 4
+item419 ' s medoid is 4
+item420 ' s medoid is 4
+item421 ' s medoid is 4
+item422 ' s medoid is 4
+item423 ' s medoid is 4
+item424 ' s medoid is 4
+item425 ' s medoid is 4
+item426 ' s medoid is 4
+item427 ' s medoid is 4
+item428 ' s medoid is 4
+item429 ' s medoid is 4
+item430 ' s medoid is 4
+item432 ' s medoid is 4
+item433 ' s medoid is 4
+item434 ' s medoid is 4
+item435 ' s medoid is 4
+item436 ' s medoid is 4
+item437 ' s medoid is 4
+item439 ' s medoid is 4
+item440 ' s medoid is 4
+item441 ' s medoid is 4
+item442 ' s medoid is 4
+item443 ' s medoid is 4
+item445 ' s medoid is 4
+item446 ' s medoid is 4
+item447 ' s medoid is 4
+item448 ' s medoid is 4
+item449 ' s medoid is 4
+item450 ' s medoid is 4
+item451 ' s medoid is 4
+item452 ' s medoid is 4
+item453 ' s medoid is 4
+item454 ' s medoid is 4
+item455 ' s medoid is 4
+item456 ' s medoid is 4
+item457 ' s medoid is 4
+item458 ' s medoid is 4
+item459 ' s medoid is 4
+item460 ' s medoid is 4
+item461 ' s medoid is 4
+item463 ' s medoid is 4
+item464 ' s medoid is 4
+item465 ' s medoid is 4
+item466 ' s medoid is 4
+item468 ' s medoid is 4
+item469 ' s medoid is 4
+item470 ' s medoid is 4
+item471 ' s medoid is 4
+item472 ' s medoid is 4
+item473 ' s medoid is 4
+item474 ' s medoid is 4
+item475 ' s medoid is 4
+item477 ' s medoid is 4
+item478 ' s medoid is 4
+item479 ' s medoid is 4
+item481 ' s medoid is 4
+item482 ' s medoid is 4
+item483 ' s medoid is 4
+item484 ' s medoid is 4
+item485 ' s medoid is 4
+item487 ' s medoid is 4
+item490 ' s medoid is 4
+item491 ' s medoid is 4
+item492 ' s medoid is 4
+item493 ' s medoid is 4
+item494 ' s medoid is 4
+item495 ' s medoid is 4
+item496 ' s medoid is 4
+item497 ' s medoid is 4
+item498 ' s medoid is 4
+item500 ' s medoid is 4
+456 items allocated

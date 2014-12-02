@@ -64,6 +64,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/mymain.o \
 	${OBJECTDIR}/probability_distr.o \
 	${OBJECTDIR}/reverse_assignment.o \
+	${OBJECTDIR}/silhouette.o \
 	${OBJECTDIR}/update_Improved_PAM.o \
 	${OBJECTDIR}/update_clarans.o \
 	${OBJECTDIR}/update_medoids.o \
@@ -238,6 +239,11 @@ ${OBJECTDIR}/reverse_assignment.o: reverse_assignment.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/reverse_assignment.o reverse_assignment.c
+
+${OBJECTDIR}/silhouette.o: silhouette.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/silhouette.o silhouette.c
 
 ${OBJECTDIR}/update_Improved_PAM.o: update_Improved_PAM.c 
 	${MKDIR} -p ${OBJECTDIR}

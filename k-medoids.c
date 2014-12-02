@@ -6,6 +6,8 @@
 #include "assign_to_clusters.h"
 #include "initialize_medoids.h"
 #include "update_medoids.h"
+#include "silhouette.h"
+#include "cluster.h"
 
 int stoppingCondition(
 	double ** distance_matrix, 
@@ -15,28 +17,26 @@ int stoppingCondition(
 
 int kmedoids( FILE * fpInput, metric_space current_space, int k, int numOfHashFunctions,
 			int L, int claransSetFraction, int claransIterations, FILE *fpOutput, int complete){
-	int choice_1=2 ,
+	int choice_1=1 ,
 		choice_2=2 ,
-		choice_3=2 ;
+		choice_3=1 ;
 	int i, j;
 	int * medoids, *newMedoids, *oldMedoids, dt_size, * assignment;
 	struct timeval start, end;
+	cluster* clusters;
 	element ** data_table= NULL;
 	double ** distance_matrix_2;
-
-	oldMedoids = malloc(sizeof(int) * k);
-	newMedoids = malloc(sizeof(int) * k);
-
-
 	gettimeofday(&start, NULL);
 	data_table= generic_parser(fpInput, &dt_size, current_space);
 	distance_matrix_2= general_generate_distance_matrix((void*)data_table, dt_size, current_space);
 	newMedoids = initialize(distance_matrix_2, dt_size, k, choice_1);
+	int counter= 0;
 	do{	
+		counter++;
 		assignment= assign_to_clusters(choice_2, newMedoids, k, data_table, distance_matrix_2, dt_size, numOfHashFunctions, L, current_space);	
 		oldMedoids = newMedoids;
 		newMedoids = update_medoids(choice_3, assignment, distance_matrix_2, data_table, dt_size, oldMedoids, k, claransSetFraction, claransIterations);
-	}while(stoppingCondition(distance_matrix_2, oldMedoids, newMedoids, k)==0);
+	}while(stoppingCondition(distance_matrix_2, oldMedoids, newMedoids, k)==0 && counter != 100);
 
 	gettimeofday(&end, NULL);
 
@@ -49,9 +49,20 @@ int kmedoids( FILE * fpInput, metric_space current_space, int k, int numOfHashFu
 	//}
 	fprintf(fpOutput, "clustering_time: %f seconds\n", ((end.tv_sec * 1000000 + end.tv_usec)- (start.tv_sec * 1000000 + start.tv_usec))/1000000.00);
 
-	//Silhouette
-
-	/*if(complete == 1){
+	/*double sil= silhouette(
+		distance_matrix_2,
+		assignment,
+		dt_size,
+		newMedoids,
+		k);
+	printf("%lf\n", sil);*/
+	clusters= assignmentToCluster(
+		assignment, 
+		distance_matrix_2,
+		dt_size, 
+		newMedoids,
+		k);
+	if(complete == 1){
 		for(i=1; i<k; i++){
 			fprintf(fpOutput, "\nCLUSTER-%d {", i+1);
 			for(j=0; j<clusters[i].size; j++){
@@ -59,9 +70,8 @@ int kmedoids( FILE * fpInput, metric_space current_space, int k, int numOfHashFu
 			}
 			fprintf(fpOutput, "}\n");
 		}
-	}*/
+	}
 }
-
 
 int stoppingCondition(
 	double ** distance_matrix, 

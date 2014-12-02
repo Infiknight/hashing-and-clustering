@@ -19,6 +19,7 @@
         </logicalFolder>
         <itemPath>cluster.h</itemPath>
         <itemPath>k-medoids.h</itemPath>
+        <itemPath>silhouette.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="private" projectFiles="true">
         <itemPath>distance_matrix_p.h</itemPath>
@@ -68,6 +69,7 @@
         </logicalFolder>
         <itemPath>assign_to_clusters.c</itemPath>
         <itemPath>initialize_medoids.c</itemPath>
+        <itemPath>silhouette.c</itemPath>
         <itemPath>update_medoids.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="distance_matrix" projectFiles="true">
@@ -232,6 +234,10 @@
       </item>
       <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="silhouette.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="silhouette.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="update_Improved_PAM.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="update_clarans.c" ex="false" tool="0" flavor2="0">
@@ -372,6 +378,10 @@
       <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="silhouette.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="silhouette.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="update_Improved_PAM.c" ex="false" tool="0" flavor2="0">
       </item>

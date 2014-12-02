@@ -18,6 +18,14 @@ struct Cluster{
 	int size;
 	double cost;
 };
+typedef struct Cluster cluster;
+
+cluster * assignmentToCluster(
+	int * assignment, 
+	double ** distance_matrix,
+	int dt_size, 
+	int * medoids,
+	int k);
 
 typedef struct Cluster cluster;
 
