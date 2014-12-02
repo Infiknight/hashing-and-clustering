@@ -1,5 +1,5 @@
 build/Release/Cygwin_4.x-Windows/LSH.o: LSH.c LSH.h LSH_structs.h \
- bucket.h initialize.h reverse_assignment.h update_step.h
+ bucket.h initialize_medoids.h assign_to_clusters.h update_medoids.h
 
 LSH.h:
 
@@ -7,8 +7,8 @@ LSH_structs.h:
 
 bucket.h:
 
-initialize.h:
+initialize_medoids.h:
 
-reverse_assignment.h:
+assign_to_clusters.h:
 
-update_step.h:
+update_medoids.h:

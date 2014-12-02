@@ -20,7 +20,8 @@ int * update_medoids(
 	int dt_size,
 	int * old_medoids,
 	int k,
-	metric_space current_space);
+	int clarans_set_fraction,
+	int clarans_iterations);
 
 
 #ifdef	__cplusplus

@@ -18,6 +18,7 @@
           <itemPath>update_medoids_p.h</itemPath>
         </logicalFolder>
         <itemPath>cluster.h</itemPath>
+        <itemPath>k-medoids.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="private" projectFiles="true">
         <itemPath>distance_matrix_p.h</itemPath>
@@ -101,10 +102,10 @@
         </logicalFolder>
         <itemPath>compare.c</itemPath>
       </logicalFolder>
-      <itemPath>LSH.c</itemPath>
       <itemPath>LSH_structs.c</itemPath>
       <itemPath>general_distance_matrix.c</itemPath>
-      <itemPath>main.c</itemPath>
+      <itemPath>k-medoids.c</itemPath>
+      <itemPath>mymain.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -128,8 +129,6 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="LSH.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LSH_structs.c" ex="false" tool="0" flavor2="0">
@@ -215,11 +214,15 @@
       </item>
       <item path="k-medoids++.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="k-medoids.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="k-medoids.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="list.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="mymain.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="probability_distr.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -267,8 +270,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="LSH.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LSH_structs.c" ex="false" tool="0" flavor2="0">
@@ -354,11 +355,15 @@
       </item>
       <item path="k-medoids++.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="k-medoids.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="k-medoids.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="list.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="list.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="mymain.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="probability_distr.c" ex="false" tool="0" flavor2="0">
       </item>

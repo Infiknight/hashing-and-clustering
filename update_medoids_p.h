@@ -13,6 +13,7 @@ extern "C" {
 #endif
 
 #include "cluster.h"
+#include "LSH_structs.h"
 	
 int * UpdateAlaLloyd(
 	cluster * clusters,
@@ -25,7 +26,8 @@ int * clarans(
 	element ** data_table,
 	int * assignment,
 	int n,
-	metric_space current_metric_space);
+	int clarans_set_fraction,
+	int clarans_iterations);
 
 #ifdef	__cplusplus
 }

@@ -3,9 +3,9 @@
 #include <string.h>
 #include "LSH.h"
 #include "LSH_structs.h"
-#include "initialize.h"
-#include "reverse_assignment.h"
-#include "update_step.h"
+#include "initialize_medoids.h"
+#include "assign_to_clusters.h"
+#include "update_medoids.h"
 
 
 int LSH(int L, int k){
@@ -14,6 +14,9 @@ int LSH(int L, int k){
 	int i, j;
 	char c;
 	FILE *fpInput;
+	int choice_1=1 ,
+		choice_2=2 ,
+		choice_3=1 ;
 
 	/*While user wants searches*/
 	while(repeat==1){
@@ -62,26 +65,29 @@ int LSH(int L, int k){
 				//}
 				//printf("\n");
 			//}
-			medoids= initialize(distance_matrix_2, dt_size, k, 2);
+			medoids= initialize(distance_matrix_2, dt_size, k, choice_1);
 			for(i= 0; i < k ; i++){
 				fprintf(out, "%d\n", medoids[i]);
 			}
 			fflush(out);
-			assignment= reverse_assignment(
+			assignment= assign_to_clusters(
+				choice_2,
 				medoids,
 				k,
-				distance_matrix_2,
 				data_table,
+				distance_matrix_2,
 				dt_size,
 				current_space);
 			//fflush(out);
 			//euc_clean_distance_matrix(distance_matrix, dt_size);
-			medoids= clarans(
-				k,
+			medoids= update_medoids(
+				choice_3,
+				assignment,
 				distance_matrix_2,
 				data_table,
-				assignment,
 				dt_size,
+				medoids,
+				k,
 				current_space);
 			fprintf(out, "----------------\n");
 			for(i= 0; i < k; i++){

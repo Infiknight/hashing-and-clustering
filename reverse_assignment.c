@@ -9,10 +9,12 @@ int * reverse_assignment(
 	double ** distance_matrix,
 	element ** data_table,
 	int dt_size,
+	int number_of_hash_functions,
+	int number_of_hash_tables,
 	metric_space current_metric_space)
 {
-	int L= 50;
-	int k= 4;
+	int L= number_of_hash_tables;
+	int k= number_of_hash_functions;
 	int i, j,
 		currently_allocated= 0;
 	int * medoid_allocation_table= malloc(dt_size * sizeof(int));

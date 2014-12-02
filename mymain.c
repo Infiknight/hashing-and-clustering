@@ -4,10 +4,10 @@
 #include <time.h>
 //#include "hamming2.h"
 //#include "euclidean_p.h"
-#include "euclidean.h"
 //#include "PAM.h"
 //#include "update_Improved_PAM.h"
 #include "k-medoids.h"
+#include "LSH_structs.h"
 
 
 int main(int argc, char *argv[]){
@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
 	double curtime;
 	int datasetArrSize=0, size=0;
 	int * medoids, *newMedoids;
-	cluster * clusters;
+	//cluster * clusters;
 	struct hamming_element * datasetArr;
 	element ** data_table;
 	char inputFile[100]={0};
@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
 	char variable[100]={0};
 	char a[100], metricSpace[100];
 	FILE *fpInput, *fpConf, *fpOutput;
-	int k, numOfHashFunctions = 4, L = 5;
+	int k= 5, numOfHashFunctions = 4, L = 5;
 	int claransSetFraction = -1;
 	int claransIterations = 2;
 	int value;
@@ -34,8 +34,10 @@ int main(int argc, char *argv[]){
 
 
 	printf("ARG = %d\n", argc);
-
-	if(argc==7){
+		strcpy(inputFile ,"DataEuclidean.csv");
+		strcpy(confFile, "random.txt");
+		strcpy(outputFile, "output.txt");
+	/*if(argc==7){
 		strcpy(inputFile ,argv[2]);
 		strcpy(confFile, argv[4]);
 		strcpy(outputFile, argv[6]);
@@ -49,7 +51,7 @@ int main(int argc, char *argv[]){
 	else{
 		printf("Please run again with the correct parameters\n");
 		return -1;
-	}
+	}*/
 
 	curtime = time(NULL); 
 	srand((unsigned int) curtime); 
@@ -109,15 +111,15 @@ int main(int argc, char *argv[]){
 
 	printf("%d %d %d %d %d\n", k , numOfHashFunctions, L, claransSetFraction, claransIterations);
 	
-	
+	metric_space current_space;
 	if (strcmp(metricSpace, "hamming")==0){
-		datasetArr = hammingParser(fpInput, &datasetArrSize);
+		current_space= hamming;
 	}
 	else if (strcmp(metricSpace, "vector")==0){
-		data_table = euc_parser(fpInput, &datasetArrSize);
+		current_space= euclidean;
 	}
-	
-
+	else if(strcmp(metricSpace , "matrix") == 0)
+			current_space= distance_matrix;
 	if(claransSetFraction == -1){
 		if( (int)(0.12 *k*(datasetArrSize-k)) > 250){
 			claransSetFraction = (int)(0.12 *k*(datasetArrSize-k));
@@ -132,7 +134,7 @@ int main(int argc, char *argv[]){
 
 
 
-	kmedoids(datasetArr, datasetArrSize, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, complete);
+	kmedoids( fpInput, current_space, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, complete);
 	
 
 	return 0;

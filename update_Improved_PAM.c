@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <errno.h>
+#include "update_medoids_p.h"
 
 double ComputeNewClusterCost(
 	double ** distance_matrix,

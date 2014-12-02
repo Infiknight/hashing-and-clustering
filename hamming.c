@@ -15,6 +15,7 @@ element ** hamming_parser(
 	char  name[100], str[100];
 	arr = NULL;
 	int size= 0;
+	fscanf(fp, "%s%s", name, str);
 	while(fscanf(fp, "%s%s", name, str) != EOF){
 		arr = (element **) realloc(arr, (size +1) * sizeof(element *));
 		if(arr==NULL){

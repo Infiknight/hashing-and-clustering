@@ -18,7 +18,7 @@ cluster * assignmentToCluster(
 		clusters[i].medoidIndex= medoids[i];
 	}
 	for(i= 0; i < dt_size; i++){
-		clusters[assignment[i]].cost+= distance_matrix[medoids[i]][i];
+		clusters[assignment[i]].cost+= distance_matrix[medoids[assignment[i]]][i];
 		clusters[assignment[i]].size++;
 		clusters[assignment[i]].elementsIndexes= realloc(clusters[assignment[i]].elementsIndexes, clusters[assignment[i]].size * sizeof(int));
 		clusters[assignment[i]].elementsIndexes[ clusters[assignment[i]].size-1 ]= i;
@@ -35,7 +35,8 @@ int * update_medoids(
 	int dt_size,
 	int * old_medoids,
 	int k,
-	metric_space current_space)
+	int clarans_set_fraction,
+	int clarans_iterations)
 {
 	if(choice == 1){
 		cluster * clusters= assignmentToCluster(
@@ -53,6 +54,7 @@ int * update_medoids(
 			data_table,
 			assignment,
 			dt_size,
-			current_space);
+			clarans_set_fraction,
+			clarans_iterations);
 	}
 }

@@ -22,6 +22,8 @@ int * reverse_assignment(
 	double ** distance_matrix,
 	element ** data_table,
 	int dt_size,
+	int number_of_hash_functions,
+	int number_of_hash_tables,
 	metric_space current_metric_space);
 
 

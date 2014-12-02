@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/LSH.o \
 	${OBJECTDIR}/LSH_structs.o \
 	${OBJECTDIR}/PAM.o \
 	${OBJECTDIR}/assign_to_clusters.o \
@@ -60,8 +59,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/hamming_specialized_tools.o \
 	${OBJECTDIR}/initialize_medoids.o \
 	${OBJECTDIR}/k-medoids++.o \
+	${OBJECTDIR}/k-medoids.o \
 	${OBJECTDIR}/list.o \
-	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/mymain.o \
 	${OBJECTDIR}/probability_distr.o \
 	${OBJECTDIR}/reverse_assignment.o \
 	${OBJECTDIR}/update_Improved_PAM.o \
@@ -93,11 +93,6 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/1h_anaptu3hs.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/1h_anaptu3hs ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/LSH.o: LSH.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LSH.o LSH.c
 
 ${OBJECTDIR}/LSH_structs.o: LSH_structs.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -219,15 +214,20 @@ ${OBJECTDIR}/k-medoids++.o: k-medoids++.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/k-medoids++.o k-medoids++.c
 
+${OBJECTDIR}/k-medoids.o: k-medoids.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/k-medoids.o k-medoids.c
+
 ${OBJECTDIR}/list.o: list.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/list.o list.c
 
-${OBJECTDIR}/main.o: main.c 
+${OBJECTDIR}/mymain.o: mymain.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mymain.o mymain.c
 
 ${OBJECTDIR}/probability_distr.o: probability_distr.c 
 	${MKDIR} -p ${OBJECTDIR}

@@ -63,7 +63,7 @@ cluster * PAM(
 		}
 
 		//printf("%d\n",i );
-		clusters[nearestMedoidIndex].elementsIndexes = realloc(clusters[nearestMedoidIndex].elementsIndexes, (size +1) * sizeof(int));
+		clusters[nearestMedoidIndex].elementsIndexes = realloc(clusters[nearestMedoidIndex].elementsIndexes, (clusters[nearestMedoidIndex].size +1) * sizeof(int));
 		clusters[nearestMedoidIndex].elementsIndexes[clusters[nearestMedoidIndex].size] = i;
 		//printf("nearestMedoidIndex = %d size = \n",nearestMedoidIndex, size );
 		//printf("%d\n",clusters[nearestMedoidIndex].elementsIndexes[size] );

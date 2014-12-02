@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <errno.h>
+#include "probability_distr.h"
 
 int doublebinarysearch(double x, double a[], int m, int n);
 int binarysearch(int x, int a[], int m, int n);
@@ -12,12 +13,12 @@ int * Spreadout(
 	int size, 
 	int k)
 {
-	int k2=1, medoidIndex, i, j, r, clu;
+	int k2=1, medoidIndex, i, j, r, clu, temp, already_in;
 	double *D, *P, randNum;
 	int * medoidsIndex = malloc(k*sizeof(int));
 	D = malloc(size * sizeof(double));
 	P = malloc(size * sizeof(double));
-	medoidsIndex[k2-1] = uniform_distribution(0, size-1);
+	medoidsIndex[k2-1] = uniform_distr(0, size-1);
 	while(k2!=k){
 		for(i=0; i<size; i++){
 			D[i]= distance_matrix[medoidsIndex[0]][i];
@@ -35,8 +36,16 @@ int * Spreadout(
 				P[r] += pow(D[j],2);
 			}
 		}
-		randNum = uniform_distribution(0, P[size-1]);
-		medoidsIndex[k2] = doublebinarysearch(randNum, P, 0, size);
+		do{
+			already_in= 0;
+			randNum = uniform_distr(0, P[size-1]);
+			temp= doublebinarysearch(randNum, P, 0, size);
+			for(j= 0; j < k2; j++){
+				if( medoidsIndex[j] == temp)
+					already_in= 1;
+			}
+		}while(already_in == 1);
+		medoidsIndex[k2]= temp;
 		k2++;
 	}
 	for(i=0; i<k; i++){

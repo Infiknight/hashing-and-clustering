@@ -1,4 +1,5 @@
 #include "assign_to_clusters_p.h"
+#include <stdlib.h>
 
 /**
  * Used exclusively by assign_to_clusters to enforce parity between the outputs
@@ -23,9 +24,10 @@ int * clusterToArray(cluster * clusters, int k){
         }
     }
 	for(i= 0; i < k; i++){
-		free(clusters[i].elementsIndexes);
-		free(clusters);
+		if(clusters[i].elementsIndexes != NULL)
+			free(clusters[i].elementsIndexes);
 	}
+	free(clusters);
     return array;
  
 }
@@ -35,7 +37,10 @@ int * assign_to_clusters(
 	int * medoids,
 	int k,
 	element ** data_table,
+	double ** distance_matrix,
 	int dt_size,
+	int number_of_hash_functions,
+	int number_of_hash_tables,
 	metric_space current_space)
 {
 	if(choice == 1){
@@ -44,5 +49,5 @@ int * assign_to_clusters(
 		return clusterToArray(clusters, k);
 	}
 	else if(choice == 2)
-		return reverse_assignment(medoids, k, distance_matrix, data_table, dt_size, current_space);
+		return reverse_assignment(medoids, k, distance_matrix, data_table, dt_size, number_of_hash_functions, number_of_hash_tables, current_space);
 }

@@ -30,7 +30,10 @@ int * assign_to_clusters(
 	int * medoids,
 	int k,
 	element ** data_table,
+	double ** distance_matrix,
 	int dt_size,
+	int number_of_hash_functions,
+	int number_of_hash_tables,
 	metric_space current_space);
 
 

@@ -23,22 +23,18 @@ int * clarans(
 	element ** data_table,
 	int * assignment,
 	int n,
-	metric_space current_metric_space)
+	int clarans_set_fraction,
+	int clarans_iterations)
 {
 	int * current_node= malloc(k*sizeof(int));
 	int * neighbor= malloc(k*sizeof(int));
 	int * bestNode= NULL;
-	int numLocal= 2,
-		maxNeighbors,
+	int numLocal= clarans_iterations,
+		maxNeighbors= clarans_set_fraction,
 		temp, j, i, i_2, x, m, t;
 	double total_cost_current,
 		total_cost_neighbor,
 		minCost= -1;
-	temp= (int) floor(0.15*k*(n-k));
-	if(temp > 250)
-		maxNeighbors= temp;
-	else
-		maxNeighbors= 250;
 	for(i= 0; i < numLocal; i++){
 		for(i_2= 0; i_2 < k; i_2++){
 			current_node[i_2]= uniform_distr(0, n-1);
