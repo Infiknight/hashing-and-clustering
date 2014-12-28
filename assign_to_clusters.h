@@ -26,6 +26,7 @@ extern "C" {
  * @return 
  */
 int * assign_to_clusters(
+	void ** seeds_h_tables,
 	int choice,
 	int * medoids,
 	int k,

@@ -40,6 +40,7 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/reverse_assignment.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_parser.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/initialize.h</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/silhouette.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/PAM.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming_specialized_tools.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/update_Improved_PAM.c</file>
@@ -60,11 +61,13 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming_search.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/initialize_medoids_p.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/silhouette.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/concentrate.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/k-medoids.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/compare.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/k-medoids.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/main.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.h</file>
-            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming_search.c.csv</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming_p.h</file>
         </group>
     </open-files>

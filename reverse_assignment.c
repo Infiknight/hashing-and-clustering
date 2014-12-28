@@ -3,7 +3,14 @@
 #include <stdlib.h>
 #include "reverse_assignment.h"
 //asdkjgflshdgfj
+typedef struct Seed_table_bundle{
+	int * hash_table_size;
+	seed ** seed_table;
+	bucket *** hash_table;
+}seed_table_bundle;
+
 int * reverse_assignment(
+	void ** seeds_h_tables,
 	int * medoids,
 	int medoids_size,
 	double ** distance_matrix,
@@ -33,11 +40,25 @@ int * reverse_assignment(
 		}
 	}
 	radius/= 2;
-	int  hash_table_size[L];
-	seed * seed_table[L];
-	bucket ** hash_table[L];
-	for(i= 0; i < L; i++){
-		hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k, current_metric_space);
+	int * hash_table_size;
+	seed ** seed_table;
+	bucket *** hash_table;
+	if(*seeds_h_tables == NULL){
+		*seeds_h_tables= malloc(sizeof(seed_table_bundle));
+		seed_table= malloc(L*sizeof(seed*));
+		hash_table= malloc(L*sizeof(bucket**));
+		hash_table_size= malloc(L*sizeof(int));
+		((seed_table_bundle*) *seeds_h_tables)->seed_table= seed_table;
+		((seed_table_bundle*) *seeds_h_tables)->hash_table= hash_table;
+		((seed_table_bundle*) *seeds_h_tables)->hash_table_size= hash_table_size;
+		for(i= 0; i < L; i++){
+			hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k, current_metric_space);
+		}
+	}
+	else{
+		seed_table= ((seed_table_bundle*) *seeds_h_tables)->seed_table;
+		hash_table= ((seed_table_bundle*) *seeds_h_tables)->hash_table;
+		hash_table_size= ((seed_table_bundle*) *seeds_h_tables)->hash_table_size;
 	}
 	int results_no;
 	element * query;
@@ -101,11 +122,11 @@ int * reverse_assignment(
 	//	data_table,
 	//	dt_size);
 	//int j;
-	for(i= 0; i < L; i++){
+	/*for(i= 0; i < L; i++){
 		for(j= 0;j <  hash_table_size[j]; j++){
 			bucket_destruct(hash_table[i][j]);
 		}
 		free(hash_table[i]);
-	}
+	}*/
 	return medoid_allocation_table;
 }

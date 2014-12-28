@@ -17,6 +17,7 @@ extern "C" {
 #include <stdio.h>
 	
 int * reverse_assignment(
+	void ** seeds_h_tables,
 	int * medoids,
 	int medoids_size,
 	double ** distance_matrix,

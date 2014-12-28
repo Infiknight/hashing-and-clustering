@@ -16,9 +16,9 @@ double silhouette(
 	for(i =0; i < dt_size; i++){
 		sum_of_distances= 0;
 		distances_count= 0;
-		for(i= 0; i < medoids_size; i++){
-			sum_of_distances_to_alien[i]= 0;
-			distances_count_to_alien[i]= 0;
+		for(j= 0; j < medoids_size; j++){
+			sum_of_distances_to_alien[j]= 0;
+			distances_count_to_alien[j]= 0;
 		}
 		for(j =0; j < dt_size; j++){
 			if(assignment[i] == assignment[j]){
@@ -26,24 +26,24 @@ double silhouette(
 				distances_count++;
 			}
 			else{
-				sum_of_distances_to_alien[medoids[assignment[j]]]+= distance_matrix[i][j];
-				distances_count_to_alien[medoids[assignment[j]]]++;
+				sum_of_distances_to_alien[assignment[j]]+= distance_matrix[i][j];
+				distances_count_to_alien[assignment[j]]++;
 			}
 		}
 		a[i]= sum_of_distances/distances_count;
-		if(medoids[i] != 0)
+		if(medoids[assignment[i]] != 0)
 			b[i]= sum_of_distances_to_alien[0]/distances_count_to_alien[0];
 		else
 			b[i]= sum_of_distances_to_alien[1]/distances_count_to_alien[1];
 		for(j= 0; j < medoids_size; j++){
-			if(medoids[j] != j){
-				if(b[j] > sum_of_distances_to_alien[j]/distances_count_to_alien[j])
-					b[j]= sum_of_distances_to_alien[j]/distances_count_to_alien[j];
+			if(medoids[j] != medoids[assignment[i]]){
+				if(b[i] > sum_of_distances_to_alien[j]/distances_count_to_alien[j])
+					b[i]= sum_of_distances_to_alien[j]/distances_count_to_alien[j];
 			}
 		}
-		if( a[i] < b[i] )
+		if( a[i] < b[i] && b[i] != 0)
 			s[i]= 1 - a[i]/b[i];
-		else if( a[i] == b[i] )
+		else if( a[i] == b[i] || a[i] == 0 || b[i] == 0)
 			s[i]= 0;
 		else
 			s[i]= b[i]/a[i] - 1;
@@ -52,5 +52,5 @@ double silhouette(
 	for(i= 0; i < dt_size; i++){
 		sum+= s[i];
 	}
-	return sum / dt_size;
+	return sum / (double) dt_size;
 }

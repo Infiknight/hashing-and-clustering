@@ -33,6 +33,7 @@ int * clusterToArray(cluster * clusters, int k){
 }
 
 int * assign_to_clusters(
+	void ** seeds_h_tables,
 	int choice,
 	int * medoids,
 	int k,
@@ -49,5 +50,5 @@ int * assign_to_clusters(
 		return clusterToArray(clusters, k);
 	}
 	else if(choice == 2)
-		return reverse_assignment(medoids, k, distance_matrix, data_table, dt_size, number_of_hash_functions, number_of_hash_tables, current_space);
+		return reverse_assignment(seeds_h_tables, medoids, k, distance_matrix, data_table, dt_size, number_of_hash_functions, number_of_hash_tables, current_space);
 }

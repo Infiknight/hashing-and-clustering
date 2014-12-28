@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
 	int datasetArrSize=0, size=0;
 	int * medoids, *newMedoids;
 	//cluster * clusters;
-	struct hamming_element * datasetArr;
+	//struct hamming_element * datasetArr;
 	element ** data_table;
 	char inputFile[100]={0};
 	char confFile[100]={0};
@@ -30,34 +30,39 @@ int main(int argc, char *argv[]){
 	int claransSetFraction = -1;
 	int claransIterations = 2;
 	int value;
+	int choice_1, choice_2, choice_3;
 	int complete = 0;
 
 
 	printf("ARG = %d\n", argc);
-		strcpy(inputFile ,"DataEuclidean.csv");
-		strcpy(confFile, "random.txt");
-		strcpy(outputFile, "output.txt");
-		complete = 1;
-	/*if(argc==7){
+		//strcpy(inputFile ,"DataEuclidean.csv");
+		//strcpy(confFile, "random.txt");
+		//strcpy(outputFile, "output.txt");
+		//complete = 1;
+	if(argc==7){
 		strcpy(inputFile ,argv[2]);
 		strcpy(confFile, argv[4]);
 		strcpy(outputFile, argv[6]);
 	}
-	else if((argc==8) && (strcmp(argv[7], "–complete") == 0)) {
+	else if((argc==8) && ((strcmp(argv[7], "–complete") == 0) || (strcmp(argv[7], "-complete"))== 0)) {
 		strcpy(inputFile ,argv[2]);
 		strcpy(confFile, argv[4]);
 		strcpy(outputFile, argv[6]);
 		complete = 1;
 	}
 	else{
-		printf("Please run again with the correct parameters\n");
-		return -1;
-	}*/
+            strcpy(inputFile ,"DataHamming.csv");
+            strcpy(confFile, "random.txt");
+            strcpy(outputFile, "output.txt");
+            complete = 1;
+		//printf("Please run again with the correct parameters\n");
+		//return -1;
+	}
 
 	curtime = time(NULL); 
 	srand((unsigned int) curtime); 
 
-	printf("input = %s conf = %s out = %s\n", inputFile, confFile, outputFile );
+	//printf("input = %s conf = %s out = %s\n", inputFile, confFile, outputFile );
 
 	//printf("Enter the path of the input file: ");
 	//fscanf(stdin, "%s", inputFile);
@@ -133,10 +138,15 @@ int main(int argc, char *argv[]){
 	
 
 
-
-
-	kmedoids( fpInput, current_space, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, complete);
-	
+	//for(choice_1=1; choice_1<=2; choice_1++){
+	//	for(choice_2=1; choice_2<=2; choice_2++){
+	//		for(choice_3=1; choice_3<=2; choice_3++){
+	//			
+					kmedoids( fpInput, current_space, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 1, 2 ,1, complete);
+	//			
+	//		}
+	//	}
+	//}
 
 	return 0;
 }
