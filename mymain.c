@@ -142,7 +142,7 @@ int main(int argc, char *argv[]){
 	//	for(choice_2=1; choice_2<=2; choice_2++){
 	//		for(choice_3=1; choice_3<=2; choice_3++){
 	//			
-					kmedoids( fpInput, current_space, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 1, 2 ,1, complete);
+					kmedoids( fpInput, current_space, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 1, 2 ,2, complete);
 	//			
 	//		}
 	//	}

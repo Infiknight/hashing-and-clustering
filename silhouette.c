@@ -31,7 +31,7 @@ double silhouette(
 			}
 		}
 		a[i]= sum_of_distances/distances_count;
-		if(medoids[assignment[i]] != 0)
+		if(assignment[i] != 0)
 			b[i]= sum_of_distances_to_alien[0]/distances_count_to_alien[0];
 		else
 			b[i]= sum_of_distances_to_alien[1]/distances_count_to_alien[1];

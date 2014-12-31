@@ -3,6 +3,20 @@
 #include <stdlib.h>
 #include "reverse_assignment.h"
 //asdkjgflshdgfj
+double total_cost3(
+	double ** distance_matrix,
+	int n, 
+	int * medoids,
+	int * assignment)
+{
+	double sum= 0;
+	int i;
+	for(i= 0; i < n; i++){
+		sum+= distance_matrix[i][medoids[assignment[i]]];
+	}
+	return sum;
+}
+
 typedef struct Seed_table_bundle{
 	int * hash_table_size;
 	seed ** seed_table;
@@ -96,6 +110,7 @@ int * reverse_assignment(
 		radius*= 2;
 		current_iteration++;
 	}
+	printf("allocated through hashing %d\n", currently_allocated);
 	double minimum_distance;
 	for(i= 0; i < dt_size; i++){
 		if(currently_allocated == dt_size)
@@ -112,6 +127,11 @@ int * reverse_assignment(
 			}
 		}
 	}
+	printf("r assignment cost %f\n",total_cost3(
+		distance_matrix,
+		dt_size, 
+		medoids,
+		medoid_allocation_table));
 	for(i= 0; i < dt_size; i++){
 		fprintf(qstream, "%s ' s medoid is %d\n", get_element_name(data_table[i], current_metric_space), medoid_allocation_table[i]);
 	}

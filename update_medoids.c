@@ -52,6 +52,7 @@ int * update_medoids(
 			k,
 			distance_matrix,
 			data_table,
+			old_medoids,
 			assignment,
 			dt_size,
 			clarans_set_fraction,

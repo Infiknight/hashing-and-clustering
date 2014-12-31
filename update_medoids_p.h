@@ -24,6 +24,7 @@ int * clarans(
 	int k,
 	double ** distance_matrix,
 	element ** data_table,
+	int * medoids,
 	int * assignment,
 	int n,
 	int clarans_set_fraction,

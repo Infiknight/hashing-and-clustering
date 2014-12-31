@@ -9,6 +9,20 @@
 #include "silhouette.h"
 #include "cluster.h"
 
+double total_cost2(
+	double ** distance_matrix,
+	int n, 
+	int * medoids,
+	int * assignment)
+{
+	double sum= 0;
+	int i;
+	for(i= 0; i < n; i++){
+		sum+= distance_matrix[i][medoids[assignment[i]]];
+	}
+	return sum;
+}
+
 int stoppingCondition(
 	double ** distance_matrix, 
 	int *medoids, 
@@ -33,31 +47,39 @@ int kmedoids( FILE * fpInput, metric_space current_space, int k, int numOfHashFu
 	do{	
 		//printf("COUNTER = %d\n", counter);
 		counter++;
-		assignment= assign_to_clusters(&seeds_and_htables, choice_2, newMedoids, k, data_table, distance_matrix_2, dt_size, numOfHashFunctions, L, current_space);	
+		assignment= assign_to_clusters(&seeds_and_htables, choice_2, newMedoids, k, data_table, distance_matrix_2, dt_size, numOfHashFunctions, L, current_space);
 		oldMedoids = newMedoids;
 		newMedoids = update_medoids(choice_3, assignment, distance_matrix_2, data_table, dt_size, oldMedoids, k, claransSetFraction, claransIterations);
+		printf("cost after assignment %f\n", total_cost2(
+			distance_matrix_2,
+			dt_size, 
+			newMedoids,
+			assignment));
+		for(i= 0; i < k; i++){
+			printf("medoid %d: %d\n", i, newMedoids[i]);
+		}
 		//seeds_and_htables= NULL;
-	}while(stoppingCondition(distance_matrix_2, oldMedoids, newMedoids, k)==0 && (counter != 5));
+	}while(stoppingCondition(distance_matrix_2, oldMedoids, newMedoids, k)==0 && (counter != -1));
 
 	gettimeofday(&end, NULL);
 
 	//printf("SIZE %d\n",clusters[0].size );
 
 	fprintf(fpOutput, "Algorithm: Ι%dA%dU%d\n", choice_1, choice_2, choice_3);
-	/*double sil= silhouette(
+	double sil= silhouette(
 		distance_matrix_2,
 		assignment,
 		dt_size,
 		newMedoids,
 		k);
-	printf("%lf\n", sil);*/
+	printf("%lf\n", sil);
 	clusters= assignmentToCluster(
 		assignment, 
 		distance_matrix_2,
 		dt_size, 
 		newMedoids,
 		k);
-        for(i=0; i<k; i++){
+    for(i=0; i<k; i++){
 		fprintf(fpOutput, "CLUSTER-%d {size: %d, medoid: item%d}\n", i+1, clusters[i].size, ((clusters[i].medoidIndex )+ 1) );
 	}
 	fprintf(fpOutput, "clustering_time: %f seconds\n", ((end.tv_sec * 1000000 + end.tv_usec)- (start.tv_sec * 1000000 + start.tv_usec))/1000000.00);
