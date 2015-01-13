@@ -44,14 +44,18 @@ typedef struct Seed{
 
 
 
-/**
- * Hash function based on the concatenation of other more basic functs
- * @param vector_0 The vector which we are going to hash.
- * @param seed_0 The seed which identifies an instance of this function
- * @param identifying_value The augment used to craft an augmented datum
- * @return 
- */
 int euc_concatenated_hash_function(
+	vector const * const vector_0,
+	seed const * const seed_0,
+	int * identifying_value,
+	vector_metric vector_metric_0);
+
+int euc_cos_concatenated_hash_function(
+	vector const * const vector_0,
+	seed const * const seed_0,
+	int * identifying_value);
+
+int euc_euc_concatenated_hash_function(
 	vector const * const vector_0,
 	seed const * const seed_0,
 	int * identifying_value);
@@ -72,7 +76,8 @@ int euc_search(
 	element *** results,
 	int * current_results_no,
 	seed const * const seed_0,
-	double radius);
+	double radius,
+	vector_metric vector_metric_0);
 	
 /**
  * Used by the concatenated hash function
@@ -82,11 +87,15 @@ int euc_search(
  * @param w size of cell
  * @return The base hash
  */
-long long euc_base_hash_function(
+long long euc_euc_base_hash_function(
 	vector const * const vector_0,
 	vector const * const vector_1,
 	double t,
 	int w);
+
+long long euc_cos_base_hash_function(
+	vector const * const vector_0,
+	vector const * const vector_1);
 
 #ifdef	__cplusplus
 }

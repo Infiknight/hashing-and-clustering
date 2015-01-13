@@ -11,7 +11,8 @@ bucket ** euc_hash_table_constructor(
 	int data_table_size,
 	int * hash_table_size,
 	seed ** seed_0_PPtr,
-	int k)
+	int k,
+	vector_metric vector_metric_0)
 {
 	augmented_data * augmented_data_Ptr;
 	int i, bucket_no, identifying_value;
@@ -33,7 +34,7 @@ bucket ** euc_hash_table_constructor(
 		seed_0->t_table[i]= ( (double)rand()/((double)RAND_MAX+1) )*W_SIZE;
 	}
 	for(i= 0; i < data_table_size; i++){
-		bucket_no= euc_concatenated_hash_function(data_table[i]->vector0, seed_0, &identifying_value);
+		bucket_no= euc_concatenated_hash_function(data_table[i]->vector0, seed_0, &identifying_value, vector_metric_0);
 		augmented_data_Ptr= malloc(sizeof(augmented_data));
 		augmented_data_Ptr->augment= identifying_value;
 		augmented_data_Ptr->data= data_table[i];

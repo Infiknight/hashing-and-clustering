@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/bucket.o \
 	${OBJECTDIR}/compare.o \
 	${OBJECTDIR}/concentrate.o \
+	${OBJECTDIR}/d_rmsd.o \
 	${OBJECTDIR}/distance_matrix.o \
 	${OBJECTDIR}/distance_matrix_hash_funcs.o \
 	${OBJECTDIR}/distance_matrix_hash_table.o \
@@ -63,6 +64,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/list.o \
 	${OBJECTDIR}/mymain.o \
 	${OBJECTDIR}/probability_distr.o \
+	${OBJECTDIR}/protein_handlers.o \
 	${OBJECTDIR}/reverse_assignment.o \
 	${OBJECTDIR}/silhouette.o \
 	${OBJECTDIR}/update_Improved_PAM.o \
@@ -72,7 +74,7 @@ OBJECTFILES= \
 
 
 # C Compiler Flags
-CFLAGS=-g
+CFLAGS=-g -Wall -Wextra
 
 # CC Compiler Flags
 CCFLAGS=
@@ -85,7 +87,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lgsl.dll -lgslcblas.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -124,6 +126,11 @@ ${OBJECTDIR}/concentrate.o: concentrate.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/concentrate.o concentrate.c
+
+${OBJECTDIR}/d_rmsd.o: d_rmsd.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/d_rmsd.o d_rmsd.c
 
 ${OBJECTDIR}/distance_matrix.o: distance_matrix.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -234,6 +241,11 @@ ${OBJECTDIR}/probability_distr.o: probability_distr.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/probability_distr.o probability_distr.c
+
+${OBJECTDIR}/protein_handlers.o: protein_handlers.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/protein_handlers.o protein_handlers.c
 
 ${OBJECTDIR}/reverse_assignment.o: reverse_assignment.c 
 	${MKDIR} -p ${OBJECTDIR}

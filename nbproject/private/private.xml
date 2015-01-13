@@ -17,6 +17,7 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_p.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/assign_to_clusters.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/proteins_p.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_p.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/assign_to_clusters.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix.h</file>
@@ -55,6 +56,7 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/list.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/compare.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/list.h</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/protein_handlers.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_hash_funcs.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_parser.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/update_clarans.c</file>
@@ -63,8 +65,10 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/silhouette.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/concentrate.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/proteins.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/k-medoids.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/compare.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/d_rmsd.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/k-medoids.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/main.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.h</file>

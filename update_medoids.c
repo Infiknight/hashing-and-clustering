@@ -58,4 +58,5 @@ int * update_medoids(
 			clarans_set_fraction,
 			clarans_iterations);
 	}
+	return -1;
 }

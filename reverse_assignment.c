@@ -1,7 +1,9 @@
 #include <float.h>
 #include <limits.h>
 #include <stdlib.h>
-#include "reverse_assignment.h"
+#include "LSH_structs.h"
+#include "bucket.h"
+#include <stdio.h>
 //asdkjgflshdgfj
 double total_cost3(
 	double ** distance_matrix,
@@ -32,7 +34,8 @@ int * reverse_assignment(
 	int dt_size,
 	int number_of_hash_functions,
 	int number_of_hash_tables,
-	metric_space current_metric_space)
+	metric_space current_metric_space,
+	vector_metric vector_metric_0)
 {
 	int L= number_of_hash_tables;
 	int k= number_of_hash_functions;
@@ -49,7 +52,7 @@ int * reverse_assignment(
 	for(i= 0; i < medoids_size-1; i++){
 		for(j= i+1; j < medoids_size; j++){
 			current_distance= distance_matrix[ medoids[i] ][ medoids[j] ];
-			if(radius > current_distance)
+			if((radius > current_distance) &&(current_distance > 0))
 				radius= current_distance;
 		}
 	}
@@ -66,7 +69,7 @@ int * reverse_assignment(
 		((seed_table_bundle*) *seeds_h_tables)->hash_table= hash_table;
 		((seed_table_bundle*) *seeds_h_tables)->hash_table_size= hash_table_size;
 		for(i= 0; i < L; i++){
-			hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k, current_metric_space);
+			hash_table[i]= hash_table_constructor(data_table, dt_size, &(hash_table_size[i]), &(seed_table[i]), k, current_metric_space, vector_metric_0);
 		}
 	}
 	else{
@@ -92,7 +95,8 @@ int * reverse_assignment(
 				radius,
 				query,
 				&results_no,
-				current_metric_space);
+				current_metric_space,
+				vector_metric_0);
 			for(j= 0; j < results_no; j++){
 				element_position= get_element_pos(results[j], current_metric_space);	//get current result's position in the data table
 				if( no_iteration_table[element_position] == -1 ){	//allocate to medoid if free

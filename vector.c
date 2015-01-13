@@ -95,6 +95,32 @@ double vector_euclidean_distance(
 	return sqrt(sum);
 }
 
+double vector_euclidean_norm(
+	vector const * const vector1)
+{
+	int i;
+	double sum= 0;
+	for(i= 0; i < vector1->dimensionality; i++){
+		sum+= pow(vector1->coordinates[i], 2);
+	}
+	return sqrt(sum);
+}
+
+double vector_cosine_distance(
+	vector const * const vector1,
+	vector const * const vector2)
+{
+	if( vector1 == vector2)
+		return 0;
+	if( vector1->dimensionality != vector2->dimensionality)
+		return -1;
+	double inner_product;
+	vector_inner_product(vector1, vector2, &inner_product);
+	inner_product/= vector_euclidean_norm(vector1);
+	inner_product/= vector_euclidean_norm(vector2);
+	return 1-inner_product;
+}
+
 int vector_dimensions(
 	vector const * const vector_0)
 {

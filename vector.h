@@ -82,6 +82,10 @@ double vector_euclidean_distance(
 	vector const * const vector1,
 	vector const * const vector2);
 
+double vector_cosine_distance(
+	vector const * const vector1,
+	vector const * const vector2);
+
 /**
  * Returns a vector's number of dimensions
  * @param vector_0	The vector whose dimensionality we want to know.

@@ -18,6 +18,10 @@ struct Tagged_double{
 };
 typedef struct Tagged_double tagged_double;
 	
+int comp_int(
+	const void * elem1,
+	const void * elem2);
+
 /**
  * Compare doubles elem1 and elem2 and return 1 if elem1 is greater than elem2,
  * -1 if elem2 is greater than elem1 and 0 if they are equal

@@ -11,7 +11,8 @@
 int euclidean_LSH(
 	FILE * stream,
 	int L,
-	int k)
+	int k,
+	vector_metric vector_metric_0)
 {
 	int i;
 	char line[LINE_SIZE];
@@ -26,7 +27,7 @@ int euclidean_LSH(
 	seed * seed_table[L];
 	bucket ** hash_table[L];
 	for(i= 0; i < L; i++){
-		hash_table[i]= euc_hash_table_constructor(data_table, size, &(hash_table_size[i]), &(seed_table[i]), k );
+		hash_table[i]= euc_hash_table_constructor(data_table, size, &(hash_table_size[i]), &(seed_table[i]), k , vector_metric_0);
 	}
 	element ** results= NULL;
 	int current_results_no= 0;
@@ -45,12 +46,14 @@ int euclidean_LSH(
 		data_table,
 		radius,
 		query,
-		&results_no);
+		&results_no,
+		vector_metric_0);
 	euc_exhaustive_search(
 		data_table,
 		size,
 		query,
-		qstream);
+		qstream,
+		vector_metric_0);
 	fclose(qstream);
 	//CLEANUP
 	euc_parser_clean(
@@ -64,4 +67,5 @@ int euclidean_LSH(
 		}
 		free(hash_table[i]);
 	}
+	return 0;
 }

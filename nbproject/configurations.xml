@@ -25,6 +25,7 @@
         <itemPath>distance_matrix_p.h</itemPath>
         <itemPath>euclidean_p.h</itemPath>
         <itemPath>hamming_p.h</itemPath>
+        <itemPath>proteins_p.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
@@ -44,12 +45,13 @@
       <itemPath>euclidean.h</itemPath>
       <itemPath>hamming.h</itemPath>
       <itemPath>initialize.h</itemPath>
-      <itemPath>reverse_assignment.h</itemPath>
+      <itemPath>proteins.h</itemPath>
       <itemPath>update_step.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>bio_small_input.dat</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -92,6 +94,10 @@
         <itemPath>hamming.c</itemPath>
         <itemPath>hamming_search.c</itemPath>
         <itemPath>hamming_specialized_tools.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="proteins" projectFiles="true">
+        <itemPath>d_rmsd.c</itemPath>
+        <itemPath>protein_handlers.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
@@ -145,6 +151,8 @@
       </item>
       <item path="assign_to_clusters_p.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="bio_small_input.dat" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
@@ -156,6 +164,8 @@
       <item path="compare.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="concentrate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="d_rmsd.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -230,9 +240,13 @@
       </item>
       <item path="probability_distr.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
+      <item path="protein_handlers.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
+      <item path="proteins.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="proteins_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="silhouette.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -264,7 +278,7 @@
       <compileType>
         <cTool>
           <commandlineTool>gcc</commandlineTool>
-          <commandLine>-g</commandLine>
+          <commandLine>-g -Wall -Wextra</commandLine>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -275,6 +289,12 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>gsl.dll</linkerLibLibItem>
+            <linkerLibLibItem>gslcblas.dll</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -290,6 +310,8 @@
       </item>
       <item path="assign_to_clusters_p.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="bio_small_input.dat" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bucket.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bucket.h" ex="false" tool="3" flavor2="0">
@@ -301,6 +323,8 @@
       <item path="compare.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="concentrate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="d_rmsd.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="distance_matrix.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -375,9 +399,13 @@
       </item>
       <item path="probability_distr.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
+      <item path="protein_handlers.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="reverse_assignment.h" ex="false" tool="3" flavor2="0">
+      <item path="proteins.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="proteins_p.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="reverse_assignment.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="silhouette.c" ex="false" tool="0" flavor2="0">
       </item>

@@ -15,7 +15,7 @@ int * concentrate(
 {
 	tagged_double v_table[size];
 	double sum1, sum2;
-	int i, j, t;
+	int i, j, t, count= 0;
 	for(i= 0; i < size; i++){
 		sum1= 0;
 		for(j= 0; j < size; j++){
@@ -30,8 +30,23 @@ int * concentrate(
 	}
 	qsort(v_table, size, sizeof(tagged_double), comp_tagged_double);
 	int * medoids= malloc(k*sizeof(int));
-	for(i= 0; i < k; i++){
-		medoids[i]= v_table[i].tag;
+	int skip= 0;
+	for(i= 0; i < size; i++){
+		for(j= 0; j < count; j++){
+			if(distance_matrix[v_table[i].tag][medoids[j]] == 0){
+				skip= 1;
+				break;
+			}
+		}
+		if(skip == 1){
+			skip= 0;
+			continue;
+		}
+		medoids[count]= v_table[i].tag;
+		count++;
+		if(count == k)
+			break;
+		
 	}
 	return medoids;
 }

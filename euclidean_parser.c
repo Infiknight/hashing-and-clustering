@@ -30,8 +30,10 @@ element ** euc_parser(
 		fgets(line, LINE_SIZE, stream);
 		vector_add_dimension( data_table[*iter]->vector0, strtod(strtok(line, "	"),NULL) );
 		while( (str= strtok(NULL, "	")) != NULL){
-			vector_add_dimension( data_table[*iter]->vector0, strtod(str,NULL));
+			if(strcmp(str, "\n") != 0)
+				vector_add_dimension( data_table[*iter]->vector0, strtod(str,NULL));
 		}
+		printf("dims %d\n", vector_dimensions(data_table[*iter]->vector0));
 		(*iter)++;
 	}
 	return data_table;
@@ -47,4 +49,5 @@ int euc_parser_clean(
 		vector_destruct(data_table[i]->vector0);
 	}
 	free(data_table);
+	return 0;
 }

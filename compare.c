@@ -1,5 +1,16 @@
 #include "compare.h"
 
+int comp_int(
+	const void * elem1,
+	const void * elem2)
+{
+    int f = *((int*)elem1);
+    int s = *((int*)elem2);
+    if (f > s) return  1;
+    if (f < s) return -1;
+    return 0;
+}
+
 double comp_double(
 	const void * elem1,
 	const void * elem2)

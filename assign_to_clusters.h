@@ -35,7 +35,8 @@ int * assign_to_clusters(
 	int dt_size,
 	int number_of_hash_functions,
 	int number_of_hash_tables,
-	metric_space current_space);
+	metric_space current_space,
+	vector_metric vector_metric_0);
 
 
 #ifdef	__cplusplus

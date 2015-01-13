@@ -51,7 +51,7 @@ int main(int argc, char *argv[]){
 		complete = 1;
 	}
 	else{
-            strcpy(inputFile ,"DataHamming.csv");
+            strcpy(inputFile ,"small.dat");
             strcpy(confFile, "random.txt");
             strcpy(outputFile, "output.txt");
             complete = 1;
@@ -87,10 +87,10 @@ int main(int argc, char *argv[]){
 	}
 
 
-	fscanf(fpInput, "%s%s", a, metricSpace);
-	printf("Metric = %s\n",metricSpace );
+	//fscanf(fpInput, "%s%s", a, metricSpace);
+	//printf("Metric = %s\n",metricSpace );
 
-	fseek(fpInput, 0, SEEK_SET);
+	//fseek(fpInput, 0, SEEK_SET);
 
 	while(fscanf(fpConf, "%s%d", variable, &value) != EOF){
 		if(strcmp(variable, "number_of_clusters:") == 0 ){
@@ -117,15 +117,16 @@ int main(int argc, char *argv[]){
 
 	printf("%d %d %d %d %d\n", k , numOfHashFunctions, L, claransSetFraction, claransIterations);
 	
-	metric_space current_space;
-	if (strcmp(metricSpace, "hamming")==0){
+	metric_space current_space= euclidean;
+	vector_metric vector_metric_0= euclidean_metric;
+	/*if (strcmp(metricSpace, "hamming")==0){
 		current_space= hamming;
 	}
 	else if (strcmp(metricSpace, "vector")==0){
 		current_space= euclidean;
 	}
 	else if(strcmp(metricSpace , "matrix") == 0)
-			current_space= distance_matrix;
+			current_space= distance_matrix;*/
 	if(claransSetFraction == -1){
 		if( (int)(0.12 *k*(datasetArrSize-k)) > 250){
 			claransSetFraction = (int)(0.12 *k*(datasetArrSize-k));
@@ -142,7 +143,7 @@ int main(int argc, char *argv[]){
 	//	for(choice_2=1; choice_2<=2; choice_2++){
 	//		for(choice_3=1; choice_3<=2; choice_3++){
 	//			
-					kmedoids( fpInput, current_space, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 1, 2 ,2, complete);
+					kmedoids( fpInput, current_space, vector_metric_0, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 2, 2 ,2, complete);
 	//			
 	//		}
 	//	}

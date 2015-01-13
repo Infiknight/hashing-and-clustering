@@ -21,8 +21,15 @@ typedef struct Seed seed;
 typedef enum Metric_space{
 	hamming,
 	euclidean,
-	distance_matrix
+	distance_matrix,
+	protein_c_rmsd,
+	protein_d_rmsd
 } metric_space;
+
+typedef enum{
+	euclidean_metric,
+	cosine_metric
+}vector_metric;
 
 bucket ** hash_table_constructor(
 	element ** data_table,
@@ -30,7 +37,8 @@ bucket ** hash_table_constructor(
 	int * hash_table_size,
 	seed ** seed_0_PPtr,
 	int k,
-	metric_space current_space);
+	metric_space current_space,
+	vector_metric vector_metric_0);
 
 int get_element_pos(
 	element * element_ptr,
@@ -49,17 +57,20 @@ element ** L_search(
 	double radius,
 	element * query,
 	int * results_no,
-	metric_space current_space);
+	metric_space current_space,
+	vector_metric vector_metric_0);
 
 element ** generic_parser(
 	FILE * stream,
 	int * dt_size,
-	metric_space current_space);
+	metric_space current_space,
+	int r);
 
 double ** general_generate_distance_matrix(
 	void * data_table,
 	int dt_size,
-	metric_space current_space);
+	metric_space current_space,
+	vector_metric vector_metric_0);
 
 int general_clean_distance_matrix(
 	double ** distance_matrix_2,

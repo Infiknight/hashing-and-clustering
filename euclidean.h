@@ -27,12 +27,14 @@ extern "C" {
 int euclidean_LSH(
 	FILE * stream,
 	int L,
-	int k);
+	int k,
+	vector_metric);
 
 double euc_distance(
 	void * data_table,
 	int index_1,
-	int index_2);
+	int index_2,
+	vector_metric vector_metric_0);
 
 char * euc_get_element_name(
 	element * element_ptr);
@@ -58,7 +60,8 @@ element ** euc_L_search(
 	element ** data_table,
 	double radius,
 	element * query,
-	int * results_no);
+	int * results_no,
+	vector_metric vector_metric_0);
 
 /**
  * Exhaustive search for the nearest neighbour of the query in the data_table.
@@ -72,7 +75,8 @@ int euc_exhaustive_search(
 	element ** data_table,
 	int size,
 	element * query,
-	FILE * stream);
+	FILE * stream,
+	vector_metric vector_metric_0);
 
 /**
  * Parses the input stream to build our data table
@@ -111,7 +115,8 @@ bucket ** euc_hash_table_constructor(
 	int data_table_size,
 	int * hash_table_size,
 	seed ** seed_0_PPtr,
-	int k);
+	int k,
+	vector_metric vector_metric_0);
 
 #ifdef	__cplusplus
 }

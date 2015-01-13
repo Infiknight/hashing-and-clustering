@@ -29,25 +29,25 @@ int stoppingCondition(
 	int *newMedoids, 
 	int k);
 
-int kmedoids( FILE * fpInput, metric_space current_space, int k, int numOfHashFunctions,
+int kmedoids( FILE * fpInput, metric_space current_space, vector_metric vector_metric_0,int k, int numOfHashFunctions,
 			int L, int claransSetFraction, int claransIterations, FILE *fpOutput, int choice_1, int choice_2, int choice_3 ,int complete){
 	
 	int i, j;
-	int * medoids, *newMedoids, *oldMedoids, dt_size, * assignment;
+	int *newMedoids, *oldMedoids, dt_size, * assignment;
 	struct timeval start, end;
 	void * seeds_and_htables= NULL;
 	cluster* clusters;
 	element ** data_table= NULL;
 	double ** distance_matrix_2;
 	gettimeofday(&start, NULL);
-	data_table= generic_parser(fpInput, &dt_size, current_space);
-	distance_matrix_2= general_generate_distance_matrix((void*)data_table, dt_size, current_space);
+	data_table= generic_parser(fpInput, &dt_size, current_space, 1000);
+	distance_matrix_2= general_generate_distance_matrix((void*)data_table, dt_size, current_space, vector_metric_0);
 	newMedoids = initialize(distance_matrix_2, dt_size, k, choice_1);
 	int counter= 0;
 	do{	
 		//printf("COUNTER = %d\n", counter);
 		counter++;
-		assignment= assign_to_clusters(&seeds_and_htables, choice_2, newMedoids, k, data_table, distance_matrix_2, dt_size, numOfHashFunctions, L, current_space);
+		assignment= assign_to_clusters(&seeds_and_htables, choice_2, newMedoids, k, data_table, distance_matrix_2, dt_size, numOfHashFunctions, L, current_space, vector_metric_0);
 		oldMedoids = newMedoids;
 		newMedoids = update_medoids(choice_3, assignment, distance_matrix_2, data_table, dt_size, oldMedoids, k, claransSetFraction, claransIterations);
 		printf("cost after assignment %f\n", total_cost2(
@@ -92,6 +92,7 @@ int kmedoids( FILE * fpInput, metric_space current_space, int k, int numOfHashFu
 			fprintf(fpOutput, "}\n");
 		}
 	}
+	return 0;
 }
 
 int stoppingCondition(
@@ -102,7 +103,7 @@ int stoppingCondition(
 {
 	int stop = 0, i;
 	for(i=0; i<k; i++){
-		if( distance_matrix[medoids[i]][newMedoids[i]] < 3 ){
+		if( distance_matrix[medoids[i]][newMedoids[i]] < 0.1 ){
 			stop++;
 		}
 	}

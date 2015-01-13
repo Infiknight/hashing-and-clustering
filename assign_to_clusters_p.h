@@ -30,7 +30,8 @@ int * reverse_assignment(
 	int dt_size,
 	int number_of_hash_functions,
 	int number_of_hash_tables,
-	metric_space current_metric_space);
+	metric_space current_metric_space,
+	vector_metric vector_metric_0);
 
 int * clusterToArray(cluster * clusters, int k);
 

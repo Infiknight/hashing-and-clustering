@@ -1,5 +1,6 @@
 #include "distance_matrix_p.h"
 #include <math.h>
+#include <stdlib.h>
 #include "compare.h"
 
 double line_projection(

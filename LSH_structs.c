@@ -2,6 +2,7 @@
 #include "euclidean.h"
 #include "distance_matrix.h"
 #include "hamming.h"
+#include "proteins.h"
 #include <stdlib.h>
 
 int get_element_pos(
@@ -10,10 +11,11 @@ int get_element_pos(
 {
 	if(current_space == euclidean)
 		return euc_get_element_pos(element_ptr);
-	else if(current_space == distance_matrix)
+	else if((current_space == distance_matrix) || (current_space == protein_c_rmsd) || (current_space == protein_d_rmsd))
 		return dm_get_element_pos(element_ptr);
 	else if(current_space == hamming)
 		return hamming_get_element_pos(element_ptr);
+	return -1;
 }
 
 char * get_element_name(
@@ -22,10 +24,11 @@ char * get_element_name(
 {
 	if(current_space == euclidean)
 		return euc_get_element_name(element_ptr);
-	else if(current_space == distance_matrix)
+	else if((current_space == distance_matrix) || (current_space == protein_c_rmsd) || (current_space == protein_d_rmsd))
 		return dm_get_element_name(element_ptr);
 	else if(current_space == hamming)
 		return hamming_get_element_name(element_ptr);
+	return NULL;
 }
 
 bucket ** hash_table_constructor(
@@ -34,7 +37,8 @@ bucket ** hash_table_constructor(
 	int * hash_table_size,
 	seed ** seed_0_PPtr,
 	int k,
-	metric_space current_space)
+	metric_space current_space,
+	vector_metric vector_metric_0)
 {
 	if(current_space == euclidean)
 		return euc_hash_table_constructor(
@@ -42,8 +46,9 @@ bucket ** hash_table_constructor(
 			data_table_size,
 			hash_table_size,
 			seed_0_PPtr,
-			k);
-	else if(current_space == distance_matrix)
+			k,
+			vector_metric_0);
+	else if((current_space == distance_matrix) || (current_space == protein_c_rmsd) || (current_space == protein_d_rmsd))
 		return dm_hash_table_constructor(
 			data_table,
 			data_table_size,
@@ -57,6 +62,7 @@ bucket ** hash_table_constructor(
 			hash_table_size,
 			seed_0_PPtr,
 			k);
+	return NULL;
 }
 
 element ** L_search(
@@ -68,7 +74,8 @@ element ** L_search(
 	double radius,
 	element * query,
 	int * results_no,
-	metric_space current_space)
+	metric_space current_space,
+	vector_metric vector_metric_0)
 {
 	if(current_space == euclidean)
 		return euc_L_search(
@@ -79,8 +86,9 @@ element ** L_search(
 			data_table,
 			radius,
 			query,
-			results_no);
-	else if(current_space == distance_matrix)
+			results_no,
+			vector_metric_0);
+	else if((current_space == distance_matrix) || (current_space == protein_c_rmsd) || (current_space == protein_d_rmsd))
 		return dm_L_search(
 			L, 
 			stream,
@@ -100,12 +108,14 @@ element ** L_search(
 			radius,
 			query,
 			results_no);
+	return NULL;
 }
 
 element ** generic_parser(
 	FILE * stream,
 	int * dt_size,
-	metric_space current_space)
+	metric_space current_space,
+	int r)
 {
 	if(current_space == euclidean)
 		return euc_parser(
@@ -115,16 +125,27 @@ element ** generic_parser(
 		return dm_parser(
 			stream,
 			dt_size);
+	else if(current_space == protein_c_rmsd)
+		return protein_parser_c(
+			stream,
+			dt_size);
+	else if(current_space == protein_d_rmsd)
+		return protein_parser_d(
+			stream,
+			dt_size,
+			r);
 	else if(current_space == hamming)
 		return hamming_parser(
 			stream,
 			dt_size);
+	return NULL;
 }
 
 double ** general_generate_distance_matrix(
 	void * data_table,
 	int dt_size,
-	metric_space current_space)
+	metric_space current_space,
+	vector_metric vector_metric_0)
 {
 	double ** distance_matrix_2= (double**) malloc(dt_size * sizeof(double*));
 	int i, j;
@@ -132,10 +153,10 @@ double ** general_generate_distance_matrix(
 		distance_matrix_2[i]= (double*) malloc(dt_size * sizeof(double));
 		for(j= 0; j < dt_size; j++){
 			if( i < j ){
-				if(current_space == distance_matrix)
+				if((current_space == distance_matrix) || (current_space == protein_c_rmsd) || (current_space == protein_d_rmsd))
 					distance_matrix_2[i][j]= dm_distance( data_table, i, j);
 				else if(current_space == euclidean)
-					distance_matrix_2[i][j]= euc_distance( data_table, i, j);
+					distance_matrix_2[i][j]= euc_distance( data_table, i, j, vector_metric_0);
 				else if(current_space == hamming)
 					distance_matrix_2[i][j]= hamming_distance( data_table, i, j);
 			}

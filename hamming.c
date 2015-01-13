@@ -6,6 +6,12 @@
 #include "hamming.h"
 #include "hamming_p.h"
 
+int uniform_distribution(int low, int high) {
+    double rand2 = rand()/(1.0 + RAND_MAX); 
+    int range = high - low + 1;
+    int rand3 = (rand2 * range) + low;
+    return rand3;
+}
 
 element ** hamming_parser(
 	FILE *fp,
@@ -105,15 +111,8 @@ int g(
 	return bucketIndex;
 }
 
-int uniform_distribution(int low, int high) {
-    double rand2 = rand()/(1.0 + RAND_MAX); 
-    int range = high - low + 1;
-    int rand3 = (rand2 * range) + low;
-    return rand3;
-}
-
 int binaryStringToDecimal(char *str){
-	int i, dec=0;
+	unsigned int i, dec=0;
 	for(i=0; i<strlen(str); i++){
 		if(str[i] =='1'){
 		dec += 1 * pow(2,strlen(str)-1-i);
@@ -123,7 +122,7 @@ int binaryStringToDecimal(char *str){
 }
 
 int hammingDistance(char *str1, char *str2){
-	int i=0, dist=0;
+	unsigned int i=0, dist=0;
 	for(i=0; i<strlen(str1); i++){
 		if (str1[i]!=str2[i]){
 			dist++;
