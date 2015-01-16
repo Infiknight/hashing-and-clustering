@@ -29,7 +29,7 @@ int comp_int(
  * @param elem2
  * @return
  */
-double comp_double(
+int comp_double(
 	const void * elem1,
 	const void * elem2);
 

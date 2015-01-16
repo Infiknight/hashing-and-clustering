@@ -24,8 +24,10 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/mymain.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/probability_distr.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH_recommend.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/probability_distr.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH_structs.h</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/recomClustering.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_specialized_tools.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/LSH_structs.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_hash_table.c</file>
@@ -52,7 +54,6 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/distance_matrix_search.c</file>
-            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/reverse_assignment.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/list.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/compare.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/list.h</file>
@@ -61,6 +62,7 @@
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/euclidean_parser.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/update_clarans.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/hamming_search.c</file>
+            <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/topRated.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/initialize_medoids_p.h</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/vector.c</file>
             <file>file:/C:/Users/Infiknight/Documents/NetBeansProjects/1h%20Anaptu3hs/silhouette.c</file>

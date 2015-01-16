@@ -18,6 +18,12 @@ extern "C" {
 typedef struct Element element;
 typedef struct Seed seed;
 
+typedef struct Seed_table_bundle{
+	int * hash_table_size;
+	seed ** seed_table;
+	bucket *** hash_table;
+}seed_table_bundle;
+
 typedef enum Metric_space{
 	hamming,
 	euclidean,

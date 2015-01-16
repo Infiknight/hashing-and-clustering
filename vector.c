@@ -30,6 +30,16 @@ vector * vector_construct_random(
 	return new;
 }
 
+double vector_get_element(
+	vector const * const vector_0,
+	int position)
+{
+	if(position < vector_0->dimensionality)
+		return vector_0->coordinates[position];
+	else
+		printf("vector doesnt have that many elements\n");
+}
+
 int vector_add_dimension(
 	vector * const vector0,
 	double dimvalue)

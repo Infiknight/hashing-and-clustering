@@ -33,7 +33,6 @@ element ** euc_parser(
 			if(strcmp(str, "\n") != 0)
 				vector_add_dimension( data_table[*iter]->vector0, strtod(str,NULL));
 		}
-		printf("dims %d\n", vector_dimensions(data_table[*iter]->vector0));
 		(*iter)++;
 	}
 	return data_table;

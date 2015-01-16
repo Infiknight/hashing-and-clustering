@@ -31,6 +31,10 @@ int uniform_distr(
 	int min,
 	int max);
 
+int * random_combination(
+	int N,
+	int M);
+
 #ifdef	__cplusplus
 }
 #endif

@@ -28,3 +28,16 @@ int euc_get_element_pos(
 {
 	return element_ptr->position_in_dt;
 }
+
+int euc_get_dimensions(
+	element * element_ptr)
+{
+	return vector_dimensions(element_ptr->vector0);
+}
+
+double euc_get_vector_element(
+	element * element_ptr,
+	int position)
+{
+	return vector_get_element( element_ptr->vector0, position);
+}

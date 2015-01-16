@@ -8,6 +8,7 @@
 //#include "update_Improved_PAM.h"
 #include "k-medoids.h"
 #include "LSH_structs.h"
+#include "LSH_recommend.h"
 
 
 int main(int argc, char *argv[]){
@@ -26,9 +27,9 @@ int main(int argc, char *argv[]){
 	char variable[100]={0};
 	char a[100], metricSpace[100];
 	FILE *fpInput, *fpConf, *fpOutput;
-	int k= 5, numOfHashFunctions = 4, L = 5;
-	int claransSetFraction = -1;
-	int claransIterations = 2;
+	int k= 7, numOfHashFunctions = 14, L = 5;
+	int claransSetFraction = 1000;
+	int claransIterations = 160;
 	int value;
 	int choice_1, choice_2, choice_3;
 	int complete = 0;
@@ -136,14 +137,21 @@ int main(int argc, char *argv[]){
 		}
 	}
 
-	
-
-
+	int top_limit= 5;
+	LSH_recommend(
+		fpInput,
+		fpOutput,
+		top_limit,
+		vector_metric_0,
+		numOfHashFunctions,
+		L);
+	fclose(fpInput);
+	fclose(fpOutput);
 	//for(choice_1=1; choice_1<=2; choice_1++){
 	//	for(choice_2=1; choice_2<=2; choice_2++){
 	//		for(choice_3=1; choice_3<=2; choice_3++){
 	//			
-					kmedoids( fpInput, current_space, vector_metric_0, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 2, 2 ,2, complete);
+					//kmedoids( fpInput, current_space, vector_metric_0, k, numOfHashFunctions, L, claransSetFraction, claransIterations, fpOutput, 1, 2 ,2, complete);
 	//			
 	//		}
 	//	}

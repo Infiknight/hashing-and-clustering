@@ -2,33 +2,7 @@
 #include <stdlib.h>
 #include <gsl/gsl_matrix_double.h>
 #include <math.h>
-#include "compare.h"
 #include "proteins_p.h"
-
-int * random_combination(
-	int N,
-	int M)
-{
-	int * combination= malloc(M*sizeof(int));
-	int chosen[N];
-	int i, random_num;
-	for(i= 0; i < N; i++){
-		chosen[i]= 0;
-	}
-	for(i= N-M; i < N; i++){
-		random_num= uniform_distr(0, i);
-		if(chosen[random_num] == 0){
-			combination[i-(N-M)]= random_num;
-			chosen[random_num]= 1;
-		}
-		else{
-			combination[i-(N-M)]= i;
-			chosen[i]= 1;
-		}
-	}
-	qsort(combination, M, sizeof(int), comp_int);
-	return combination;
-}
 
 int ** random_edge_selection(
 	int no_points,

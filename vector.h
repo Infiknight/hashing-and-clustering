@@ -33,6 +33,10 @@ vector * vector_construct();
 vector* vector_construct_random(
 	int noDimensions);
 
+double vector_get_element(
+	vector const * const vector_0,
+	int position);
+
 /**
  * Extend? a vector to a new dimension.
  * @param vector0 The vector in question.

@@ -27,6 +27,9 @@
         <itemPath>hamming_p.h</itemPath>
         <itemPath>proteins_p.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f4" displayName="recommendation" projectFiles="true">
+        <itemPath>LSH_recommend.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
           <itemPath>bucket.h</itemPath>
@@ -99,6 +102,10 @@
         <itemPath>d_rmsd.c</itemPath>
         <itemPath>protein_handlers.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f7" displayName="recommendation" projectFiles="true">
+        <itemPath>LSH_recommend.c</itemPath>
+        <itemPath>LSH_recommend_tools.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f5" displayName="tools" projectFiles="true">
         <logicalFolder name="f1" displayName="bucket" projectFiles="true">
           <itemPath>bucket.c</itemPath>
@@ -138,6 +145,12 @@
       <compileType>
       </compileType>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LSH_recommend.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LSH_recommend.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LSH_recommend_tools.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="LSH_structs.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -297,6 +310,12 @@
         </linkerTool>
       </compileType>
       <item path="LSH.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LSH_recommend.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LSH_recommend.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LSH_recommend_tools.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="LSH_structs.c" ex="false" tool="0" flavor2="0">
       </item>

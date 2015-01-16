@@ -11,7 +11,7 @@ int comp_int(
     return 0;
 }
 
-double comp_double(
+int comp_double(
 	const void * elem1,
 	const void * elem2)
 {

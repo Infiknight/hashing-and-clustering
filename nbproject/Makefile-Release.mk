@@ -35,6 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/LSH_recommend.o \
+	${OBJECTDIR}/LSH_recommend_tools.o \
 	${OBJECTDIR}/LSH_structs.o \
 	${OBJECTDIR}/PAM.o \
 	${OBJECTDIR}/assign_to_clusters.o \
@@ -96,6 +98,16 @@ LDLIBSOPTIONS=-lgsl.dll -lgslcblas.dll
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/1h_anaptu3hs.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/1h_anaptu3hs ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/LSH_recommend.o: LSH_recommend.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LSH_recommend.o LSH_recommend.c
+
+${OBJECTDIR}/LSH_recommend_tools.o: LSH_recommend_tools.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LSH_recommend_tools.o LSH_recommend_tools.c
 
 ${OBJECTDIR}/LSH_structs.o: LSH_structs.c 
 	${MKDIR} -p ${OBJECTDIR}

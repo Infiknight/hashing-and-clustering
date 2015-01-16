@@ -36,6 +36,9 @@ double euc_distance(
 	int index_2,
 	vector_metric vector_metric_0);
 
+int euc_get_dimensions(
+	element * element_ptr);
+
 char * euc_get_element_name(
 	element * element_ptr);
 
@@ -90,6 +93,10 @@ element ** euc_parser(
 
 int euc_get_element_pos(
 	element * element_ptr);
+
+double euc_get_vector_element(
+	element * element_ptr,
+	int position);
 
 /**
  * Deallocates the memeory allocated for teh data table
